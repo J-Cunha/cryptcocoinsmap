@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_en: MyString
+  code: MyString
+  countries: 
+
+two:
+  name_en: MyString
+  code: MyString
+  countries: 

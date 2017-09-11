@@ -1,0 +1,2 @@
+class FiatCurrency < Currency
+end

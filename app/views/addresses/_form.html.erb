@@ -1,0 +1,123 @@
+<script type="application/javascript" src="<%= asset_url('jquery.min.js') %>"></script>
+<script type="application/javascript" src="<%= asset_url('intlTelInput.js') %>"></script>
+<%= simple_form_for(@address) do |f| %>
+    <%= f.error_notification %>
+      <div class="form-inputs">
+        <div class="row">
+          <div class="col-sm-12">
+            <%= f.input :business_name,
+                        input_html: { class: 'transparent-input' }, label: "#{t('address.business_name')}:" ,
+                        :label_html => { :class => 'login-label' } %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <%= f.input :web_site,
+                        input_html: { class: 'transparent-input' }, label: "#{t('address.web_site')}:" ,
+                        :label_html => { :class => 'login-label' } %>
+          </div>
+          <div class="col-sm-6">
+            <%= f.input :facebook_page,
+                        input_html: { class: 'transparent-input' }, label: "#{t('address.facebook_page')}:" ,
+                        :label_html => { :class => 'login-label' } %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-7">
+            <%= render('layouts/multEmailInput') %>
+          </div>
+          <div class="col-sm-5">
+            <%= render('layouts/multIntlTelInput') %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= f.input :description,
+                        input_html: { class: 'transparent-input', maxlength: 15, }, label: "#{t('address.description')}:" ,
+                        :label_html => { :class => 'login-label' }%>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group required">
+              <label class="control-label string required login-label" for="address_zip_code"><abbr title="required">*</abbr> <%= t('address.country') %></label><br>
+              <%= f.collection_select :country_id, Country.order(:name_en), :id, :name_native, {include_blank: false}, {class: 'form-control transparent-input country-select'} %>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <%= f.input :state,
+                        input_html: { class: 'transparent-input' }, label: "#{t('address.state')}:" ,
+                        :label_html => { :class => 'login-label' } %>
+          </div>
+          <div class="col-sm-6">
+            <%= f.input :city,
+                        input_html: { class: 'transparent-input' }, label: "#{t('address.city')}:" ,
+                        :label_html => { :class => 'login-label' } %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">
+            <%= f.input :zip_code,
+                        input_html: { class: 'transparent-input' }, label: "#{t('address.zip_code')}:" ,
+                        :label_html => { :class => 'login-label' } %>
+          </div>
+          <div class="col-xs-7">
+
+            <%= f.input :district,
+                        input_html: { class: 'transparent-input' }, label: "#{t('address.district')}:" ,
+                        :label_html => { :class => 'login-label' } %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <%= f.input :street,
+                        input_html: { class: 'transparent-input' }, label: "#{t('address.street')}:" ,
+                        :label_html => { :class => 'login-label' } %>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-xs-4">
+                <%= f.input :number,
+                            input_html: { class: 'transparent-input' }, label: "#{t('address.number')}:" ,
+                            :label_html => { :class => 'login-label' } %>
+              </div>
+              <div class="col-xs-8">
+                <%= f.input :complement,
+                            input_html: { class: 'transparent-input' }, label: "#{t('address.complement')}:" ,
+                            :label_html => { :class => 'login-label' } %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= f.input :reference_point,
+                        input_html: { class: 'transparent-input' }, label: "#{t('address.reference_point')}:" ,
+                        :label_html => { :class => 'login-label' }%>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-actions">
+              <%= f.button :submit, t('new_address_page.create_address'), class: ' filter-apply-button' %>
+            </div>
+          </div>
+        </div>
+      </div>
+<% end %>
+<style type="text/css">
+  .email-input {
+    margin-bottom: 8px;
+  }
+
+  .phone-input {
+    margin-bottom: 8px;
+  }
+</style>

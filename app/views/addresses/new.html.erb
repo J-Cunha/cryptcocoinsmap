@@ -1,0 +1,8 @@
+<% content_for :title, t('new_address_page.create_new_address') %>
+<div class="world-background" id="world-background">
+  <div class="container-fluid" , style="max-width: 1024px">
+    <h1 class="text-center blue-header "><%= t('new_address_page.create_new_address') %></h1>
+    <%= render 'form', address: @address %>
+    <%= link_to 'Back', addresses_path %>
+  </div>
+</div>

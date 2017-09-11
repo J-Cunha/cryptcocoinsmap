@@ -1,0 +1,122 @@
+@import "navbar/colors";
+@import "navbar/navbar_collapse_toggle";
+@import "navbar/navbar_dropdown_menu";
+@import "navbar/navbar_collapse_config";
+
+$nav_li_border_radius: 15px;
+$nav_items_margin_top: 10px;
+$nav_li_common_font_size: 130%;
+$nav_li_hover_font_size: 140%;
+
+.blue-70{
+  color: $water_light_70;
+}
+.navbar {
+  min-height: 70px;
+  max-height: 70px;
+
+
+}
+//navbar properties
+.navbar-default {
+  background-color: #021019;
+  border: none ;
+  border-radius: 0px;
+}
+
+
+
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
+a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent; /*BACKGROUND color for active*/
+  //color: #515151; /*BACKGROUND color for active*/
+  color: $water_light_70; /*BACKGROUND color for active*/
+  font-size: $nav_li_hover_font_size;
+  //background: white;
+  font-weight: bold ;
+  //text-decoration: underline;
+  border-radius: 0;
+  border-bottom: solid $water_light_70 4px;
+  padding-bottom: 11px;
+}
+//NAV BAR DEFAULT NAV ITEM:HOVER
+.navbar-default .navbar-nav > li > a:hover {
+  //color: #515151;  //Sets the text hover color on navbar
+  color: $water_light_70;  //Sets the text hover color on navbar
+  //font-weight: bold ;
+  //font-size: 10%;
+  //font-size: 10%;
+  background-color: transparent;
+  border-radius: 0;
+  //text-decoration: underline;
+}
+
+//general items properties
+.navbar-default .navbar-nav > li > a {
+  //color: #515151; /*Change active text color here*/
+  color: $water_light_55; /*Change active text color here*/
+  font-size: $nav_li_common_font_size;
+  //font-family: Aadhunik;
+  font-family:  Helvetica, sans-serif;
+
+  font-weight: bold;
+  //letter-spacing: 0.05em;
+  background-color: transparent;
+}
+//item in navbar
+.navbar-nav > li{
+  margin-left:5px;
+  margin-right:5px;
+  margin-top: $nav_items_margin_top;
+}
+
+
+
+.collapsed-flag-selector {
+  margin-top: 15px;
+  margin-left: 25px;
+}
+
+.slogan-text {
+  font-family:  Helvetica, sans-serif;
+
+  font-size: 120%;
+  font-weight: bold;
+
+  margin-left: 20px;
+  margin-top: $nav_items_margin_top;
+  padding-top: 0px;
+}
+
+
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: $water_light_70;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}

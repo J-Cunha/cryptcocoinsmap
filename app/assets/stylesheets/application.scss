@@ -1,0 +1,223 @@
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap-datetimepicker';
+@import "navbar/navbar";
+@import "intlTelInput";
+.inline {
+  display: inline;
+}
+div.world-background {
+  //width: 100%;
+  //height: auto;
+
+  position: relative;
+  overflow: visible;
+  height: auto;
+  padding: 5em 5em 5em 5em;
+  //margin-top: 70px;
+  border: 1px #384FBF;
+  border-top-style: solid;
+  border-bottom-style: none;
+  background: asset_data_url('world.jpg') no-repeat center ;
+  background-size: cover;
+}
+.country-select option {
+  margin: 40px;
+  background: $water_dark_blue;
+}
+//Info_box
+$info_box_icon_height: 16px;
+$info_box_icon_width: 16px;
+div.infobox-flag-icon{
+  height: $info_box_icon_height;
+  width: $info_box_icon_width;
+  background: asset_data_url('info_box/flag.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
+}
+div.infobox-tag-icon{
+  height: $info_box_icon_height;
+  width: $info_box_icon_width;
+  background: asset_data_url('info_box/tag.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
+}
+div.infobox-phone-icon{
+  height: $info_box_icon_height;
+  width: $info_box_icon_width;
+  background: asset_data_url('info_box/phone.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
+}
+div.infobox-email-icon{
+  height: $info_box_icon_height;
+  width: $info_box_icon_width;
+  background: asset_data_url('info_box/email.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
+}
+div.infobox-street-icon{
+  height: $info_box_icon_height;
+  width: $info_box_icon_width;
+  background: asset_data_url('info_box/street.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
+}
+.infobox-currency-logo-16x16{
+  height: 16px;
+  width: 16px;
+}
+div.address_property_key{
+  font-weight: bold ;
+  display: inline;
+}
+div.address_property_value {
+  height: 16px;
+  vertical-align: top;
+  display: inline;
+  margin-left: 3px;
+}
+
+$money_green_color: #1c5424;
+$crypto_blue_color: #384FBF;
+
+.banks-icon{
+  width: 40px;
+}
+.table > tbody > tr > td {
+  vertical-align: middle;
+  font-size: 120%;
+}
+.txt-account-option {
+  color: $crypto_blue_color !important;
+}
+.txt-center{
+  text-align: center;
+}
+.img-center {
+  display: block;
+  margin: 0 auto;
+}
+.body{
+  padding-bottom: 0px;
+}
+.page-body{
+  margin-top: 70px;
+}
+.btn-no-margin-top{
+  margin-top: 0;
+}
+.btn-no-margin{
+  margin-left: 0;
+}
+//navbar-summary
+$summary_icon_height: 32px;
+$summary_icon_width: 32px;
+.navbar-summary{
+  margin: 10px 20px 10px 20px;
+}
+.summary-info{
+  color: white;
+  font-weight: lighter;
+  font-size: 170%;
+}
+div.summary-shop-icon{
+  height: $summary_icon_height;
+  width: $summary_icon_width;
+  background: asset_data_url('summary/shop.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
+}
+//LOGIN PAGE
+.blue-header{
+  color: $water_light_65;
+  margin: 30px 0px 20px 0px;
+}
+.transparent-input{
+  background: transparent;
+  font-weight: 600;
+  color: $water_light_85;
+}
+.login-label{
+  color: $water_light_65;
+  font-size: 120%;
+}
+
+div.social-facebook-icon{
+  height: $summary_icon_height;
+  width: $summary_icon_width;
+  background: asset_data_url('social_media/facebook-logo.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
+}
+div.social-twitter-icon{
+  height: $summary_icon_height;
+  width: $summary_icon_width;
+  background: asset_data_url('social_media/twitter.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
+}
+div.social-google-icon{
+  height: $summary_icon_height;
+  width: $summary_icon_width;
+  background: asset_data_url('social_media/google-plus.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
+}
+div.social-github-icon{
+  height: $summary_icon_height;
+  width: $summary_icon_width;
+  background: asset_data_url('social_media/github-logo.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
+}
+.social-login-container {
+margin-top: 5px;
+}
+.social-login-label:hover{
+  color: $water_light_65;
+}
+.social-login-label{
+  color: $water_light_65;
+  font-size: 150%;
+  font-weight: bold;
+  vertical-align: middle;
+  margin-left: -10px;
+
+}
+.login-btn:hover{
+  color: white;
+  font-weight: bold;
+  font-size: 130%;
+  background-color:$water_light_55 ;
+  text-decoration: underline;
+}
+.login-btn{
+  color: white;
+  font-weight: bold;
+  font-size: 130%;
+
+  background-color:$water_light_55 ;
+}
+.dark-blue-container {
+  background-color: $water_dark_blue;
+  margin-top: 70px;
+}
+
+
+.placeholder-blue::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    $water_light_55;
+}
+.placeholder-blue:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #909;
+  opacity:  1;
+}
+.placeholder-blue::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #909;
+  opacity:  1;
+}
+.placeholder-blue:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    #909;
+}
+

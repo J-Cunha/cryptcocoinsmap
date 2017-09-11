@@ -1,0 +1,67 @@
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>Business Name:</strong>
+    <%= @address.business_name %>
+  </p>
+  <p>
+    <strong>Business Name:</strong>
+    <%= @address.categories %>
+  </p>
+  <p>
+    <strong>Country:</strong>
+    <%= @address.country.name %>
+  </p>
+
+  <p>
+    <strong>State:</strong>
+    <%= @address.state %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= @address.city %>
+  </p>
+
+  <p>
+    <strong>District:</strong>
+    <%= @address.district %>
+  </p>
+
+  <p>
+    <strong>Street:</strong>
+    <%= @address.street %>
+  </p>
+
+  <p>
+    <strong>Number:</strong>
+    <%= @address.number %>
+  </p>
+
+  <p>
+    <strong>Complement:</strong>
+    <%= @address.complement %>
+  </p>
+
+  <p>
+    <strong>Reference point:</strong>
+    <%= @address.reference_point %>
+  </p>
+  <p>
+    <strong>Web Site:</strong>
+    <%= @address.web_site%>
+  </p>
+  <p>
+    <strong>E-mails:</strong>
+    <%= @address.emails %>
+  </p>
+  <p>
+    <strong>Phone_numbers:</strong>
+    <%= @address.phone_numbers %>
+  </p>
+  <p>
+    <strong>CryptoCurrenciesAccepted:</strong>
+    <%= @address.crypto_currencies_accepted%>
+  </p>
+
+  <%= link_to 'Edit', edit_address_path(@address) %> |
+  <%= link_to 'Back', addresses_path %>

@@ -1,0 +1,38 @@
+cryptocoinsmap
+
+A site where inform who is accepting cryptocurrencies as payment for pŕoducts and serviços.
+
+Alertar ao usuario entrar em contato com os comercios e pesquisar sobre eles para ver se são legitimos
+
+categorizar produtos e servicos;
+cada usuario ṕde cadastrar mais de uma empresa;
+cada empresa pode ter mais de uma filial;
+cadastrar somente informacoes basicas de telefone e endereço;
+por idiomas falados
+
+filtros para exibir dados
+    continent
+    pais
+    estado
+    cidade
+    num raio de *km de {posicao x}
+    produtos
+    serviços
+
+    
+
+o usuario pode reportar problemas
+    icone nao sendo exibido
+    nao consigo cadastrar no sistema
+    
+
+o usuario pode fazer doacoes 
+    coinpayments gateway;
+    paypal;
+    
+
+            index = $('.phone-input').length + 1;
+
+
+
+

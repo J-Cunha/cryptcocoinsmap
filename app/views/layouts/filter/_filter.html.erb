@@ -1,0 +1,109 @@
+<%= form_tag(index_path, method: 'get') do %>
+    <nav class="navbar navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-1">
+          </div>
+          <div class="col-sm-10">
+            <div class="row">
+              <div class="col-xs-1 index-filter-block">
+                <div class="form-group">
+                  <div class="filter-property-label"><%=t('filters.countries') %></div>
+                  <li class="dropdown index-filter-property-container">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <div style="overflow-x: hidden; display: inline;"><%= params[:filter_countries] ||  t('filters.no_filter') %></div>
+                    </a>
+                    <ul class="dropdown-menu scrollable-menu" id="style-7">
+                      <% @countries.each do |c| %>
+                          <li>
+                            <div class="checkbox filter-dropdown-checkbox">
+                              <label>
+                                <input type="checkbox" value="<%= c.id.to_s %>" name="filter_countries[]">
+                                <%= "#{c.name}" %>
+                              </label>
+                            </div>
+                          </li>
+                      <% end %>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+              <div class="col-xs-1 index-filter-block">
+                <div class="form-group">
+                  <div class="filter-property-label"><%=t('filters.languages') %></div>
+                  <li class="dropdown index-filter-property-container">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <div style="overflow-x: hidden; display: inline;"><%= params[:filter_languages] ||  t('filters.no_filter')%></div>
+                    </a>
+                    <ul class="dropdown-menu scrollable-menu" id="style-7">
+                      <% @languages.each do |c| %>
+                          <li>
+                            <div class="checkbox  filter-dropdown-checkbox">
+                              <label>
+                                <input type="checkbox" value="<%= c.id.to_s %>" name="filter_languages[]">
+                                <%= "#{c.name_native}" %>
+                              </label>
+                            </div>
+                          </li>
+                      <% end %>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+              <div class="col-xs-1 index-filter-block">
+                <div class="form-group ">
+                  <div class="filter-property-label"><%=t('filters.categories') %></div>
+                  <li class="dropdown index-filter-property-container">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <div style="max-height: inherit; overflow-x: hidden; overflow-y: hidden; display: inline;"><%= params[:filter_categories] || t('filters.no_filter') %></div>
+                    </a>
+                    <ul class="dropdown-menu scrollable-menu" id="style-7">
+                      <% @categories.each do |c| %>
+                          <!--<li><%# link_to image_tag(""), { :locale=>l.to_s}  %></li>-->
+                          <li>
+                            <div class="checkbox filter-dropdown-checkbox">
+                              <label>
+                                <input type="checkbox" value="<%= c.id.to_s %>" name="filter_categories[]"/>
+                                <%= "#{c.name}" %>
+                              </label>
+                            </div>
+                          </li>
+                      <% end %>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+              <div class="col-xs-1 index-filter-block">
+                <div class="form-group  ">
+                  <div class="filter-property-label"><%=t('filters.coins') %></div>
+                  <li class="dropdown index-filter-property-container">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <div style="max-height: inherit; overflow-x: hidden; overflow-y: hidden; display: inline;"><%= params[:filter_crypto_currencies] || t('filters.no_filter') %></div>
+                    </a>
+                    <ul class="dropdown-menu scrollable-menu" id="style-7">
+                      <% @crypto_currencies.each do |c| %>
+                          <!--<li><%# link_to image_tag(""), { :locale=>l.to_s}  %></li>-->
+                          <li>
+                            <div class="checkbox filter-dropdown-checkbox">
+                              <label>
+                                <input type="checkbox" value="<%= c.id.to_s %>" name="filter_crypto_currencies[]"/>
+                                <%= "#{c.name}" %>
+                              </label>
+                            </div>
+                          </li>
+                      <% end %>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+              <div class="col-xs-1 index-filter-block">
+                <%= submit_tag t('filters.apply_filter'), class: " btn filter-apply-button" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1">
+          </div>
+        </div>
+      </div>
+    </nav>
+<% end %>

@@ -1,0 +1,2 @@
+class CryptoCurrency < Currency
+end

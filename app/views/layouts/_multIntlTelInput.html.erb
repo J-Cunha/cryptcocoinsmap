@@ -1,0 +1,15 @@
+<div class="form-group">
+  <div class="phone-list">
+    <div class=" phone-input">
+      <div class=" form-group string  phone_numbers ">
+        <label class="control-label string required login-label" for="address_zip_code"><abbr title="required">*</abbr> <%= t('address.phone') %></label><br>
+        <input type="text" name="address[phone_numbers][1]" id="address_phone_numbers" class=" placeholder-blue form-control transparent-input"/>
+        <span id="valid-msg" class="hide" style="color: #EFEFEF"><%= t('address.phone_valid') %></span>
+        <span id="error-msg" class="hide" style="color: red"><%= t('address.phone_invalid') %></span>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-success btn-sm btn-add-phone">
+    <span class="glyphicon glyphicon-plus"></span> <%= t('address.add_phone') %>
+  </button>
+</div>

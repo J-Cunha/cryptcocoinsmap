@@ -1,0 +1,12 @@
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  border-color: $water_light_55; /* Removes border color */
+  background-color: transparent;
+  float: right; /* Move navbar toggle to left */
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color:  $water_light_55; /* Changes regular toggle color */
+}
+.navbar-default .navbar-toggle .icon-bar:hover {
+  background-color: #22e7ff; /* Changes toggle color on hover */
+}

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_en: MyString
+  name_native: MyString
+  code_iso2: MyString
+  code_iso3: MyString
+  phone_code: MyString
+  continent: one
+
+two:
+  name_en: MyString
+  name_native: MyString
+  code_iso2: MyString
+  code_iso3: MyString
+  phone_code: MyString
+  continent: two

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield :title %></title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+  <nav>
+    <%= render 'layouts/navbar/navbar' %>
+  </nav>
+<body>
+<%= yield %>
+</body>
+<script type="application/javascript">
+    setWorldBackgroundHeight();
+    window.addEventListener('resize', setWorldBackgroundHeight);
+    // window.resize callback function
+    function setWorldBackgroundHeight() {
+        document.getElementById("world-background").style.minHeight = "" + $(window).height() + "px";
+    }
+</script>
+</html>
