@@ -13,10 +13,9 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: localhost
-  username: root
-  password: H0F0rtuna!
-  socket: /var/run/mysqld/mysqld.sock
+  host: <%= ENV['DATABASE_HOST'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   timeout: 5000
 
 development:
@@ -52,5 +51,3 @@ test:
 production:
   <<: *default
   database: cryptocoinsmap_production
-  username: cryptocoinsmap_info
-  password: <%= ENV['CRYPTOCOINSMAP_INFO_DATABASE_PASSWORD'] %>
