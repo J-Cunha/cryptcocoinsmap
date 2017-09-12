@@ -19,3 +19,8 @@
 /yarn-error.log
 
 .byebug_history
+
+# Ignore external configurations
+
+/config/database.yml
+.env
