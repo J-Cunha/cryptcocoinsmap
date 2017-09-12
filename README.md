@@ -1,14 +1,32 @@
 ## CryptoCoinsMap 
 
 This is the official repository of www.CryptoCoinsMap.Info.
-The CryptoCoinsMap 
+The CryptoCoinsMap it's and web application that allow local businesses to register themselves to show in the world map.
+The users can
+
 
 ### Versions
-Ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+Ruby 2.4.0p0 (2016-12-24 revision 57164)
+
 Rails 5.1.3
 
+### Dependencies
+* Gmap4Rails for handle the google maps API
+
+https://github.com/apneadiving/Google-Maps-for-Rails 
+
+* Devise for database authentication
+
+https://github.com/plataformatec/devise 
+
+* Ominiauth for authentication with social networks
+
+https://github.com/omniauth/omniauth
+
+
 ### Database
-It's configured to use Mysql database 
+It's configured to use Mysql database
+
 You must run db:seeds to feed the database
 
 ### Tests
