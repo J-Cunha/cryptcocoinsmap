@@ -6,5 +6,6 @@ I18n.available_locales = [:en, #english
                           :fr, #french
                           :ja, #japanese
                           :hi, #hindi
-                          :ar  #arabic
+                          :ar, #arabic
+                          :ru  #russian
 ]
