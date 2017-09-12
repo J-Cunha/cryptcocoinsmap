@@ -1,24 +1,23 @@
-# README
+## CryptoCoinsMap 
+
+This is the official repository of www.CryptoCoinsMap.Info.
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+### Versions
+Ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+Rails 5.1.3
 
-* Ruby version
+### Database
+It's configured to use Mysql database 
+You must run db:seeds to feed the database
 
-* System dependencies
+### Tests
+No tests have been made yet
 
-* Configuration
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Deployment instructions
+Not yet deployed
