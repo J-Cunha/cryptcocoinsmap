@@ -5,10 +5,7 @@ A site where inform who is accepting cryptocurrencies as payment for pŕoducts a
 Alertar ao usuario entrar em contato com os comercios e pesquisar sobre eles para ver se são legitimos
 
 categorizar produtos e servicos;
-cada usuario ṕde cadastrar mais de uma empresa;
-cada empresa pode ter mais de uma filial;
-cadastrar somente informacoes basicas de telefone e endereço;
-por idiomas falados
+cada usuario pode cadastrar mais de uma empresa;
 
 filtros para exibir dados
     continent
@@ -19,7 +16,6 @@ filtros para exibir dados
     produtos
     serviços
 
-    
 
 o usuario pode reportar problemas
     icone nao sendo exibido
@@ -29,10 +25,3 @@ o usuario pode reportar problemas
 o usuario pode fazer doacoes 
     coinpayments gateway;
     paypal;
-    
-
-            index = $('.phone-input').length + 1;
-
-
-
-
