@@ -1,10 +1,7 @@
 ## CryptoCoinsMap 
 
 This is the official repository of www.CryptoCoinsMap.Info.
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The CryptoCoinsMap 
 
 ### Versions
 Ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
@@ -16,8 +13,6 @@ You must run db:seeds to feed the database
 
 ### Tests
 No tests have been made yet
-
-
 
 ### Deployment instructions
 Not yet deployed
