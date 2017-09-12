@@ -68,6 +68,7 @@ group :development do
   gem 'railroady'
   gem 'nokogiri'
   gem 'faker'
+  gem 'locales_export_import' #For export and import translations
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

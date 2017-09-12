@@ -1,35 +1,35 @@
-en:
+it:
   index:
     index: 'Index'
     coins_accepted: 'Accepted Coins'
 
   address:
-    business_name: 'Business name'
+    business_name: 'Nome commerciale'
     web_site: 'Web site'
     facebook_page: 'Facebook'
-    description: 'Description'
-    country: 'Country'
-    state: 'State'
-    city: 'City'
-    zip_code: 'Zip code'
-    district: 'District'
-    street: 'Street'
+    description: 'Descrizione'
+    country: 'Paese'
+    state: 'Stato'
+    city: 'Città'
+    zip_code: 'Codice postale'
+    district: 'Quartiere'
+    street: 'Via'
     number: 'Nº'
-    complement: 'Complement'
-    reference_point: 'Reference point'
-    email: 'Email'
-    add_email: 'Add Email'
-    phone: 'Phone'
-    add_phone: 'Add Phone'
+    complement: 'Complemento'
+    reference_point: 'Punto di riferimento'
+    email: 'E-mail'
+    add_email: 'Aggiungi e-mail'
+    phone: 'Telefono'
+    add_phone: 'Aggiungi Telefono'
     phone_valid: '✓'
     phone_invalid: 'nº invalid'
 
 
   navbar:
-    map: 'Map'
-    reports: 'Reports'
-    my_account: 'My Account'
-    donate: 'Contribute'
+    map: 'Mappa'
+    reports: 'Rapporti'
+    my_account: 'Mia Conta'
+    donate: 'Contribuire'
     logout: 'Logout'
     login: 'Login'
 
@@ -37,7 +37,6 @@ en:
     most_accepted_coins: "Most Accepted Coins"
     registered_businesses: "Registered business"
     add_business: 'Add Business'
-
 
   filters:
     countries: 'Countries'

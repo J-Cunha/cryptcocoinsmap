@@ -24,3 +24,6 @@
 
 /config/database.yml
 .env
+
+#Ignore keys.csv (locales exporter)
+keys.csv
