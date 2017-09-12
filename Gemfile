@@ -43,7 +43,10 @@ gem 'jquery_mask_rails'
 # gem 'capistrano-rails', group: :development
 gem 'devise' #authentication
 gem 'crono' #scheduled jobs
+
+# omniauths
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
