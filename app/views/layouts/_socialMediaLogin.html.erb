@@ -16,6 +16,15 @@
     <%= link_to t('devise.sessions.sign_in_with_google'), user_google_oauth2_omniauth_authorize_path , class: "social-login-label" %>
   </div>
 </div>
+<div class="row social-login-container">
+  <div class="col-xs-2 ">
+    <div class=" social-github-icon">
+    </div>
+  </div>
+  <div class="col-xs-10">
+    <%= link_to t('devise.sessions.sign_in_with_github'), user_github_omniauth_authorize_path , class: "social-login-label" %>
+  </div>
+</div>
 <!--
 <div class="row social-login-container">
   <div class="col-xs-2 ">
