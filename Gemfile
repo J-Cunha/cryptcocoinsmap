@@ -46,6 +46,7 @@ gem 'crono' #scheduled jobs
 
 # omniauths
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 
