@@ -13,6 +13,8 @@ The users can
 * [Gmap4Rails](https://github.com/apneadiving/Google-Maps-for-Rails) for handle the google maps API
 * [Devise](https://github.com/plataformatec/devise ) for database authentication
 * [Ominiauth](https://github.com/omniauth/omniauth) for authentication with social networks
+* [dotenv](https://github.com/bkeepers/dotenv) for externalize configurations
+
 
 ### Database
 * It's configured to use Mysql database
