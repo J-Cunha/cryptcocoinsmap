@@ -18,10 +18,12 @@ The users can
 
 ### Database
 * It's configured to use Mysql database
-* You must run db:seeds to feed the database
+
 
 ### Tests
 * No tests have been made yet
 
 ### Deployment instructions
-* Not yet deployed
+* You must run db:seeds to feed the database with all kind of informations
+* You must run parse_categories_from_paypal.rb to feed the database with categories
+* You must run parse_coin_market_cap.rb to feed the database with cryptocurrencies
