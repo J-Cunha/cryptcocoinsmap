@@ -1,0 +1,58 @@
+$(function () {
+    var category_index = 2;
+    var deleted_category_indexes = [];
+    var tot_categories = 1;
+
+    $(document.body).on('click', '.btn-remove-category2', function () {
+        $(this).closest('.category-input').remove();
+        deleted_category_indexes.push(2);
+        tot_categories -= 1;
+    });
+    $(document.body).on('click', '.btn-remove-category3', function () {
+        $(this).closest('.category-input').remove();
+        deleted_category_indexes.push(3);
+        tot_categories -= 1;
+    });
+    $(document.body).on('click', '.btn-remove-category4', function () {
+        $(this).closest('.category-input').remove();
+        deleted_category_indexes.push(4);
+        tot_categories -= 1;
+    });
+    $(document.body).on('click', '.btn-remove-category5', function () {
+        $(this).closest('.category-input').remove();
+        deleted_category_indexes.push(5);
+        tot_categories -= 1;
+    });
+
+    $('.btn-add-category').click(function () {
+        if ((deleted_category_indexes.length > 0)) {
+            category_index = min = Math.min.apply(null, deleted_category_indexes);
+            console.log("min: " + min.toString());
+            var del_ind = deleted_category_indexes.indexOf(category_index);
+            if (category_index > -1) {
+                deleted_category_indexes.splice(del_ind, 1);
+            }
+        }
+        <%@categories = Category.all %>
+        if (tot_categories < 5) {
+            $('.category-list').append('' +
+                '<div class="row input-group category-input">' +
+                '<div class="col-xs-10">' +
+                '<select style="border-radius: 5px;" class="form-control transparent-input country-select border-radius-10 " name="address[categories][' + category_index + ']" id="address_categories[' + category_index + ']">' +
+                    '<%@categories.each  do |category| %><option value="<%= category.id%>"><%= category.name.sub("/'", "" )%></option><%end %>' +
+                '</select>' +
+                '</div>' +
+                '<div class="col-xs-2">' +
+                '<span class="input-group-btn">' +
+                '<button class="btn btn-danger btn-remove-category' + category_index + '" type="button"><span class="glyphicon glyphicon-remove"></span></button>' +
+                '</span>' +
+                '</div>' +
+                '</div>'
+            );
+            if ((deleted_category_indexes.length == 0)) {
+                category_index += 1;
+            }
+            tot_categories += 1;
+        }
+    });
+});

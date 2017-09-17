@@ -4198,10 +4198,11 @@ allTr.each do |tr|
 end
 ####################################################
 #CATEGORIES
+
 #USERS
 ####################################################
-j_u = User.create(email: "joao@joao.com", password:"password", password_confirmation: "password")
-j_u_2 = User.create(email: "joao1@joao1.com", password:"password", password_confirmation: "password")
+j_u = User.create(email: "user@user.com", password:"password", password_confirmation: "password")
+j_u_2 = User.create(email: "user1@user1.com", password:"password", password_confirmation: "password")
 
 ####################################################
 #USERS
@@ -4231,6 +4232,7 @@ j_u_2 = User.where(email:"joao1@joao1.com" ).first
   addr.emails= {"1" => Faker::Internet.email, "2" => Faker::Internet.email}
   addr.phone_numbers= {"1" => "+5521992064121", "2" => "+12505554848"}
   addr.crypto_currencies_accepted= {"1" => "BTC", "2" => "LTC", "3" => "USD", "4" => "ETC", "5" => "XRP"}
+  addr.categories = {"1" => "1", "2" => "2", "3" => "3", "31" => "4","33" => "5"}
   addr.latitude = fk_addr.latitude
   addr.longitude = fk_addr.longitude
   puts addr.save
@@ -4250,6 +4252,8 @@ Address.create(user: j_u,
                emails: {"1" => "jvsdc1992@gmail.com", "2" => "soares.cunha.joao@gmail.com", "3" => "ceo@pagcrypto.com"},
                phone_numbers: {"1" => "+5521992064121", "2" => "+12505554848"},
                crypto_currencies_accepted: {"1" => "BTC", "2" => "LTC", "3" => "USD"},
+               categories: {"1" => "1", "2" => "2", "3" => "3", "31" => "4","33" => "5" }
+
 
 
 )
@@ -4265,7 +4269,8 @@ Address.create(user: j_u_2,
                reference_point: "Em frente à casa Show",
                emails: {"1" => "jvsdc1992@gmail.com", "2" => "soares.cunha.joao@gmail.com", "3" => "ceo@pagcrypto.com"},
                phone_numbers: {"1" => "+5521992064121", "2" => "+12505554848"},
-               crypto_currencies_accepted: {"1" => "BTC", "2" => "LTC", "3" => "USD", "31" => "ETH","33" => "ETC","23" => "GBG" }
+               crypto_currencies_accepted: {"1" => "BTC", "2" => "LTC", "3" => "USD", "31" => "ETH","33" => "ETC","23" => "GBG" },
+               categories: {"1" => "1", "2" => "2", "3" => "3", "31" => "4","33" => "5" }
 )
 ####################################################
 #ADDRESSES

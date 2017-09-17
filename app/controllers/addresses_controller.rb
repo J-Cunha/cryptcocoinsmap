@@ -15,7 +15,6 @@ class AddressesController < ApplicationController
   # GET /addresses/new
   def new
     @address = Address.new
-    @crypto_currencies = CryptoCurrency.all
   end
 
   # GET /addresses/1/edit
@@ -26,11 +25,13 @@ class AddressesController < ApplicationController
   # POST /addresses.json
   def create
     @address = Address.new(address_params)
+    @address.user = current_user
     respond_to do |format|
       if @address.save
-        @address.phone_numbers =address_params[:phone_numbers]
-        puts "Address Params[emails]: #{address_params[:emails]}"
-        puts "Address Params[phone_numbers]: #{address_params[:phone_numbers]}"
+        @address.set_categories= address_params[:categories]
+        @address.set_emails= address_params[:emails]
+        @address.set_phone_numbers= address_params[:phone_numbers]
+        @address.set_crypto_currencies_accepted = address_params[:crypto_currencies_accepted]
         format.html { redirect_to @address, notice: 'Address was successfully created.' }
         format.json { render :show, status: :created, location: @address }
       else
@@ -72,6 +73,7 @@ class AddressesController < ApplicationController
                                       :zip_code,:district,
                                       :street, :number, :complement,
                                       :reference_point,
-                                      emails: ['1','2','3','4','5'], phone_numbers: ['1','2','3','4','5'])
+                                      emails: ['1','2','3','4','5'], phone_numbers: ['1','2','3','4','5'], categories: ['1','2','3','4'], crypto_currencies_accepted: [] )
+
     end
 end

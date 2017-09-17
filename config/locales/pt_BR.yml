@@ -23,6 +23,8 @@ pt_BR:
     add_phone: 'Adicionar Telefone'
     phone_valid: '✓'
     phone_invalid: 'nº inválido'
+    categories: 'Categorias'
+    add_category: 'Adiconar Categoria'
 
 
   navbar:

@@ -4,12 +4,16 @@
       <%= f.error_notification %>
       <div class="form-inputs">
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-8">
             <%= f.input :business_name,
                         input_html: {class: 'transparent-input'}, label: "#{t('address.business_name')}:",
                         :label_html => {:class => 'login-label'} %>
           </div>
+          <div class="col-sm-4">
+            <%= render('layouts/multCategoryInput') %>
+          </div>
         </div>
+
         <div class="row">
           <div class="col-sm-6">
             <%= f.input :web_site,
@@ -42,8 +46,7 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="form-group required">
-              <label class="control-label string required login-label" for="address_zip_code"><abbr title="required">*</abbr> <%= t('address.country') %>
-              </label><br>
+              <label class="control-label string required login-label" for="address_zip_code"><abbr title="required">*</abbr> <%= t('address.country') %></label><br>
               <%= f.collection_select :country_id, Country.order(:name_en), :id, :name_native, {include_blank: false}, {class: 'form-control transparent-input country-select'} %>
             </div>
           </div>
@@ -128,12 +131,11 @@
                       <div class="col-xs-6">
                         <% blks[i].each do |c| %>
                             <div class="checkbox filter-dropdown-checkbox">
-                              <input type="checkbox" value="<%= c.id.to_s %>" name="filter_crypto_currencies[]"/>
+                              <input type="checkbox" value="<%= c.id.to_s %>" name="address[crypto_currencies_accepted][]"/>
                               <%= (image_tag ("coins_icons/#{c.name.split.join('-')}.png"),
                                              class: 'infobox-currency-logo-16x16 inline') if (Rails.application.assets.find_asset "coins_icons/#{c.name.split.join('-')}.png") %>
                               <div class="login-label inline"><%= "#{c.name}" %></div>
                             </div>
-                            <% puts "\n#{i}: #{c.name} \n" %>
                         <% end %>
                         <% i = (i + 1) %>
                       </div>
@@ -154,6 +156,10 @@
 
   <% end %>
   <style type="text/css">
+    .category-input {
+      margin-bottom: 8px;
+    }
+
     .email-input {
       margin-bottom: 8px;
     }

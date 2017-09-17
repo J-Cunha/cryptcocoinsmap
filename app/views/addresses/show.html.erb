@@ -1,11 +1,12 @@
-  <p id="notice"><%= notice %></p>
+<div style="margin-top: 100px;"></div>
+<p id="notice"><%= notice %></p>
   <p>
     <strong>Business Name:</strong>
     <%= @address.business_name %>
   </p>
   <p>
-    <strong>Business Name:</strong>
-    <%= @address.categories %>
+    <strong>Categories:</strong>
+    <%= @address.get_categories %>
   </p>
   <p>
     <strong>Country:</strong>
