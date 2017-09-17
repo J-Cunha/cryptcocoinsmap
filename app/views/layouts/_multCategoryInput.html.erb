@@ -1,0 +1,18 @@
+<div class="form-group">
+  <div class="category-list">
+    <div class=" category-input">
+      <div class="form-group string required address_categories ">
+        <label class="control-label string required login-label" for="address_zip_code"><abbr title="required">*</abbr> <%= t('address.categories') %>
+        </label>
+        <select class="form-control transparent-input country-select" name="address[categories][1]" id="address_categories">
+          <%= @categories.each do |cateogy| %>
+              <option value="<%= cateogy.id%>"><%= cateogy.name%></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-success btn-sm btn-add-category">
+    <span class="glyphicon glyphicon-plus"></span> <%= t('address.add_category') %>
+  </button>
+</div>

@@ -22,9 +22,14 @@ class WelcomeController < ApplicationController
 
       info_window_html = "<div class=\"countainer-fluid\">"+
                           "<h5><a href=\"http://localhost:3000/addresses/#{address.id}\">#{address.business_name}</a></h5>"+
-                          "<div>"+ #bussiness categories
-                            "<div class=\"infobox-tag-icon\"> </div>"+
-                            "<div class=\"address_property_value\">Food, Barbecue</div>"+
+                          "<div>"
+
+      #bussiness categories
+      categories =  "<div class=\"infobox-tag-icon\"> </div>"
+      categories +=  "<div class=\"address_property_value\">"
+      address.categories.each {|c| categories += "<a href=\"http://localhost:3000/categories/#{c.id}\"> #{c.name} </a> "}
+      categories += "</div>"
+      info_window_html += categories+
                           "</div>"+
                           "<div >"+#state and country
                             "<div class=\"infobox-flag-icon\"> </div>"+
@@ -34,21 +39,21 @@ class WelcomeController < ApplicationController
                             "<div class=\"infobox-street-icon\"> </div>"+
                             "<div class=\"address_property_value\">#{address.full_street} </div>"+
                           "</div>"
-      #add crypyo phone numbers to infowindow
+      #add phone numbers to infowindow
       address.phone_numbers.each do |pn|
         info_window_html += "<div>"+
                             "<div class=\"infobox-phone-icon\"> </div>"+
                             "<div class=\"address_property_value\">#{pn}</div>"+
                             "</div>"
       end
-      #add crypyo emails to infowindow
+      #add  emails to infowindow
       address.emails.each do |em|
         info_window_html += "<div>"+
             "<div class=\"infobox-email-icon\"> </div>"+
             "<div class=\"address_property_value\">#{em} </div>"+
                             "</div>"
       end
-      #add crypyo currencies to infowindow
+      #add cryptocurrencies to infowindow
       info_window_html += "<div id=\"accepted-coins\" >"
 
       address.crypto_currencies_accepted.each do |coin_accepted|

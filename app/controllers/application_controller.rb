@@ -1,7 +1,13 @@
 class ApplicationController < ActionController::Base
-  before_action :set_locale
+  before_action :set_locale, :set_variables
   protect_from_forgery with: :exception
 
+
+  def set_variables
+    @categories = Category.all.order(:name)
+    @crypto_currencies = CryptoCurrency.all
+
+  end
   def default_url_options
     { locale: I18n.locale }
   end
