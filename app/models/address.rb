@@ -15,6 +15,7 @@ class Address < ApplicationRecord
                 :phone_numbers,
                 :emails,
                 :crypto_currencies_accepted
+
   geocoded_by :full_address
   after_validation :geocode
 
@@ -33,22 +34,34 @@ class Address < ApplicationRecord
       addresses = Currency.find(fc.to_i).addresses if addresses.nil?
       addresses += Country.find(f_c.to_i).addresses if addresses.nil?
     end
-    return addresses
+    return "#{addresses}"
   end
 
   #def categories
   #  categories = []
- #   self.address_categories.each do |c|
-  #    categories.push(c.category.name)
-  #  end
-  #  return categories
-#  end
 
+  #  end
 
   def categories=(categories)
     #receive
+    puts "categories= #{categories.inspect} #{self.inspect}"
     categories.each do |c|
-      AddressCategory.create(address: self, category: Category.where(id: c[1]).first)
+      AddressCategory.create(address: self, category: Category.where(id: c[1].to_i).first)
+    end
+    true
+  end
+  def get_categories
+    categories=[]
+    self.address_categories.each do |c|
+      categories.push(c.category.name)
+    end
+    return categories
+  end
+  def set_categories=(categories)
+    #receive
+    puts "categories= #{categories.inspect} #{self.inspect}"
+    categories.each do |k,v|
+      AddressCategory.create(address: self, category: Category.where(id: v.to_i).first) unless v.to_s.empty? || v.to_s.nil?
     end
     true
   end
@@ -59,7 +72,6 @@ class Address < ApplicationRecord
     return currencies
     true
   end
-
   def crypto_currencies_accepted=(currencies)
     currencies.each do |c|
       AddressCurrency.create(address: self, currency: Currency.where(code: c[1]).first)
@@ -73,8 +85,15 @@ class Address < ApplicationRecord
     end
     return emails
   end
-
+  def set_emails=(emails)
+    puts "emails= #{emails.inspect} #{self.inspect}"
+    emails.each do |k, v|
+      Email.create(address: self, email: v) unless v.to_s.empty? || v.to_s.nil?
+    end
+    true
+  end
   def emails=(emails)
+    puts "emails= #{emails.inspect} #{self.inspect}"
     emails.each do |e|
       Email.create(address: self, email: e[1])
     end
@@ -88,10 +107,15 @@ class Address < ApplicationRecord
     end
     return phone_numbers
   end
-
   def phone_numbers=(phone_numbers)
     phone_numbers.each do |pn|
-      PhoneNumber.create(address: self, number: pn[1], country: Country.where(id: 107).first)
+      PhoneNumber.create(address: self, number: pn[1], country: Country.where(id: 1).first)
+    end
+    true
+  end
+  def set_phone_numbers=(phone_numbers)
+    phone_numbers.each do |k,v|
+      PhoneNumber.create(address: self, number: v.to_s, country: Country.where(id: 107).first) unless v.to_s.empty? || v.to_s.nil?
     end
     true
   end

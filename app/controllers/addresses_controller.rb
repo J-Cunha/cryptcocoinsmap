@@ -24,14 +24,13 @@ class AddressesController < ApplicationController
   # POST /addresses
   # POST /addresses.json
   def create
-    puts address_params.inspect
     @address = Address.new(address_params)
     @address.user = current_user
     respond_to do |format|
       if @address.save
-        @address.categories = address_params[:categories]
-        @address.emails = address_params[:emails]
-        @address.phone_numbers = address_params[:phone_numbers]
+        @address.set_categories= address_params[:categories]
+        @address.set_emails= address_params[:emails]
+        @address.set_phone_numbers= address_params[:phone_numbers]
         format.html { redirect_to @address, notice: 'Address was successfully created.' }
         format.json { render :show, status: :created, location: @address }
       else
