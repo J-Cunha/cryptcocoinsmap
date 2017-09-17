@@ -10,6 +10,7 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
+      user.email = "github@github.com" if auth.provider == ('github') && (auth.info.email.blank? || auth.info.email.nil?  )
       token = Devise.friendly_token[0,20]
       user.password = token
       user.password_confirmation = token
