@@ -131,7 +131,7 @@
                       <div class="col-xs-6">
                         <% blks[i].each do |c| %>
                             <div class="checkbox filter-dropdown-checkbox">
-                              <input type="checkbox" value="<%= c.id.to_s %>" name="crypto_currencies_accepted[]"/>
+                              <input type="checkbox" value="<%= c.id.to_s %>" name="address[crypto_currencies_accepted][]"/>
                               <%= (image_tag ("coins_icons/#{c.name.split.join('-')}.png"),
                                              class: 'infobox-currency-logo-16x16 inline') if (Rails.application.assets.find_asset "coins_icons/#{c.name.split.join('-')}.png") %>
                               <div class="login-label inline"><%= "#{c.name}" %></div>

@@ -44,7 +44,7 @@ class Address < ApplicationRecord
 
   def categories=(categories)
     #receive
-    puts "categories= #{categories.inspect} #{self.inspect}"
+    #puts "categories= #{categories.inspect} #{self.inspect}"
     categories.each do |c|
       AddressCategory.create(address: self, category: Category.where(id: c[1].to_i).first)
     end
@@ -59,7 +59,6 @@ class Address < ApplicationRecord
   end
   def set_categories=(categories)
     #receive
-    puts "categories= #{categories.inspect} #{self.inspect}"
     categories.each do |k,v|
       AddressCategory.create(address: self, category: Category.where(id: v.to_i).first) unless v.to_s.empty? || v.to_s.nil?
     end
@@ -72,9 +71,10 @@ class Address < ApplicationRecord
     return currencies
     true
   end
-  def crypto_currencies_accepted=(currencies)
+  def set_crypto_currencies_accepted=(currencies)
+    puts "coins_accepted= #{currencies.inspect} "
     currencies.each do |c|
-      AddressCurrency.create(address: self, currency: Currency.where(code: c[1]).first)
+      AddressCurrency.create(address: self, currency: CryptoCurrency.where(id: c.to_i).first)
     end
   end
 
