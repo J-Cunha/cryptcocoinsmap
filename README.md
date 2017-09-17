@@ -13,13 +13,17 @@ The users can
 * [Gmap4Rails](https://github.com/apneadiving/Google-Maps-for-Rails) for handle the google maps API
 * [Devise](https://github.com/plataformatec/devise ) for database authentication
 * [Ominiauth](https://github.com/omniauth/omniauth) for authentication with social networks
+* [dotenv](https://github.com/bkeepers/dotenv) for externalize configurations
+
 
 ### Database
 * It's configured to use Mysql database
-* You must run db:seeds to feed the database
+
 
 ### Tests
 * No tests have been made yet
 
 ### Deployment instructions
-* Not yet deployed
+* You must run db:seeds to feed the database with all kind of informations
+* You must run parse_categories_from_paypal.rb to feed the database with categories
+* You must run parse_coin_market_cap.rb to feed the database with cryptocurrencies
