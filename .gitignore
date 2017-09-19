@@ -27,5 +27,3 @@
 #Ignore keys.csv (locales exporter)
 keys.csv
 
-#Ignore .ruby-version
-/.ruby-version
