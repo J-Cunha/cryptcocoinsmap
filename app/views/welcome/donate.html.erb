@@ -1,122 +1,130 @@
-<div class="container-fluid" , style="max-width: 1024px; margin-top: 70px">
-  <h1 class="text-center blue-header "><%= t('navbar.donate') %></h1>
-
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="row">
+<div class="world-background" id="world-background">
+  <div class="container-fluid" , style="max-width: 1024px; margin-top: 70px">
+    <h1 class="text-center blue-header "><%= t('navbar.donate') %></h1>
+    <div class="row">
+      <div class="col-sm-6 center center-align center-block">
         <div class="col-xs-12 ">
-          <h3 class="text-center blue-header "><%= t('donate_page.make_donation') %></h3>
-
+        <div class="row">
+            <h3 class="text-center blue-header "><%= t('donate_page.make_donation') %></h3>
+          <div class="col-xs-12 margin-auto ">
           <table class="">
-            <tr>
-              <td class="text-left"><%= image_tag 'coins_icons/Bitcoin.png' %>
-                <label class="login-label">Bitcoin</label>
-              </td>
-              <td rowspan="2"><%= image_tag 'qr_code.png', height: 64, width: 64 %>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
-              </td>
-            </tr>
-          </table>
+              <tr>
+                <td class="text-left"><%= image_tag 'coins_icons/Bitcoin.png' %>
+                  <label class="login-label">Bitcoin</label>
+                </td>
+                <td rowspan="2"><%= image_tag 'qr_code.png', height: 64, width: 64 %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
+                </td>
+              </tr>
+            </table>
+          </div>
+          </div>
+        </div>
+
+        <div class="row ">
+          <div class="col-xs-12">
+            <table class="">
+              <tr>
+                <td class="text-left"> <%= image_tag 'coins_icons/Litecoin.png' %>
+                  <label class="login-label">Litecoin</label></td>
+                <td rowspan="2"><%= image_tag 'qr_code.png', height: 64, width: 64 %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <table class="">
+              <tr>
+                <td class="text-left"> <%= image_tag 'coins_icons/Monero.png' %>
+                  <label class="login-label">Monero</label>
+                </td>
+                <td rowspan="2"><%= image_tag 'qr_code.png', height: 64, width: 64 %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <table class="">
+              <tr>
+                <td class="text-left"> <%= image_tag 'coins_icons/Ripple.png' %>
+                  <label class="login-label">Ripple</label>
+                </td>
+                <td rowspan="2"><%= image_tag 'qr_code.png', height: 64, width: 64 %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <table class="">
+              <tr>
+                <td class="text-left"> <%= image_tag 'coins_icons/Ethereum.png' %>
+                  <label class="login-label">Ethereum</label></td>
+                <td rowspan="2"><%= image_tag 'qr_code.png', height: 64, width: 64 %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <table class="">
-            <tr>
-              <td class="text-left"> <%= image_tag 'coins_icons/Litecoin.png' %>
-                <label class="login-label">Litecoin</label></td>
-              <td rowspan="2"><%= image_tag 'qr_code.png', height: 64, width: 64 %>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <table class="">
-            <tr>
-              <td class="text-left"> <%= image_tag 'coins_icons/Monero.png' %>
-                <label class="login-label">Monero</label>
-              </td>
-              <td rowspan="2"><%= image_tag 'qr_code.png', height: 64, width: 64 %>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <table class="">
-            <tr>
-              <td class="text-left"> <%= image_tag 'coins_icons/Ripple.png' %>
-                <label class="login-label">Ripple</label>
-              </td>
-              <td rowspan="2"><%= image_tag 'qr_code.png', height: 64, width: 64 %>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <table class="">
-            <tr>
-              <td class="text-left"> <%= image_tag 'coins_icons/Ethereum.png' %>
-                <label class="login-label">Ethereum</label></td>
-              <td rowspan="2"><%= image_tag 'qr_code.png', height: 64, width: 64 %>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="text-left blue-header "><%= t('donate_page.share') %></h2>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="text-left blue-header "><%= t('donate_page.share') %></h2>
 
 
-          <div id="fb-root"></div>
-          <div class="fb-share-button" data-href="https://www.facebook.com/Cryptocoinsmap/" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FCryptocoinsmap%2F&amp;src=sdkpreparse"><%= t('donate_page.facebook_share')%></a></div>
-          <script>(function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.10&appId=465876620412327";
-              fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script>
+            <div id="fb-root"></div>
+            <div class="fb-share-button" data-href="https://www.facebook.com/Cryptocoinsmap/" data-layout="button" data-size="large" data-mobile-iframe="false">
+              <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FCryptocoinsmap%2F&amp;src=sdkpreparse"><%= t('donate_page.facebook_share') %></a>
+            </div>
+            <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.10&appId=465876620412327";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="text-left blue-header "><%= t('donate_page.answer') %></h2>
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="text-left blue-header "><%= t('donate_page.answer') %></h2>
 
-          divulgue
+            divulgue
 
+          </div>
         </div>
       </div>
     </div>
