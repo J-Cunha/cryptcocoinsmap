@@ -8,7 +8,6 @@
 /.bundle
 /.idea
 
-
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -27,3 +26,6 @@
 
 #Ignore keys.csv (locales exporter)
 keys.csv
+
+#Ignore .ruby-version
+/.ruby-version
