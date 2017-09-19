@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :donate_infos
   devise_for :users, :controllers => {sessions: 'users/sessions', registrations: 'users/registrations',  :omniauth_callbacks => 'users/omniauth_callbacks'}
 
   resources :addresses

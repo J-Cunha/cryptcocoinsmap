@@ -31,7 +31,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right ">
         <li class="<%= "active" if current_page?(index_path) %> hvr-underline-from-center"><%= link_to t('navbar.map'), index_path %></li>
-        <li class="<%= "active" if current_page?(report_path) %> hvr-underline-from-center"><%= link_to t('navbar.reports'), report_path %></li>
+        <!--
+        <li class="<%= "active" if current_page?(report_path) %> hvr-underline-from-center"><%= link_to t('navbar.reports'), report_path %></li> -->
         <li class="<%= "active" if current_page?(donate_path) %> hvr-underline-from-center"><%= link_to t('navbar.donate'), donate_path %></li>
         <% if user_signed_in? == true %>
             <li class="<%= "active" if current_page?(addresses_path) %> hvr-underline-from-center"><%= link_to t('navbar.my_account'), addresses_path %></li>

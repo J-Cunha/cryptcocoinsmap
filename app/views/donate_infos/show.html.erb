@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @donate_info.currency %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @donate_info.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @donate_info.address %>
+</p>
+
+<%= link_to 'Edit', edit_donate_info_path(@donate_info) %> |
+<%= link_to 'Back', donate_infos_path %>
