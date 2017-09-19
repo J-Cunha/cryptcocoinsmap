@@ -1,5 +1,6 @@
 cryptocoinsmap
 
+
 A site where inform who is accepting cryptocurrencies as payment for pŕoducts and serviços.
 
 Alertar ao usuario entrar em contato com os comercios e pesquisar sobre eles para ver se são legitimos
@@ -25,3 +26,10 @@ o usuario pode reportar problemas
 o usuario pode fazer doacoes 
     coinpayments gateway;
     paypal;
+
+
+o exportar dados para um csv
+
+
+Melhorias Alexandre Ferreira:
+-> no cadastro da empresa em Minha Conta, quando o usuario digitar o cep já buscar informações do logradouro, etc...
