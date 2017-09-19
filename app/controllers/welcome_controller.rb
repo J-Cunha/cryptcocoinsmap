@@ -74,6 +74,6 @@ class WelcomeController < ApplicationController
 
     end
   def donate
-
+@donate_infos = DonateInfo.all
   end
 end

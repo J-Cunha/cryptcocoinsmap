@@ -6,6 +6,8 @@ class AddressesController < ApplicationController
   def index
     if user_signed_in?
       @addresses = current_user.addresses
+    else
+      @addresses = Address.all
     end
   end
   # GET /addresses/1

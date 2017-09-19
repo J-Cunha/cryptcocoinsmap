@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910210000) do
+ActiveRecord::Schema.define(version: 20170919074606) do
 
   create_table "address_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "address_id"
@@ -109,6 +109,15 @@ ActiveRecord::Schema.define(version: 20170910210000) do
     t.index ["country_id"], name: "index_currencies_on_country_id"
   end
 
+  create_table "donate_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "currency_id"
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["currency_id"], name: "index_donate_infos_on_currency_id"
+  end
+
   create_table "emails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "address_id"
     t.string "email"
@@ -163,6 +172,7 @@ ActiveRecord::Schema.define(version: 20170910210000) do
   add_foreign_key "countries", "continents"
   add_foreign_key "country_languages", "countries"
   add_foreign_key "country_languages", "languages"
+  add_foreign_key "donate_infos", "currencies"
   add_foreign_key "emails", "addresses"
   add_foreign_key "phone_numbers", "addresses"
   add_foreign_key "phone_numbers", "countries"
