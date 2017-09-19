@@ -1,4 +1,4 @@
-## CryptoCoinsMap 
+## CryptoCoinsMap
 
 This is the official repository of www.CryptoCoinsMap.Info.
 The CryptoCoinsMap it's and web application that allow local businesses to register themselves to show in the world map.
@@ -6,8 +6,8 @@ The users can
 
 
 ### Versions
-* Ruby 2.4.0p0 (2016-12-24 revision 57164)
-* Rails 5.1.3
+* Ruby 2.4.1p111 (2017-03-22 revision 58053)
+* Rails 5.1.4
 
 ### Dependencies
 * [Gmap4Rails](https://github.com/apneadiving/Google-Maps-for-Rails) for handle the google maps API
