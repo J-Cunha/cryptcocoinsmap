@@ -1,0 +1,42 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.dashboard-container{
+  margin-top: 70px ;
+  background: $water_dark_blue;
+}
+.dashboard-menu-panel {
+ background: transparent;
+  border-color: $water_light_40;
+}
+.dashboard-menu-head{
+  background: transparent !important;
+  color: $water_light_70 !important;
+}
+.dashboard-menu-title{
+}
+.dashboard-menu-content-container{
+  border-color: $water_light_60 !important;
+  padding-left: 25px;
+
+}
+.dashboard-addresses-tbody td{
+
+  border: none !important;
+  //border-color: $water_light_60 !important;
+
+}
+.dashboard-address-table tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: $water_light_20 !important;
+}
+.table-command-button{
+  margin: 0 5px 0 5px;
+}
+.dashboard-menu-container {
+  margin-top: 20px;
+
+}
+@media (min-width: 795px) {
+  .dashboard-menu-container{
+  margin-top: 111px;}
+}

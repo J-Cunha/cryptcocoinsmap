@@ -10,7 +10,11 @@
     <%= render 'layouts/navbar/navbar' %>
   </nav>
 <body>
-<%= yield %>
+<%if (controller_name == 'dashboard') || (controller_name=='addresses') %>
+  <%= render 'layouts/dashboard' %>
+<%else %>
+  <%= yield %>
+<% end %>
 </body>
 <script type="application/javascript">
     setWorldBackgroundHeight();

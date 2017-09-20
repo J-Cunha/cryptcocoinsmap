@@ -6,9 +6,19 @@
 @import "intlTelInput";
 @import "scrollableCoinCointainer";
 @import "flagLocaleSelector";
+@import "dashboard";
 
 .border-radius-10{
   border-radius: 10px;
+}
+.danger{
+  color: #d9534f;
+}
+.success {
+  color: #5cb85c;
+}
+.blue-50 {
+  color: #428bca;
 }
 .inline {
   display: inline;
@@ -16,7 +26,6 @@
 div.world-background {
   //width: 100%;
   //height: auto;
-
   position: relative;
   overflow: visible;
   height: auto;
