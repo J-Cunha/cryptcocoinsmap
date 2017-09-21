@@ -26,7 +26,6 @@ pt_BR:
     categories: 'Categorias'
     add_category: 'Adiconar Categoria'
 
-
   navbar:
     map: 'Mapa'
     reports: 'Relatórios'
@@ -79,7 +78,7 @@ pt_BR:
     share: 'Divulgue'
     share_text: 'Divulgue nosso site para que mais pessoas possam usufruir'
     facebook_share: 'Compartilhe'
-
+    translate: 'Traduza'
 
 
 
