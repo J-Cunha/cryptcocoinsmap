@@ -53,6 +53,15 @@ gem 'omniauth-github'
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
 
+# CarrierWave gem provides a simple and extremely flexible way to upload files 
+# from Ruby applications. It works well with Rack based web applications, 
+# such as Ruby on Rails
+gem 'carrierwave',             '~> 1.0'
+# A ruby wrapper for ImageMagick or GraphicsMagick command line.
+gem 'mini_magick'
+# Use Cocoon to nerest forms
+gem 'cocoon'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

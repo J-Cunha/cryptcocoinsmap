@@ -7,7 +7,11 @@ class Address < ApplicationRecord
   has_many :currencies, dependent: :destroy, through: :address_currencies
   has_many :address_categories, dependent: :destroy
   has_many :categories, dependent: :destroy, through: :address_categories
+  has_many :address_attachments, inverse_of: :address
 
+  accepts_nested_attributes_for :address_attachments, reject_if: :all_blank,
+  allow_destroy: true
+  
   validates_presence_of :business_name, :country, :state, :city, :zip_code, :street, :number
 
   attr_readonly [:full_address]
@@ -19,6 +23,7 @@ class Address < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode
 
+  
   def self.from_countries(countries)
     addresses = nil
     countries.each do |f_c|

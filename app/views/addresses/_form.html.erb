@@ -2,6 +2,7 @@
   <script type="application/javascript" src="<%= asset_url('intlTelInput.js') %>"></script>
   <%= simple_form_for(@address) do |f| %>
       <%= f.error_notification %>
+           
       <div class="form-inputs">
         <div class="row">
           <div class="col-sm-8">
@@ -38,7 +39,7 @@
         <div class="row">
           <div class="col-xs-12">
             <%= f.input :description,
-                        input_html: {class: 'transparent-input', maxlength: 15, }, label: "#{t('address.description')}:",
+                        input_html: {class: 'transparent-input', maxlength: 400, }, label: "#{t('address.description')}:",
                         :label_html => {:class => 'login-label'} %>
           </div>
         </div>
@@ -98,11 +99,27 @@
         <div class="row">
           <div class="col-xs-12">
             <%= f.input :reference_point,
-                        input_html: {class: 'transparent-input'}, label: "#{t('address.reference_point')}:",
+                        input_html: {class: 'transparent-input', maxlength: 120}, label: "#{t('address.reference_point')}:",
                         :label_html => {:class => 'login-label'} %>
           </div>
         </div>
-        <hr>
+        <hr>        
+
+        <div class="row">
+          <div class="col-xs-12">
+              <div id="address_attachments">
+                <%= f.simple_fields_for :address_attachments do |attach| %>
+                  <%= render "address_attachment_fields", :f => attach %>
+                <% end %>             
+                
+                <div class="links">
+                  <%= link_to_add_association 'Add photo', f, :address_attachments, :class => "btn btn-default" %>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+        <br>
         <div class="row">
           <div class="col-xs-12">
             <div class="form-actions">
