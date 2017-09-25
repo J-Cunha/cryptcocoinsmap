@@ -15,12 +15,22 @@ venues.each do |v|
   puts latitude = v['lat']
   puts longitude = v['lon']
 
-  details_response = Net::HTTP.get("https://coinmap.org/api/v1/venues/#{coin_map_id.to_s}")
+  details_response = Net::HTTP.get(URI("https://coinmap.org/api/v1/venues/#{coin_map_id.to_s}"))
   details_json = JSON.parse(details_response)
   details = details_json['venue']
+
+  puts description = details['description']
+
+  puts web_site = details['website']
+  puts email = details['email']
+  puts facebook = details['facebook']
+
   puts country = details['country']
+  puts state = details['state']
+  puts city = details['city']
+  puts zip_code= details['postcode']
+  puts street = details['street']
 
 
- puts ""
 end
 
