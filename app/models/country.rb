@@ -1,5 +1,6 @@
 class Country < ApplicationRecord
-  belongs_to :continent
+  belongs_to :continent, required: false
+
   has_many :languages, through: :country_languages
   has_many :phone_numbers
   has_many :addresses
