@@ -365,7 +365,7 @@ DEPENDENCIES
   puma
   railroady
   rails
-  rspec-rails
+  rspec-rails (~> 3.6)
   sass-rails
   selenium-webdriver
   shoulda (~> 3.5)

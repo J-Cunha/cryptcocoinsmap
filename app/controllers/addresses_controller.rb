@@ -80,8 +80,7 @@ class AddressesController < ApplicationController
                                       :zip_code,:district,
                                       :street, :number, :complement,
                                       :reference_point,
-                                      :email, :phone, address_attachments_attributes: [:id, :address_id, {photos: []}, :_destroy]),
-                                      address_categories_attributes: [:id, :_destroy, :category_id, category_attributes: [:id, :_destroy, :name]], crypto_currencies_accepted: [] )
+                                      :email, :phone, address_attachments_attributes: [:id, :address_id, {photos: []}, :_destroy],  category_attributes: [:id, :_destroy, :name], crypto_currencies_accepted: [] )
 
     end
    
