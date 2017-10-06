@@ -63,7 +63,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'faker'
+  gem 'shoulda', '~> 3.5'
 end
 
 group :development do
@@ -75,7 +77,6 @@ group :development do
   gem 'spring-watcher-listen'
   gem 'railroady'   #Generate UML models
   gem 'nokogiri'    #parse html
-  gem 'faker'
   gem 'locales_export_import' #For export and import translations
 end
 
