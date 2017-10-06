@@ -4,6 +4,7 @@
   <table class="blue-70 table table-hover dashboard-address-table">
     <thead>
     <tr>
+      <th>Name</th>
       <th>Country</th>
       <th>State</th>
       <th>City</th>
@@ -17,6 +18,7 @@
     <tbody class="dashboard-addresses-tbody">
     <% @addresses.each do |address| %>
         <tr>
+          <td><%= address.business_name %></td>
           <td><%= address.country.name_en %></td>
           <td><%= address.state %></td>
           <td><%= address.city %></td>

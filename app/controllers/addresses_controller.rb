@@ -17,6 +17,7 @@ class AddressesController < ApplicationController
   # GET /addresses/new
   def new
     @address = Address.new
+    1.times {@address.address_categories.build}
   end
 
   # GET /addresses/1/edit
@@ -30,9 +31,6 @@ class AddressesController < ApplicationController
     @address.user = current_user
     respond_to do |format|
       if @address.save
-        @address.set_categories= address_params[:categories]
-        @address.set_emails= address_params[:emails]
-        @address.set_phone_numbers= address_params[:phone_numbers]
         @address.set_crypto_currencies_accepted = address_params[:crypto_currencies_accepted]
         format.html { redirect_to @address, notice: 'Address was successfully created.' }
         format.json { render :show, status: :created, location: @address }
@@ -75,7 +73,7 @@ class AddressesController < ApplicationController
                                       :zip_code,:district,
                                       :street, :number, :complement,
                                       :reference_point,
-                                      :email, :phone, categories: ['1','2','3','4'], crypto_currencies_accepted: [] )
+                                      :email, :phone, address_categories_attributes: [:id, :_destroy, :category_id, category_attributes: [:id, :_destroy, :name]], crypto_currencies_accepted: [] )
 
     end
 end
