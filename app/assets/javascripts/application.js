@@ -16,7 +16,6 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require jquery.mask
-
 //= require underscore
 //= require gmaps/google
 //= require cocoon

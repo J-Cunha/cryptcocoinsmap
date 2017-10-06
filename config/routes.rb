@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+  resources :address_attachments
+
   get 'dashboard/index', as: :dashboard_index
 
   get 'dashboard/addresses', as: :dashboard_addresses
@@ -7,6 +10,7 @@ Rails.application.routes.draw do
   get 'dashboard/avaliations', as: :dashboard_avaliations
 
   get 'dashboard/contacts', as: :dashboard_contacts
+
 
   resources :donate_infos
   devise_for :users, :controllers => {sessions: 'users/sessions', registrations: 'users/registrations',  :omniauth_callbacks => 'users/omniauth_callbacks'}

@@ -1,5 +1,5 @@
-<script type="application/javascript" src="<%= asset_url('jquery.min.js') %>"></script>
-<script type="application/javascript" src="<%= asset_url('intlTelInput.js') %>"></script>
+
+
 <%= simple_form_for(@address) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
@@ -15,6 +15,7 @@
             <%= render 'addresses/address_category_fields', :f => address_category %>
         <% end %>
         <%= link_to_add_association t('address.add_category'), f, :address_categories, class: 'btn btn-success  '%>
+
         </div>
         </div>
       </div>
@@ -92,36 +93,55 @@
                     input_html: {class: 'transparent-input'}, label: "#{t('address.street')}:",
                     :label_html => {:class => 'login-label'} %>
       </div>
-      <div class="col-sm-6">
-        <div class="row">
-          <div class="col-xs-4">
-            <%= f.input :number,
-                        input_html: {class: 'transparent-input'}, label: "#{t('address.number')}:",
-                        :label_html => {:class => 'login-label'} %>
+      
+
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-xs-4">
+                <%= f.input :number,
+                            input_html: {class: 'transparent-input'}, label: "#{t('address.number')}:",
+                            :label_html => {:class => 'login-label'} %>
+              </div>
+              <div class="col-xs-8">
+                <%= f.input :complement,
+                            input_html: {class: 'transparent-input'}, label: "#{t('address.complement')}:",
+                            :label_html => {:class => 'login-label'} %>
+              </div>
+            </div>
           </div>
-          <div class="col-xs-8">
-            <%= f.input :complement,
-                        input_html: {class: 'transparent-input'}, label: "#{t('address.complement')}:",
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= f.input :reference_point,
+                        input_html: {class: 'transparent-input', maxlength: 120}, label: "#{t('address.reference_point')}:",
                         :label_html => {:class => 'login-label'} %>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <%= f.input :reference_point,
-                    input_html: {class: 'transparent-input'}, label: "#{t('address.reference_point')}:",
-                    :label_html => {:class => 'login-label'} %>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="form-actions">
+        <hr>        
+
+        <div class="row">
+          <div class="col-xs-12">
+              <div id="address_attachments">
+                <%= f.simple_fields_for :address_attachments do |attach| %>
+                  <%= render "address_attachment_fields", :f => attach %>
+                <% end %>             
+                
+                <div class="links">
+                  <%= link_to_add_association 'Add photo', f, :address_attachments, :class => "btn btn-default" %>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-actions">
 
         </div>
       </div>
     </div>
+      
     <div class="row">
       <div class="col-xs-12">
       </div>

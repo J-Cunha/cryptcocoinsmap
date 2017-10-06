@@ -1,6 +1,10 @@
-<h1>Editing Address</h1>
+<% content_for :title, t('edit_address_page.edit_address') %>
+<div class="world-background" id="world-background">
+  <div class="container-fluid" , style="max-width: 1024px">
+    <h1 class="text-center blue-header "><%= t('edit_address_page.edit_address') %></h1>
+    <%= render 'form', address: @address %>
 
-<%= render 'form', address: @address %>
-
-<%= link_to 'Show', @address %> |
-<%= link_to 'Back', addresses_path %>
+	<%= link_to 'Show', @address %> |
+	<%= link_to 'Back', addresses_path %>
+  </div>
+</div>

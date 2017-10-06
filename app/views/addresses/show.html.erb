@@ -64,6 +64,13 @@
     <%= @address.crypto_currencies_accepted%>
   </p>
 
+  <p>
+    <% @address.address_attachments.each do |p| %>
+      <%= image_tag p.photos.thumb.url %>  
+      <%= link_to "Edit attachment", edit_address_attachment_path(p) %>
+    <% end %>
+  </p>
+
   <%= link_to 'Edit', edit_address_path(@address) %> |
   <%= link_to 'Back', addresses_path %>
 </div>

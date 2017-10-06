@@ -1,0 +1,5 @@
+<div class="nested-fields">
+	<%= f.label :photos %>
+	<%= f.file_field :photos, :multiple => true, name: "address_attachments[photos][]" %>
+	<%= link_to_remove_association "remove photo", f, :class => "btn btn-danger" %>	
+</div>

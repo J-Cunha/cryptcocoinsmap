@@ -13,10 +13,12 @@ class AddressesController < ApplicationController
   # GET /addresses/1
   # GET /addresses/1.json
   def show
+    @address_attachments = @address.address_attachments.all
   end
   # GET /addresses/new
   def new
     @address = Address.new
+    @address_attachment = @address.address_attachments.build
     1.times {@address.address_categories.build}
   end
 
@@ -31,6 +33,7 @@ class AddressesController < ApplicationController
     @address.user = current_user
     respond_to do |format|
       if @address.save
+        save_attachments if params[:address_attachments]
         @address.set_crypto_currencies_accepted = address_params[:crypto_currencies_accepted]
         format.html { redirect_to @address, notice: 'Address was successfully created.' }
         format.json { render :show, status: :created, location: @address }
@@ -44,7 +47,8 @@ class AddressesController < ApplicationController
   # PATCH/PUT /addresses/1.json
   def update
     respond_to do |format|
-      if @address.update(address_params)
+      update_attchments if params[:address_attachments]
+      if @address.update_attributes(address_params)
         format.html { redirect_to @address, notice: 'Address was successfully updated.' }
         format.json { render :show, status: :ok, location: @address }
       else
@@ -62,18 +66,34 @@ class AddressesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
   private
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_address
       @address = Address.find(params[:id])
     end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit(:description,:business_name,:web_site,:facebook_page,:country_id, :state, :city,
+     params.require(:address).permit(:description,:business_name,:web_site,:facebook_page,:country_id, :state, :city,
                                       :zip_code,:district,
                                       :street, :number, :complement,
                                       :reference_point,
-                                      :email, :phone, address_categories_attributes: [:id, :_destroy, :category_id, category_attributes: [:id, :_destroy, :name]], crypto_currencies_accepted: [] )
+                                      :email, :phone, address_attachments_attributes: [:id, :address_id, {photos: []}, :_destroy]),
+                                      address_categories_attributes: [:id, :_destroy, :category_id, category_attributes: [:id, :_destroy, :name]], crypto_currencies_accepted: [] )
 
     end
+   
+    def save_attachments
+      @address.address_attachments.each do |a|
+        @address_attachment = @address.address_attachments.create!(:photo => a)
+      end
+    end
+
+    def update_attchments
+      @address.address_attachments.each(&:destroy) if @address.address_attachments.present?
+        save_attachments       
+    end
+
 end
