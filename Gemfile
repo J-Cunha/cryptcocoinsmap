@@ -38,6 +38,8 @@ gem 'mail_form'
 gem 'simple_form'
 #mask for forms
 gem 'jquery_mask_rails'
+#cocoon for nested attributes
+gem 'cocoon'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

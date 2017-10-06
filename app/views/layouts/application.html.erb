@@ -5,12 +5,19 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%# javascript_include_tag :cocoon%>
 </head>
   <nav>
     <%= render 'layouts/navbar/navbar' %>
   </nav>
 <body>
-<%= yield %>
+<%if (controller_name == 'dashboard') ||
+    (controller_name=='addresses') ||
+    ( (controller_name=='registrations' ) && ( (action_name =='edit') || (action_name =='update' ) ) )  %>
+  <%= render 'layouts/dashboard' %>
+<%else %>
+  <%= yield %>
+<% end %>
 </body>
 <script type="application/javascript">
     setWorldBackgroundHeight();

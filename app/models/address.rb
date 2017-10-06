@@ -1,19 +1,18 @@
 class Address < ApplicationRecord
   belongs_to :country
   belongs_to :user
-  has_many :phone_numbers, dependent: :destroy
   has_many :address_currencies, dependent: :destroy
-  has_many :emails, dependent: :destroy
   has_many :currencies, dependent: :destroy, through: :address_currencies
+
   has_many :address_categories, dependent: :destroy
-  has_many :categories, dependent: :destroy, through: :address_categories
+  has_many :categories, dependent: :destroy, through: :address_categories, :class_name => 'Category'
+  accepts_nested_attributes_for :categories
+  accepts_nested_attributes_for :address_categories
 
   validates_presence_of :business_name, :country, :state, :city, :zip_code, :street, :number
 
   attr_readonly [:full_address]
   attr_accessor :country_id,
-                :phone_numbers,
-                :emails,
                 :crypto_currencies_accepted
 
   geocoded_by :full_address
@@ -42,14 +41,14 @@ class Address < ApplicationRecord
 
   #  end
 
-  def categories=(categories)
+  #def categories=(categories)
     #receive
     #puts "categories= #{categories.inspect} #{self.inspect}"
-    categories.each do |c|
-      AddressCategory.create(address: self, category: Category.where(id: c[1].to_i).first)
-    end
-    true
-  end
+    #categories.each do |c|
+     # AddressCategory.create(address: self, category: Category.where(id: c[1].to_i).first)
+    #end
+   # true
+  #end
   def get_categories
     categories=[]
     self.address_categories.each do |c|

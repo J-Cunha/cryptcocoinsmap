@@ -6,18 +6,27 @@
       <div class="col-sm-6">
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
-              <%= f.input :email, input_html: { class: 'transparent-input' }, required: true, label: "#{t('devise.sessions.email')}:" , :label_html => { :class => 'login-label' }%>
-              <%= f.input :password,hint: "", input_html: { class: 'transparent-input' }, required: true, label: "#{t('devise.sessions.password')}:" , :label_html => { :class => 'login-label' }%>
-              <%= link_to t('devise.sessions.forgot_password?'), new_password_path(resource_name), class: 'login-label' %><br/>
-              <%= f.input :remember_me, as: :boolean , label: "#{t('devise.sessions.remember_me')}" , :label_html => { :class => 'login-label' } if devise_mapping.rememberable? %>
+              <%= f.input :email, input_html: {class: 'transparent-input'}, required: true, label: "#{t('devise.sessions.email')}:", :label_html => {:class => 'login-label'} %>
+              <%= f.input :password, hint: "", input_html: {class: 'transparent-input'}, required: true, label: "#{t('devise.sessions.password')}:", :label_html => {:class => 'login-label'} %>
+              <%= link_to t('devise.sessions.forgot_password?'), new_password_path(resource_name), class: 'login-label' %>
+              <br/>
+              <%= f.input :remember_me, as: :boolean, label: "#{t('devise.sessions.remember_me')}", :label_html => {:class => 'login-label'} if devise_mapping.rememberable? %>
             </div>
-            <div class="form-actions">
-              <%= f.button :submit, t('devise.sessions.new'), class: 'btn btn-primary btn-block login-btn' %>
+            <div class=" container-fluid form-actions" style="margin: 0; padding: 0;">
+              <div class=" row">
+                <div class=" col-xs-7">
+
+                  <%= f.button :submit, t('devise.sessions.new'), class: 'btn btn-primary btn-block login-btn' %>
+                </div>
+                <div class=" col-xs-5">
+                  <%= link_to t('devise.sessions.sing_up'), new_registration_path(resource_name), class: 'btn btn-success btn-block  login-btn create-account-btn ' %>
+                  <br/>
+                </div>
+              </div>
             </div>
-            <%= link_to t('devise.sessions.sing_up'), new_registration_path(resource_name) , class: 'blue-70 ' %><br/>
         <% end %>
       </div>
-      <div class="col-sm-6" >
+      <div class="col-sm-6">
         <br>
         <%= render 'layouts/socialMediaLogin' %>
       </div>
