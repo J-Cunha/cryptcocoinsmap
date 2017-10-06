@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170921015357) do
 
   create_table "address_attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -19,6 +20,9 @@ ActiveRecord::Schema.define(version: 20170921015357) do
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_address_attachments_on_address_id"
   end
+
+
+
 
   create_table "address_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "address_id"
@@ -58,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170921015357) do
     t.string "facebook_page"
     t.bigint "user_id"
     t.text "description"
+    t.string "phone"
     t.index ["country_id"], name: "index_addresses_on_country_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end

@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+
+
   def index
     @addresses = nil
     if params[:filter_countries]

@@ -1,0 +1,78 @@
+<div class="panel-group dashboard-menu" id="accordion">
+  <div class="panel panel-default dashboard-menu-panel ">
+    <div class="panel-heading dashboard-menu-head">
+      <h4 class="panel-title dashboard-menu-title ">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= "#{t('dashboard.menu.my_account')}" %></a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse <%='in' if controller_name == 'registrations'%>  ">
+      <div class="panel-body dashboard-menu-content-container <%='in' unless controller_name == 'addresses'%>">
+        <table>
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-pencil blue-70 " aria-hidden="true"></span>
+              <%= link_to "#{t('dashboard.menu.edit_profile')}", edit_user_registration_path %>
+              <!--<span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>-->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-cog blue-70" aria-hidden="true"></span>
+              <%= link_to "#{t('dashboard.menu.settings')}", new_address_path %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-trash danger" aria-hidden="true"></span>
+              <%= link_to "#{t('dashboard.menu.delete_account')}", registration_path(current_user), data: { confirm: "Deseja excluir conta e todos os dados?" }, method: :delete %>
+              <!--<span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>-->
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default dashboard-menu-panel ">
+    <div class="panel-heading dashboard-menu-head">
+      <h4 class="panel-title dashboard-menu-title ">
+        <span class="glyphicon glyphicon-briefcase blue-70" aria-hidden="true"></span>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><%= "#{t('dashboard.menu.businesses')}"%></a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse <%='in' if controller_name == 'addresses'%>">
+      <div class="panel-body dashboard-menu-content-container">
+        <table>
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-search blue-70" aria-hidden="true"></span>
+              <%= link_to "#{t('dashboard.menu.show_all')}", addresses_path %>
+              <!--<span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>-->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-plus blue-70" aria-hidden="true"></span>
+              <%= link_to "#{t('dashboard.menu.add_new')}", new_address_path %>
+              <!--<span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>-->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-star blue-70" aria-hidden="true"></span>
+              <%= link_to "#{t('dashboard.menu.avaliations')}", new_address_path %>
+              <!--<span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>-->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-envelope blue-70" aria-hidden="true"></span>
+              <%= link_to "#{t('dashboard.menu.messages')}", new_address_path %>
+              <!--<span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>-->
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

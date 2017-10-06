@@ -19,6 +19,7 @@ class AddressesController < ApplicationController
   def new
     @address = Address.new
     @address_attachment = @address.address_attachments.build
+    1.times {@address.address_categories.build}
   end
 
   # GET /addresses/1/edit
@@ -33,9 +34,6 @@ class AddressesController < ApplicationController
     respond_to do |format|
       if @address.save
         save_attachments if params[:address_attachments]
-        @address.set_categories = address_params[:categories]
-        @address.set_emails = address_params[:emails]
-        @address.set_phone_numbers = address_params[:phone_numbers]
         @address.set_crypto_currencies_accepted = address_params[:crypto_currencies_accepted]
         format.html { redirect_to @address, notice: 'Address was successfully created.' }
         format.json { render :show, status: :created, location: @address }
@@ -78,16 +76,12 @@ class AddressesController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit(:description,:business_name,:web_site,
-                                      :facebook_page, :country_id, :state, 
-                                      :city, :zip_code,:district, :street, 
-                                      :number, :complement, :reference_point,
-                                      emails: ['1','2','3','4','5'], 
-                                      phone_numbers: ['1','2','3','4','5'], 
-                                      categories: ['1','2','3','4'], 
-                                      crypto_currencies_accepted: [],                                      
-                                      address_attachments_attributes: [:id, 
-                                        :address_id, {photos: []}, :_destroy])
+     params.require(:address).permit(:description,:business_name,:web_site,:facebook_page,:country_id, :state, :city,
+                                      :zip_code,:district,
+                                      :street, :number, :complement,
+                                      :reference_point,
+                                      :email, :phone, address_attachments_attributes: [:id, :address_id, {photos: []}, :_destroy]),
+                                      address_categories_attributes: [:id, :_destroy, :category_id, category_attributes: [:id, :_destroy, :name]], crypto_currencies_accepted: [] )
 
     end
    

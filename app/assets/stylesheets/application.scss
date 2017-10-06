@@ -6,9 +6,21 @@
 @import "intlTelInput";
 @import "scrollableCoinCointainer";
 @import "flagLocaleSelector";
-
+@import "dashboard";
+.btn-remove-category{
+ margin-top: 25px;
+}
 .border-radius-10{
   border-radius: 10px;
+}
+.danger{
+  color: #d9534f;
+}
+.success {
+  color: #5cb85c;
+}
+.blue-50 {
+  color: #428bca;
 }
 .inline {
   display: inline;
@@ -16,7 +28,6 @@
 div.world-background {
   //width: 100%;
   //height: auto;
-
   position: relative;
   overflow: visible;
   height: auto;
@@ -198,6 +209,9 @@ margin-top: 5px;
   font-size: 130%;
   background-color:$water_light_55 ;
   text-decoration: underline;
+}
+.create-account-btn{
+  background-color: $success_green !important;
 }
 .login-btn{
   color: white;

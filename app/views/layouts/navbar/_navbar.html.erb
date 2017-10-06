@@ -13,7 +13,7 @@
       </li>
     </div>
     <div class="navbar-header pull-left ">
-      <%= render "layouts/navbar/navbar_summary" %>
+      <%= render "layouts/navbar/navbar_summary" if (controller_name =='welcome') && (action_name == 'index')%>
     </div>
     <div class="navbar-header ">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -35,7 +35,7 @@
         <li class="<%= "active" if current_page?(report_path) %> hvr-underline-from-center"><%= link_to t('navbar.reports'), report_path %></li> -->
         <li class="<%= "active" if current_page?(donate_path) %> hvr-underline-from-center"><%= link_to t('navbar.donate'), donate_path %></li>
         <% if user_signed_in? == true %>
-            <li class="<%= "active" if current_page?(addresses_path) %> hvr-underline-from-center"><%= link_to t('navbar.my_account'), addresses_path %></li>
+            <li class="<%= "active" if current_page?(addresses_path) %> hvr-underline-from-center"><%= link_to t('navbar.my_account'), dashboard_index_path %></li>
             <li><%= link_to t('navbar.logout').to_s.capitalize, destroy_user_session_path, method: :delete %></li>
         <% else
              user_signed_in? == false %>
