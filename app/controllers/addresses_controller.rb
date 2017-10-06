@@ -75,7 +75,7 @@ class AddressesController < ApplicationController
                                       :zip_code,:district,
                                       :street, :number, :complement,
                                       :reference_point,
-                                      emails: ['1','2','3','4','5'], phone_numbers: ['1','2','3','4','5'], categories: ['1','2','3','4'], crypto_currencies_accepted: [] )
+                                      :email, :phone, categories: ['1','2','3','4'], crypto_currencies_accepted: [] )
 
     end
 end

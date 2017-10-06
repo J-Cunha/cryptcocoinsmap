@@ -1,9 +1,7 @@
 class Address < ApplicationRecord
   belongs_to :country
   belongs_to :user
-  has_many :phone_numbers, dependent: :destroy
   has_many :address_currencies, dependent: :destroy
-  has_many :emails, dependent: :destroy
   has_many :currencies, dependent: :destroy, through: :address_currencies
   has_many :address_categories, dependent: :destroy
   has_many :categories, dependent: :destroy, through: :address_categories
