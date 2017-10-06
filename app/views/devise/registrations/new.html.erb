@@ -2,25 +2,32 @@
   <div class="container-fluid" style="max-width: 800px;">
     <h1 class="text-center blue-header "><%= t('devise.sessions.sing_up') %></h1>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                input_html: { class: 'transparent-input' },
-                required: true,
-                label: "#{t('devise.sessions.email')}:" ,
-                :label_html => { :class => 'login-label' },
-                autofocus: true %>
-    <%= f.input :password, input_html: { class: 'transparent-input' }, required: true, label: "#{t('devise.sessions.password')}:" , :label_html => { :class => 'login-label' }, hint: "" %>
-    <%= f.input :password_confirmation, input_html: { class: 'transparent-input' }, required: true, label: "#{t('devise.sessions.password_confirmation')}:" , :label_html => { :class => 'login-label' } %>
-  </div>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      input_html: {class: 'transparent-input'},
+                      required: true,
+                      label: "#{t('devise.sessions.email')}:",
+                      :label_html => {:class => 'login-label'},
+                      autofocus: true %>
+          <%= f.input :password, input_html: {class: 'transparent-input', placeholder: ''}, required: true, label: "#{t('devise.sessions.password')}:", :label_html => {:class => 'login-label'}, hint: "" %>
+          <%= f.input :password_confirmation, input_html: {class: 'transparent-input'}, required: true, label: "#{t('devise.sessions.password_confirmation')}:", :label_html => {:class => 'login-label'} %>
+        </div>
+        <div class=" container-fluid form-actions" style="margin: 0; padding: 0;">
+          <div class=" row">
+            <div class=" col-xs-8">
+              <%= f.button :submit, t('devise.sessions.sing_up'), class: 'btn btn-primary btn-block login-btn create-account-btn ' %>
+            </div>
+            <div class=" col-xs-4">
+              <%= link_to "Log in", new_session_path(resource_name), class: 'btn btn-primary btn-block login-btn ' %>
+              <br/>
+              <br/>
+            </div>
+          </div>
+        </div>
+    <% end %>
 
-  <div class="form-actions">
-    <%= f.button :submit, t('devise.sessions.sing_up'), class: 'btn btn-primary btn-block login-btn' %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
   </div>
 </div>

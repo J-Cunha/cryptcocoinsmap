@@ -10,7 +10,9 @@
     <%= render 'layouts/navbar/navbar' %>
   </nav>
 <body>
-<%if (controller_name == 'dashboard') || (controller_name=='addresses') %>
+<%if (controller_name == 'dashboard') ||
+    (controller_name=='addresses') ||
+    ( (controller_name=='registrations' ) && ( (action_name =='edit') || (action_name =='update' ) ) )  %>
   <%= render 'layouts/dashboard' %>
 <%else %>
   <%= yield %>

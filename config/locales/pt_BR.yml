@@ -80,7 +80,17 @@ pt_BR:
     facebook_share: 'Compartilhe'
     translate: 'Traduza'
 
-
+  dashboard:
+    menu:
+      my_account: 'Minha conta'
+      edit_profile: 'Editar conta'
+      settings: 'Configurações'
+      delete_account: 'Deletar conta'
+      businesses: 'Negócios'
+      show_all: 'Ver todos'
+      add_new: 'Adicionar'
+      avaliations: 'Avaliações'
+      messages: 'Mensagens'
 
   settlement_currency_option:
     settlement_currency: 'Selecione a moeda corrente do seu país   '
@@ -88,6 +98,7 @@ pt_BR:
     currency: 'Moeda Corrente'
     code: 'Código'
     symbol: 'Símbolo'
+
   devise:
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso. Você está logado."
@@ -120,6 +131,13 @@ pt_BR:
       updated: "Sua senha foi alterada com sucesso. Você está logado."
       updated_not_active: "Sua senha foi alterada com sucesso."
     registrations:
+      update: "Atualizar conta"
+      edit_account: "Editar conta"
+      current_password: "Senha atual"
+      current_password_hint: "Insira sua senha atual para confirmar as alterações"
+      new_password_hint: "Deixe em branco se não quiser alterar"
+      new_password: "Nova senha"
+      new_password_confirmation: "Confirme a nova senha"
       destroyed: "Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve."
       signed_up: "Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail."
       signed_up_but_inactive: "Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta não foi ativada."
@@ -127,6 +145,7 @@ pt_BR:
       signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviada para o seu endereço de e-mail. Por favor, abra o link para confirmar a sua conta."
       update_needs_confirmation: "Você atualizou a sua conta com sucesso, mas o seu novo endereço de e-mail precisa ser confirmado. Por favor, acesse-o e clique no link de confirmação que enviamos."
       updated: "Sua conta foi atualizada com sucesso."
+
     sessions:
       new: 'Login'
       email: 'Email'
