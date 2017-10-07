@@ -1,12 +1,18 @@
+<% content_for :title, "#{t('address.my_businesses')}  - CryptoCoinsMap" %>
+
 <p id="notice"><%= notice %></p>
 <div style="margin: 10px">
-  <h2 class="blue-70">Addresses</h2>
+  <h2 class="blue-70"><%= t('dashboard.menu.businesses') %></h2>
   <table class="blue-70 table table-hover dashboard-address-table">
     <thead>
     <tr>
-      <th>Name</th>
-      <th>Country</th>
-      <th>State</th>
+      <th><%= t('address.business_name') %></th>
+      <th><%= t('address.country') %></th>
+      <th><%= t('address.state') %></th>
+      <th><%= t('address.city') %></th>
+      <th><%= t('address.street') %></th>
+      <th><%= t('address.number') %></th>
+      <th><%= t('address.evaluations') %></th>
       <th>City</th>
       <th>Street</th>
       <th>Number</th>

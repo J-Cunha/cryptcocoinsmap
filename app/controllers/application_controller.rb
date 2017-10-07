@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     puts "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
     puts extract_locale_from_accept_language_header.inspect
     if (params[:locale].nil? || params[:locale].empty? || I18n.locale_available?( params[:locale] )==false)
-      I18n.locale = "pt_BR"
+      I18n.locale = "en"
     else
       if I18n.locale_available? params[:locale]
         I18n.locale = params[:locale]

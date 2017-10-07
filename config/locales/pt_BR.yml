@@ -1,206 +1,250 @@
-pt_BR:
+---
+pt:
   index:
-    index: 'Index'
-    coins_accepted: 'Moedas Aceitas'
-
+    index: Index
+    coins_accepted: Moedas Aceitas
   address:
-    business_name: 'Nome do negócio'
-    web_site: 'Web site'
-    facebook_page: 'Facebook'
-    description: 'Descrição'
-    country: 'País'
-    state: 'UF'
-    city: 'Cidade'
-    zip_code: 'CEP'
-    district: 'Bairro'
-    street: 'Logradouro'
-    number: 'Nº'
-    complement: 'Complemento'
-    reference_point: 'Ponto de referência'
-    email: 'Email'
-    add_email: 'Adicionar Email'
-    phone: 'Telefone'
-    add_phone: 'Adicionar Telefone'
-    phone_valid: '✓'
-    phone_invalid: 'nº inválido'
-    categories: 'Categorias'
-    add_category: 'Adiconar Categoria'
-
+    business_name: Nome do negócio
+    web_site: Web site
+    facebook_page: Facebook
+    description: Descrição
+    country: País
+    state: UF
+    city: Cidade
+    zip_code: CEP
+    district: Bairro
+    street: Logradouro
+    number: Nº
+    complement: Complemento
+    reference_point: Ponto de referência
+    email: Email
+    add_email: Adicionar Email
+    phone: Telefone
+    add_phone: Adicionar Telefone
+    phone_valid: "✓"
+    phone_invalid: nº inválido
+    categories: Categorias
+    add_category: Adiconar Categoria
+    evaluations: Avaliações
+    my_businesses: Meus Negócios
   navbar:
-    map: 'Mapa'
-    reports: 'Relatórios'
-    my_account: 'Minha Conta'
-    donate: 'Contribua'
-    logout: 'Sair'
-    login: 'Entrar'
-
+    map: Mapa
+    reports: Relatórios
+    my_account: Minha Conta
+    donate: Contribua
+    logout: Sair
+    login: Entrar
   summary:
-    most_accepted_coins: "Moedas mais aceitas"
-    registered_businesses: "Negócios Registrados"
-    add_business: 'Adicionar Negócio'
-
-  titles:
-    map: 'Mapa'
-    reports: 'Relatórios'
-    my_account: 'Minha Conta'
-
+    most_accepted_coins: Moedas mais aceitas
+    registered_businesses: Negócios Registrados
+    add_business: Adicionar Negócio
   filters:
-    countries: 'Países'
-    languages: 'Idiomas'
-    categories: 'Categorias'
-    coins: 'Moedas'
-    apply_filter: 'Filtrar'
-    no_filter: 'Sem Filtro'
-
+    countries: Países
+    languages: Idiomas
+    categories: Categorias
+    coins: Moedas
+    apply_filter: Filtrar
+    no_filter: Sem Filtro
   new_address_page:
-    business_name: "Nome do Negócio"
-    web_site: 'Web Site'
-    facebook_page: 'Facebook'
-    description: 'Descrição'
-    country: 'Country'
-    state: 'UF'
-    city: 'Cidade'
-    zip_code: 'CEP'
-    district: 'Bairro'
-    street: 'Logradouro'
-    number: 'Nº'
-    complement: 'Complemento'
-    reference_point: 'Ponto de referência'
-    create_address: 'Cadastrar Negócio'
-    create_new_address: 'Cadastrar Novo Negócio'
-
+    business_name: Nome do Negócio
+    web_site: Web Site
+    facebook_page: Facebook
+    description: Descrição
+    country: Country
+    state: UF
+    city: Cidade
+    zip_code: CEP
+    district: Bairro
+    street: Logradouro
+    number: Nº
+    complement: Complemento
+    reference_point: Ponto de referência
+    create_address: Cadastrar Negócio
+    create_new_address: Cadastrar Novo Negócio
   donate_page:
-    make_donation: 'Faça uma Doação'
-    donate: 'Doe'
-    donate_text: 'Para manter este site no ar requer custos, nos ajude a mante-lo no ar, faça uma doação.'
-    answer: 'Responda'
-    answer_text: 'Responda as nossas pesquisas'
-    share: 'Divulgue'
-    share_text: 'Divulgue nosso site para que mais pessoas possam usufruir'
-    facebook_share: 'Compartilhe'
-    translate: 'Traduza'
-
-  dashboard:
-    menu:
-      my_account: 'Minha conta'
-      edit_profile: 'Editar conta'
-      settings: 'Configurações'
-      delete_account: 'Deletar conta'
-      businesses: 'Negócios'
-      show_all: 'Ver todos'
-      add_new: 'Adicionar'
-      avaliations: 'Avaliações'
-      messages: 'Mensagens'
-
-  settlement_currency_option:
-    settlement_currency: 'Selecione a moeda corrente do seu país   '
-    country: 'País'
-    currency: 'Moeda Corrente'
-    code: 'Código'
-    symbol: 'Símbolo'
-
+    make_donation: Faça uma Doação
+    donate: Doe
+    donate_text: Para manter este site no ar requer custos, nos ajude a mante-lo no
+      ar, faça uma doação.
+    answer: Responda
+    answer_text: Responda as nossas pesquisas
+    share: Divulgue
+    share_text: Divulgue nosso site para que mais pessoas possam usufruir
+    facebook_share: Compartilhe
+    contribute: Contribua
+    translate: Traduza
   devise:
     confirmations:
-      confirmed: "Sua conta foi confirmada com sucesso. Você está logado."
-      send_instructions: "Dentro de minutos, você receberá um e-mail com instruções para a confirmação da sua conta."
-      send_paranoid_instructions: "Se o seu endereço de e-mail estiver cadastrado, você receberá uma mensagem com instruções para confirmação da sua conta."
+      confirmed: Sua conta foi confirmada com sucesso. Você está logado.
+      send_instructions: Dentro de minutos, você receberá um e-mail com instruções
+        para a confirmação da sua conta.
+      send_paranoid_instructions: Se o seu endereço de e-mail estiver cadastrado,
+        você receberá uma mensagem com instruções para confirmação da sua conta.
     failure:
-      already_authenticated: "Você já está logado."
-      inactive: "Sua conta ainda não foi ativada."
+      already_authenticated: Você já está logado.
+      inactive: Sua conta ainda não foi ativada.
       invalid: "%{authentication_keys} ou senha inválida."
-      locked: "Sua conta está bloqueada."
-      last_attempt: "Você tem mais uma tentativa antes de bloquear sua conta."
+      locked: Sua conta está bloqueada.
+      last_attempt: Você tem mais uma tentativa antes de bloquear sua conta.
       not_found_in_database: "%{authentication_keys} ou senha inválida."
-      timeout: "Sua sessão expirou, por favor, efetue login novamente para continuar."
-      unauthenticated: "Para continuar, efetue login ou registre-se."
-      unconfirmed: "Antes de continuar, confirme a sua conta."
+      timeout: Sua sessão expirou, por favor, efetue login novamente para continuar.
+      unauthenticated: Para continuar, efetue login ou registre-se.
+      unconfirmed: Antes de continuar, confirme a sua conta.
     mailer:
       confirmation_instructions:
-        subject: "Instruções de confirmação"
+        subject: Instruções de confirmação
       reset_password_instructions:
-        subject: "Instruções de troca de senha"
+        subject: Instruções de troca de senha
       unlock_instructions:
-        subject: "Instruções de desbloqueio"
+        subject: Instruções de desbloqueio
+      email_changed:
+        subject: Email alterado
+      password_change:
+        subject: Senha alterada
     omniauth_callbacks:
-      failure: "Não foi possível autenticá-lo como %{kind} porque %{reason}."
-      success: "Autenticado com sucesso com uma conta de %{kind}."
+      failure: Não foi possível autenticá-lo como %{kind} porque %{reason}.
+      success: Autenticado com sucesso com uma conta de %{kind}.
     passwords:
-      no_token: "Você só pode acessar essa página através de um e-mail de troca de senha. Se já estiver acessando por um e-mail, verifique se a URL fornecida está completa."
-      send_instructions: "Dentro de minutos, você receberá um e-mail com instruções para a troca da sua senha."
-      send_paranoid_instructions: "Se o seu endereço de e-mail estiver cadastrado, você receberá um link de recuperação da senha via e-mail."
-      updated: "Sua senha foi alterada com sucesso. Você está logado."
-      updated_not_active: "Sua senha foi alterada com sucesso."
+      no_token: Você só pode acessar essa página através de um e-mail de troca de
+        senha. Se já estiver acessando por um e-mail, verifique se a URL fornecida
+        está completa.
+      send_instructions: Dentro de minutos, você receberá um e-mail com instruções
+        para a troca da sua senha.
+      send_paranoid_instructions: Se o seu endereço de e-mail estiver cadastrado,
+        você receberá um link de recuperação da senha via e-mail.
+      updated: Sua senha foi alterada com sucesso. Você está logado.
+      updated_not_active: Sua senha foi alterada com sucesso.
     registrations:
-      update: "Atualizar conta"
-      edit_account: "Editar conta"
-      current_password: "Senha atual"
-      current_password_hint: "Insira sua senha atual para confirmar as alterações"
-      new_password_hint: "Deixe em branco se não quiser alterar"
-      new_password: "Nova senha"
-      new_password_confirmation: "Confirme a nova senha"
-      destroyed: "Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve."
-      signed_up: "Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail."
-      signed_up_but_inactive: "Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta não foi ativada."
-      signed_up_but_locked: "Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta está bloqueada."
-      signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviada para o seu endereço de e-mail. Por favor, abra o link para confirmar a sua conta."
-      update_needs_confirmation: "Você atualizou a sua conta com sucesso, mas o seu novo endereço de e-mail precisa ser confirmado. Por favor, acesse-o e clique no link de confirmação que enviamos."
-      updated: "Sua conta foi atualizada com sucesso."
-
+      destroyed: Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em
+        breve.
+      signed_up: Login efetuado com sucesso. Se não foi autorizado, a confirmação
+        será enviada por e-mail.
+      signed_up_but_inactive: Você foi cadastrado com sucesso. No entanto, não foi
+        possível efetuar login, pois sua conta não foi ativada.
+      signed_up_but_locked: Você foi cadastrado com sucesso. No entanto, não foi possível
+        efetuar login, pois sua conta está bloqueada.
+      signed_up_but_unconfirmed: Uma mensagem com um link de confirmação foi enviada
+        para o seu endereço de e-mail. Por favor, abra o link para confirmar a sua
+        conta.
+      update_needs_confirmation: Você atualizou a sua conta com sucesso, mas o seu
+        novo endereço de e-mail precisa ser confirmado. Por favor, acesse-o e clique
+        no link de confirmação que enviamos.
+      updated: Sua conta foi atualizada com sucesso.
+      update: Atualizar conta
+      edit_account: Editar conta
+      current_password: Senha atual
+      current_password_hint: Insira sua senha atual para confirmar as alterações
+      new_password_hint: Deixe em branco se não quiser alterar
+      new_password: Nova senha
+      new_password_confirmation: Confirme a nova senha
     sessions:
-      new: 'Login'
-      email: 'Email'
-      password: 'Senha'
-      password_confirmation: 'Confirme a Senha'
-      sign_in_with_facebook: 'Facebook'
-      sign_in_with_twitter: 'Twitter'
-      sign_in_with_google: 'Google+'
-      sign_in_with_github: 'GitHub'
-      sing_up: 'Criar Conta'
-      forgot_password?: 'Esqueceu sua senha?'
-      remember_me: 'Me mantenha logado'
-
-      signed_in: "Login efetuado com sucesso!"
-      signed_out: "Saiu com sucesso."
-      already_signed_out: "Saiu com sucesso."
+      signed_in: Login efetuado com sucesso!
+      signed_out: Saiu com sucesso.
+      already_signed_out: Saiu com sucesso.
+      new: Login
+      email: Email
+      password: Senha
+      password_confirmation: Confirme a Senha
+      sign_in_with_facebook: Facebook
+      sign_in_with_twitter: Twitter
+      sign_in_with_google: Google+
+      sign_in_with_github: GitHub
+      sing_up: Criar Conta
+      forgot_password?: Esqueceu sua senha?
+      remember_me: Me mantenha logado
     unlocks:
-      send_instructions: "Dentro de minutos, você receberá um email com instruções para o desbloqueio da sua conta."
-      send_paranoid_instructions: "Se sua conta existir, você receberá um e-mail com instruções para desbloqueá-la em alguns minutos."
-      unlocked: "Sua conta foi desbloqueada com sucesso. Efetue login para continuar."
-
+      send_instructions: Dentro de minutos, você receberá um email com instruções
+        para o desbloqueio da sua conta.
+      send_paranoid_instructions: Se sua conta existir, você receberá um e-mail com
+        instruções para desbloqueá-la em alguns minutos.
+      unlocked: Sua conta foi desbloqueada com sucesso. Efetue login para continuar.
   errors:
     messages:
-      already_confirmed: "já foi confirmado"
-      confirmation_period_expired: "precisa ser confirmada em até %{period}, por favor, solicite uma nova"
-      expired: "expirou, por favor, solicite uma nova"
-      not_found: "não encontrado"
-      not_locked: "não foi bloqueado"
+      already_confirmed: Ja está confirmada, tente fazer login
+      confirmation_period_expired: precisa ser confirmado dentro de %{period}, por
+        favor peça um novo
+      expired: Expirou, por favor peça um novo
+      not_found: não encontrado
+      not_locked: Não foi bloqueado
       not_saved:
-        one: "Não foi possível salvar %{resource}: 1 erro"
-        other: "Não foi possível salvar %{resource}: %{count} erros."
-  create_personal_account: criar conta pessoal
-  create_company_account: criar conta empresarial
-  index_top_text_pr: mais de 50.000 empresas estão aceitando criptomoedas
-  index_top_text_sc: Comece hoje mesmo e não fique para trás!
-
+        one: '1 erro impediu este %{resource} de ser salvo:'
+        other: "%{count} erros impediram este %{resource} de ser salvo:"
+      accepted: deve ser aceito
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: não é igual a %{attribute}
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: não está disponível
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: não é válido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      model_invalid: 'A validação falhou: %{errors}'
+      not_a_number: não é um número
+      not_an_integer: não é um número inteiro
+      odd: deve ser ímpar
+      required: é obrigatório(a)
+      taken: já está em uso
+      too_long:
+        one: 'é muito longo (máximo: 1 caracter)'
+        other: 'é muito longo (máximo: %{count} caracteres)'
+      too_short:
+        one: 'é muito curto (mínimo: 1 caracter)'
+        other: 'é muito curto (mínimo: %{count} caracteres)'
+      wrong_length:
+        one: não possui o tamanho esperado (1 caracter)
+        other: não possui o tamanho esperado (%{count} caracteres)
+      other_than: deve ser diferente de %{count}
+    format: "%{attribute} %{message}"
+    template:
+      body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
+      header:
+        one: 'Não foi possível gravar %{model}: 1 erro'
+        other: 'Não foi possível gravar %{model}: %{count} erros'
   simple_form:
+    'yes': Sim
+    'no': Não
+    required:
+      text: obrigatório
+      mark: "*"
+    error_notification:
+      default_message: Por favor resolva os problemas abaixo
     labels:
       defaults:
-        name: 'Nome'
-        message: 'Mensagem'
-        email: 'E-mail'
-        username: 'User name'
-        password: 'Password'
+        name: Nome
+        message: Mensagem
+        email: E-mail
+        username: User name
+        password: Password
         new:
-          username: 'Choose a user name'
+          username: Escolha seu nome de usuário
     hints:
       defaults:
-        username: 'User name to sign in.'
-        password: 'No special characters, please.'
+        username: User name to sign in.
+        password: Sem caracteres especiais
     placeholders:
       defaults:
-        username: 'Your username'
-        password: '****'
-
+        username: Seu nome de usuário
+        password: "****"
+  titles:
+    map: Mapa
+    reports: Relatórios
+    my_account: Minha Conta
+  dashboard:
+    menu:
+      my_account: Minha conta
+      edit_profile: Editar conta
+      settings: Configurações
+      delete_account: Deletar conta
+      businesses: Negócios
+      show_all: Ver todos
+      add_new: Adicionar
+      avaliations: Avaliações
+      messages: Mensagens
   activerecord:
     errors:
       messages:
@@ -209,58 +253,10 @@ pt_BR:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
   date:
-    abbr_day_names:
-    - Dom
-    - Seg
-    - Ter
-    - Qua
-    - Qui
-    - Sex
-    - Sáb
-    abbr_month_names:
-    -
-    - Jan
-    - Fev
-    - Mar
-    - Abr
-    - Mai
-    - Jun
-    - Jul
-    - Ago
-    - Set
-    - Out
-    - Nov
-    - Dez
-    day_names:
-    - Domingo
-    - Segunda-feira
-    - Terça-feira
-    - Quarta-feira
-    - Quinta-feira
-    - Sexta-feira
-    - Sábado
     formats:
       default: "%d/%m/%Y"
       long: "%d de %B de %Y"
       short: "%d de %B"
-    month_names:
-    -
-    - Janeiro
-    - Fevereiro
-    - Março
-    - Abril
-    - Maio
-    - Junho
-    - Julho
-    - Agosto
-    - Setembro
-    - Outubro
-    - Novembro
-    - Dezembro
-    order:
-    - :day
-    - :month
-    - :year
   datetime:
     distance_in_words:
       about_x_hours:
@@ -307,44 +303,6 @@ pt_BR:
       month: Mês
       second: Segundo
       year: Ano
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: deve ser aceito
-      blank: não pode ficar em branco
-      present: deve ficar em branco
-      confirmation: não é igual a %{attribute}
-      empty: não pode ficar vazio
-      equal_to: deve ser igual a %{count}
-      even: deve ser par
-      exclusion: não está disponível
-      greater_than: deve ser maior que %{count}
-      greater_than_or_equal_to: deve ser maior ou igual a %{count}
-      inclusion: não está incluído na lista
-      invalid: não é válido
-      less_than: deve ser menor que %{count}
-      less_than_or_equal_to: deve ser menor ou igual a %{count}
-      model_invalid: 'A validação falhou: %{errors}'
-      not_a_number: não é um número
-      not_an_integer: não é um número inteiro
-      odd: deve ser ímpar
-      required: é obrigatório(a)
-      taken: já está em uso
-      too_long:
-        one: 'é muito longo (máximo: 1 caracter)'
-        other: 'é muito longo (máximo: %{count} caracteres)'
-      too_short:
-        one: 'é muito curto (mínimo: 1 caracter)'
-        other: 'é muito curto (mínimo: %{count} caracteres)'
-      wrong_length:
-        one: não possui o tamanho esperado (1 caracter)
-        other: não possui o tamanho esperado (%{count} caracteres)
-      other_than: deve ser diferente de %{count}
-    template:
-      body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
-      header:
-        one: 'Não foi possível gravar %{model}: 1 erro'
-        other: 'Não foi possível gravar %{model}: %{count} erros'
   helpers:
     select:
       prompt: Por favor selecione
@@ -357,17 +315,11 @@ pt_BR:
       format:
         delimiter: "."
         format: "%u %n"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
+        separator: '0'
         unit: R$
     format:
       delimiter: "."
-      precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
+      separator: '0'
     human:
       decimal_units:
         format: "%n %u"
@@ -385,12 +337,6 @@ pt_BR:
           trillion:
             one: trilhão
             other: trilhões
-          unit: ''
-      format:
-        delimiter: ""
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
@@ -412,11 +358,9 @@ pt_BR:
     array:
       last_word_connector: " e "
       two_words_connector: " e "
-      words_connector: ", "
+      words_connector: '0'
   time:
-    am: ''
     formats:
       default: "%a, %d de %B de %Y, %H:%M:%S %z"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
-  pm: ''
