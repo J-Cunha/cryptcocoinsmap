@@ -30,6 +30,7 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
+gem 'clipboard-rails'
 #For datetimepicker
 gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails'

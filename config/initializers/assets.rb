@@ -11,4 +11,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w(jquery.min.js utils.js multCategoryInput.js.erb multEmailInput.js multIntlTelInput.js applyIntlTelInput.js.erb intlTelInput.js intlTelInput.min.js )
+#Rails.application.config.assets.precompile += %w( )

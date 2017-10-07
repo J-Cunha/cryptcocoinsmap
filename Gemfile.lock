@@ -81,6 +81,7 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
+    clipboard-rails (1.7.1)
     cocoon (1.2.10)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -338,6 +339,7 @@ DEPENDENCIES
   byebug
   capybara
   carrierwave (~> 1.0)
+  clipboard-rails
   cocoon
   coffee-rails
   crono

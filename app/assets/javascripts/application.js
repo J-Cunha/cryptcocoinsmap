@@ -19,7 +19,9 @@
 //= require underscore
 //= require gmaps/google
 //= require cocoon
+//= require clipboard
 //= require_tree .
+
 
 
 

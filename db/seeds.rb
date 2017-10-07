@@ -149,6 +149,17 @@ class DbFeed
       puts addr.save
     end
   end
+  def self.donate_info
+   puts "btc: " + "#{DonateInfo.create(currency: Currency.where(name: "Bitcoin").first, address: '1E2WdXsuSxrzhvUWjYJz26CCaU3RqeW1Zp') ? 'Saved' : 'Failed' }"
+   puts "ltc: " + "#{DonateInfo.create(currency: Currency.where(name: "Litecoin").first, address: 'LWtXEUBpWK2CDppsPQ2ANtMQYaHjxc8DYJ') ? 'Saved' : 'Failed'}"
+   puts "eth: " + "#{DonateInfo.create(currency: Currency.where(name: "Ethereum").first, address: '0xd4cf2a093f13f20ed3e44b4c1679fb0e3cf0e0a1') ? 'Saved' : 'Failed'}"
+   puts "dash: " +"#{ DonateInfo.create(currency: Currency.where(name: "Dash").first, address: 'XqSEoSjJvgZHd8xKE5HqWp3kdUHRKwPC6c') ? 'Saved' : 'Failed'}"
+   puts "zcs: " + "#{DonateInfo.create(currency: Currency.where(name: "Zcash").first, address: 't1JJgMwBYqQ9eTjq5GjXsxENgVYHSwUvpZD') ? 'Saved' : 'Failed'}"
+   puts "neo: " + "#{DonateInfo.create(currency: Currency.where(name: "NEO").first, address: 'AZtFZtCmDhJTjZ2yzv1DBc41Tz6HjVp1MA') ? 'Saved' : 'Failed'}"
+
+
+
+  end
 end
 
 #real = FiatCurrency.create(country_name: 'Brasil', name: 'Real', code: 'BRL', symbol: 'R$')
@@ -166,4 +177,5 @@ end
 #DbFeed.countries
 #DbFeed.fiat_currencies
 #DbFeed.users
-DbFeed.crypto_currencies
+#DbFeed.crypto_currencies
+DbFeed.donate_info

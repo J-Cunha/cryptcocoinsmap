@@ -7,6 +7,9 @@
 @import "scrollableCoinCointainer";
 @import "flagLocaleSelector";
 @import "dashboard";
+@import "donate_infos";
+
+
 .btn-remove-category{
  margin-top: 25px;
 }
@@ -148,7 +151,7 @@ div.summary-shop-icon{
 }
 //LOGIN PAGE
 .blue-header{
-  color: $water_light_65;
+  color: $water_light_70;
   margin: 30px 0px 20px 0px;
 }
 .transparent-input{
@@ -157,7 +160,7 @@ div.summary-shop-icon{
   color: $water_light_85;
 }
 .login-label{
-  color: $water_light_65;
+  color: $water_light_60;
   font-size: 120%;
 }
 

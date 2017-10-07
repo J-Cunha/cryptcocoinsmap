@@ -1,3 +1,44 @@
 // Place all the styles related to the DonateInfos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.donate-info-coin-img{
+padding: 10px 0 10px;
+}
+
+.donate-info-currency-address::selection {
+  background: $water_light_80; /* WebKit/Blink Browsers */
+  color: white;
+}
+.donate-info-currency-address::-moz-selection {
+  background: $water_light_80; /* WebKit/Blink Browsers */
+  color: white;
+}
+.donate-info-currency-address{
+  color: $water_light_80;
+  margin-top: -5px;
+  border: none;
+  border-bottom: 1px solid $water_light_55;
+  background-color: transparent !important;
+  border-radius: 0px !important;
+
+}
+.donate-info-copy-icon{
+  font-size: 150%;
+  color: $water_light_60;
+  //border-bottom: 1px solid $water_light_55;
+  padding-bottom: 5px;
+  display: inline;
+
+
+}
+
+.donate-info-buttons{
+background-color: transparent;
+padding: 5px;
+  border-color:  $water_light_55;
+
+}
+.donate-info-buttons-container{
+margin-left: 0px;
+  padding-left: 0px;
+}
