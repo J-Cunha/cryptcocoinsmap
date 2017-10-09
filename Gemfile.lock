@@ -124,6 +124,11 @@ GEM
     geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    globalize-accessors (0.2.1)
+      globalize (~> 5.0, >= 5.0.0)
+    globalize-validations (0.0.4)
+      globalize (>= 3)
+      globalize-accessors (~> 0.1)
     gmaps4rails (2.1.2)
     hashie (3.5.6)
     i18n (0.8.6)
@@ -349,6 +354,7 @@ DEPENDENCIES
   faker
   geocoder
   globalize!
+  globalize-validations
   gmaps4rails
   jbuilder
   jquery-rails

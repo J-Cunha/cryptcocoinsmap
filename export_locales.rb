@@ -1,8 +1,9 @@
 require 'locales_export_import'
 LocalesExportImport::Yaml2Csv.convert(
-    %w[en.yml pt_BR.yml es.yml it.yml ],
-    'crypto_coins_map_locales.csv'
+    %w[ config/locales/pt_BR.yml config/locales/es.yml  ],
+    'crypto_coins_map_locales_pt_es.csv'
 )
+
 
 #---------------
 #LocalesExportImport::Yaml2Csv.convert(

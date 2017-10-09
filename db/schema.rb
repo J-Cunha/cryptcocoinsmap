@@ -10,19 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170921015357) do
+ActiveRecord::Schema.define(version: 20171006182030) do
 
   create_table "address_attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "address_id"
-    t.json "photos"
+    t.text "photos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_address_attachments_on_address_id"
   end
-
-
-
 
   create_table "address_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "address_id"

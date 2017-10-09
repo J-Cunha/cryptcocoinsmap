@@ -84,10 +84,21 @@ div.infobox-street-icon{
   background-size: cover;
   display: inline-block;
 }
-.infobox-currency-logo-16x16{
-  height: 16px;
-  width: 16px;
+.infobox-attr-container{
+  margin-top: 1px;
+
 }
+div.infobox-divisor {
+  min-height: 8px;
+}
+.infobox-currency-logo-16x16{
+  height: 24px;
+  width: 24px;
+  margin-right: 4px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
 div.address_property_key{
   font-weight: bold ;
   display: inline;
@@ -97,6 +108,10 @@ div.address_property_value {
   vertical-align: top;
   display: inline;
   margin-left: 3px;
+}
+a.address_property_value{
+  margin-left: 3px;
+  display: inline;
 }
 
 $money_green_color: #1c5424;
@@ -120,7 +135,7 @@ $crypto_blue_color: #384FBF;
   margin: 0 auto;
 }
 .body{
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 .page-body{
   margin-top: 70px;
@@ -152,7 +167,7 @@ div.summary-shop-icon{
 //LOGIN PAGE
 .blue-header{
   color: $water_light_70;
-  margin: 30px 0px 20px 0px;
+  margin: 30px 0 20px 0;
 }
 .transparent-input{
   background: transparent;

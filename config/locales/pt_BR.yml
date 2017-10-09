@@ -315,11 +315,9 @@ pt:
       format:
         delimiter: "."
         format: "%u %n"
-        separator: '0'
         unit: R$
     format:
       delimiter: "."
-      separator: '0'
     human:
       decimal_units:
         format: "%n %u"
@@ -358,7 +356,6 @@ pt:
     array:
       last_word_connector: " e "
       two_words_connector: " e "
-      words_connector: '0'
   time:
     formats:
       default: "%a, %d de %B de %Y, %H:%M:%S %z"

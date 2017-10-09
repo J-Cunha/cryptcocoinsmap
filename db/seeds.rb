@@ -112,9 +112,44 @@ class DbFeed
       if !allTd[1].nil?
         #category_id =allTd[0].text.to_s.delete("\t").delete("\n").delete(" ")
         name =allTd[1].text.to_s.delete("\t").delete("\n")
-        Category.create(name: name)
+        puts "#{name} #{Category.create(name: name) ? true : false }"
       end
     end
+    arts_en = format_cat_str(" Nightclub, Fashion Designer, Art Gallery, Modeling Agency, Actor, Artist, Athlete, Author, Music Band, Blogger, Chef, Coach, Comedian, Dancer, Entrepreneur, Fashion Model, Fitness Model, Journalist, Motivational Speaker, Musician, Photographer, Politician, Musical Producer, Movie Producer, Theater Producer, Public Figure, Scientist, Teacher, Video Creator, Writer, Youtuber")
+    entertainment_en = format_cat_str(" Public House, Zoo, Aquarium, Ticket Sales, Symphony, Rodeo, Race Track, Museum, Circus, Casino, Sports Team, Books, Book Store, Concert Tour, Festival, Library, Literary Arts, Magazine, Movie Theater, Theater, Movie/Television Studio, Music Studio, Music Video, Performance Art, Performing Arts, Podcast, Radio Station, Record Label, Show, Sports League, Stadium, Arena & Sports Venue, Theatrical Productions, TV Channel, TV Network, TV Show")
+    hospitality_en = format_cat_str(" Accomodation, Hotel, Motel, Resort, Serviced Apartaments, Bed and Breakfasts, Hostel")
+    tourism = format_cat_str(" Airport, Tourism Agency, Travel Agency, Travel Agent, Touristic point")
+    food_en = format_cat_str(" Steakhouse, Pizzeria, Restaurant, Bar, Pub, Barbecue Restaurant, Biker Bar, Cafés, Cafeteria, Coffeehouse, Doughnut Shops‎, Drive-in Restaurants‎, Fast-food, Seafood Restaurant, Tea House, Vegetarian Restaurant, Asian Restaurante, Brazilian Restaurant, Italian Restaurant")
+    antiques_vintage = format_cat_str(" Antiques & Vintage, Antique Store")
+    marketing = format_cat_str(" Publisher, Advertising Agency, Broadcasting & Media Production, Graphic Design, Market Consultant, Photographic Services & Equipment")
+    construction = format_cat_str(" Architect, Construction Restoration, ")
+    sex = (" Erotic dance‎, Erotic massage‎, Gay bathhouses‎, Pornography‎, Sex toys‎, Sexology‎, Sex tourism‎, Call Girl, Call Boy, Strip Club")
+    health = (" Hospital, Pharmacy, Drug Store, Medicinal Cannabis")
+    agriculture = format_cat_str("")
+    forestry=format_cat_str("")
+    fishing=format_cat_str("")
+    mining =format_cat_str("")
+    construction =format_cat_str("")
+    manufacturing=format_cat_str("")
+    transportation =format_cat_str("")
+    communications =format_cat_str("")
+    electric=format_cat_str("")
+    gas=format_cat_str("")
+    sanitary_service=format_cat_str("")
+    finance=format_cat_str("")
+    insurance =format_cat_str("")
+    nonclassifiable=format_cat_str("")
+
+
+  end
+
+  def format_cat_str(str)
+    array = str.split(',')
+    array.each do
+    |a|
+      a[0]=''
+    end
+    return array
   end
 
 #USERS
@@ -122,9 +157,11 @@ class DbFeed
   def self.users
     j_u = User.create(email: "user@user.com", password: "password", password_confirmation: "password")
     j_u_2 = User.create(email: "user1@user1.com", password: "password", password_confirmation: "password")
+    j_u_2 = User.create(email: "joao@joao.com", password: "password", password_confirmation: "password")
   end
 
   def self.address_faker
+    i = 0
     20.times do
       i +=1
       fk_addr = Faker::Address
@@ -142,21 +179,21 @@ class DbFeed
       addr.complement = fk_addr.secondary_address
       addr.email= Faker::Internet.email
       addr.phone= "+5521992064121"
-      addr.crypto_currencies_accepted={"1" => "BTC", "2" => "LTC", "3" => "USD", "4" => "ETC", "5" => "XRP"}
+      addr.crypto_currencies_accepted=["119", "120", "130" , "145" , "345"]
       addr.categories= Category.first(3)
       addr.latitude = fk_addr.latitude
       addr.longitude = fk_addr.longitude
       puts addr.save
     end
   end
-  def self.donate_info
-   puts "btc: " + "#{DonateInfo.create(currency: Currency.where(name: "Bitcoin").first, address: '1E2WdXsuSxrzhvUWjYJz26CCaU3RqeW1Zp') ? 'Saved' : 'Failed' }"
-   puts "ltc: " + "#{DonateInfo.create(currency: Currency.where(name: "Litecoin").first, address: 'LWtXEUBpWK2CDppsPQ2ANtMQYaHjxc8DYJ') ? 'Saved' : 'Failed'}"
-   puts "eth: " + "#{DonateInfo.create(currency: Currency.where(name: "Ethereum").first, address: '0xd4cf2a093f13f20ed3e44b4c1679fb0e3cf0e0a1') ? 'Saved' : 'Failed'}"
-   puts "dash: " +"#{ DonateInfo.create(currency: Currency.where(name: "Dash").first, address: 'XqSEoSjJvgZHd8xKE5HqWp3kdUHRKwPC6c') ? 'Saved' : 'Failed'}"
-   puts "zcs: " + "#{DonateInfo.create(currency: Currency.where(name: "Zcash").first, address: 't1JJgMwBYqQ9eTjq5GjXsxENgVYHSwUvpZD') ? 'Saved' : 'Failed'}"
-   puts "neo: " + "#{DonateInfo.create(currency: Currency.where(name: "NEO").first, address: 'AZtFZtCmDhJTjZ2yzv1DBc41Tz6HjVp1MA') ? 'Saved' : 'Failed'}"
 
+  def self.donate_info
+    puts "btc: " + "#{DonateInfo.create(currency: Currency.where(name: "Bitcoin").first, address: '1E2WdXsuSxrzhvUWjYJz26CCaU3RqeW1Zp') ? 'Saved' : 'Failed' }"
+    puts "ltc: " + "#{DonateInfo.create(currency: Currency.where(name: "Litecoin").first, address: 'LWtXEUBpWK2CDppsPQ2ANtMQYaHjxc8DYJ') ? 'Saved' : 'Failed'}"
+    puts "eth: " + "#{DonateInfo.create(currency: Currency.where(name: "Ethereum").first, address: '0xd4cf2a093f13f20ed3e44b4c1679fb0e3cf0e0a1') ? 'Saved' : 'Failed'}"
+    puts "dash: " +"#{DonateInfo.create(currency: Currency.where(name: "Dash").first, address: 'XqSEoSjJvgZHd8xKE5HqWp3kdUHRKwPC6c') ? 'Saved' : 'Failed'}"
+    puts "zcs: " + "#{DonateInfo.create(currency: Currency.where(name: "Zcash").first, address: 't1JJgMwBYqQ9eTjq5GjXsxENgVYHSwUvpZD') ? 'Saved' : 'Failed'}"
+    puts "neo: " + "#{DonateInfo.create(currency: Currency.where(name: "NEO").first, address: 'AZtFZtCmDhJTjZ2yzv1DBc41Tz6HjVp1MA') ? 'Saved' : 'Failed'}"
 
 
   end
@@ -178,4 +215,6 @@ end
 #DbFeed.fiat_currencies
 #DbFeed.users
 #DbFeed.crypto_currencies
-DbFeed.donate_info
+#DbFeed.donate_info
+#DbFeed.categories
+DbFeed.address_faker

@@ -75,8 +75,7 @@ class Address < ApplicationRecord
     return currencies
     true
   end
-  def set_crypto_currencies_accepted=(currencies)
-    puts "coins_accepted= #{currencies.inspect} "
+  def crypto_currencies_accepted=(currencies)
     currencies.each do |c|
       AddressCurrency.create(address: self, currency: CryptoCurrency.where(id: c.to_i).first)
     end

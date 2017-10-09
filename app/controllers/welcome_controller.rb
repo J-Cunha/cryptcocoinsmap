@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
-
+  include ActionView::Helpers::TagHelper
+  attr_accessor :output_buffer
 
   def index
     @addresses = nil
@@ -18,64 +19,81 @@ class WelcomeController < ApplicationController
       marker.lng address.longitude
       marker.picture({
                          "url" => "http://localhost:3000#{ActionController::Base.helpers.asset_path('marker.png')}",
-                         "width" =>  32,
+                         "width" => 32,
                          "height" => 32
                      })
+      info_window_content =""
 
-      info_window_html = "<div class=\"countainer-fluid\">"+
-      info_window_title = "<h5><a href=\"http://localhost:3000/addresses/#{address.id}\">#{address.business_name}</a></h5>"
+      info_window_content += content_tag(:div, :class => 'countainer-fluid') do
+        #title - Business Name
+        content_tag(:h4) do
+          content_tag(:a, :href => "http://localhost:3000/addresses/#{address.id}") do
+            address.business_name
+          end
+        end
 
-      #bussiness categories
-      categories =  "<div class=\"infobox-tag-icon\"> </div>"+
-                    "<div class=\"address_property_value\">"
-                      address.categories.each {|c| categories += "<a href=\"http://localhost:3000/categories/#{c.id}\"> #{c.name} </a> "}
-      categories += "</div>"
+        #country
+      end
+      #categories
+        address.categories.first(5).each do |c|
+        info_window_content += content_tag(:div, :class => 'infobox-attr-category-container') do
+          content_tag(:div, "", :class => 'infobox-tag-icon')+
+          content_tag(:a, "#{c.name}", :href => "http://localhost:3000/categories/#{c.id}", :class => 'address_property_value infobox-link')
+        end
+        end
+      info_window_content += content_tag(:div, "",:class => 'infobox-divisor')
 
-      info_window_country = "<div >"+#state and country
-                            "<div class=\"infobox-flag-icon\"> </div>"+
-                            "<div class=\"address_property_value\">#{address.city}, #{address.state}, #{address.country.name} </div>"+
-                            "</div>"
-      info_window_addr = "<div>"+ #full street address (street, number, complement)
-                            "<div class=\"infobox-street-icon\"> </div>"+
-                            "<div class=\"address_property_value\">#{address.full_street} </div>"+
-                          "</div>"
-
+      #Country
+      info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
+        content_tag(:div, "", :class => 'infobox-flag-icon') +
+        content_tag(:div, :class => 'address_property_value') do
+          "#{address.city},  #{address.state}, #{address.country.name }"
+          # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
+        end
+      end
+      #Fullstreet
+      info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
+        content_tag(:div, "", :class => 'infobox-street-icon') +
+            content_tag(:div, :class => 'address_property_value') do
+              "#{address.full_street}"
+              # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
+            end
+      end
 
       #add phone numbers to infowindow
-      info_window_phones = ""
-      address.phone_numbers.each do |pn|
-        info_window_phones += "<div>"+
-                              "<div class=\"infobox-phone-icon\"> </div>"+
-                              "<div class=\"address_property_value\">#{pn}</div>"+
-                              "</div>"
+      info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
+        content_tag(:div, "", :class => 'infobox-phone-icon') +
+            content_tag(:div, :class => 'address_property_value') do
+              "#{address.phone}"
+              # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
+            end
       end
+
       #add  emails to infowindow
-      info_window_emails= ""
-      address.emails.each do |em|
-        info_window_emails += "<div>"+
-                              "<div class=\"infobox-email-icon\"> </div>"+
-                              "<div class=\"address_property_value\">#{em} </div>"+
-                              "</div>"
+      info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
+        content_tag(:div, "", :class => 'infobox-email-icon') +
+            content_tag(:div, :class => 'address_property_value') do
+              "#{address.email}"
+              # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
+            end
       end
+
       #add cryptocurrencies to infowindow
-      info_window_crypto = "<div id=\"accepted-coins\" >"
-      address.crypto_currencies_accepted.each do |coin_accepted|
-        info_window_crypto +=  "<img class=\"infobox-currency-logo-16x16\" alt=\"#{coin_accepted}\" src=\"http://localhost:3000#{ActionController::Base.helpers.asset_path("coins_icons/#{coin_accepted.split.join('-')}")}\" > </img>"
+      info_window_content += content_tag(:div, :id => 'accepted-coins') do
+        a = ActiveSupport::SafeBuffer.new
+        address.crypto_currencies_accepted.collect { |coin_accepted| a << ActionController::Base.helpers.image_tag("coins_icons/#{coin_accepted.split.join('-')}", class: 'infobox-currency-logo-16x16')}
+        a
       end
-      info_window_html += "</div>" #close accepted-coins
 
-
-      info_window_html +=  categories + info_window_country + info_window_addr
-      info_window_html += info_window_phones + info_window_emails+ info_window_crypto
-      info_window_html += "</div>" #close container-fluid
-
-      marker.infowindow info_window_html
+      marker.infowindow info_window_content
     end
   end
+
   def report
 
-    end
+  end
+
   def donate
-@donate_infos = DonateInfo.all
+    @donate_infos = DonateInfo.all
   end
 end
