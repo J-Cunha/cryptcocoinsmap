@@ -35,7 +35,7 @@ class WelcomeController < ApplicationController
         #country
       end
       #categories
-      address.categories.first(10).each do |c|
+      address.categories.first(3).each do |c|
         info_window_content += content_tag(:div, :class => 'infobox-attr-category-container') do
           content_tag(:div, "", :class => 'infobox-tag-icon')+
               content_tag(:a, "#{c.name}", :href => "http://localhost:3000/categories/#{c.id}", :class => 'address_property_value infobox-link')
