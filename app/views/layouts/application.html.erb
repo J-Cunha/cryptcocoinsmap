@@ -5,19 +5,25 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= favicon_link_tag 'fav_icon.ico'%>
+  <%= favicon_link_tag 'fav_icon.ico' %>
 
 </head>
-  <nav>
-    <%= render 'layouts/navbar/navbar' %>
-  </nav>
+<nav>
+  <%= render 'layouts/navbar/navbar' %>
+</nav>
 <body>
-<%if (controller_name == 'dashboard') ||
+<% if (controller_name == 'dashboard') ||
     ((controller_name=='addresses') && (action_name != 'show')) ||
-    ( (controller_name=='registrations' ) && ( (action_name =='edit') || (action_name =='update' ) ) )  %>
-  <%= render 'layouts/dashboard' %>
-<%else %>
-  <%= yield %>
+    ((controller_name=='registrations') && ((action_name =='edit') || (action_name =='update'))) %>
+    <%= render 'layouts/dashboard' %>
+<% else %>
+    <% if (controller_name == 'welcome') && (action_name == 'index') %>
+        <%= yield %>
+    <% else %>
+        <div class="dashboard-container" id="world-background">
+          <%= yield %>
+        </div>
+    <% end %>
 <% end %>
 </body>
 <script type="application/javascript">

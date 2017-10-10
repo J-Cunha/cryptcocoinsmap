@@ -35,21 +35,21 @@ class WelcomeController < ApplicationController
         #country
       end
       #categories
-        address.categories.first(5).each do |c|
+      address.categories.first(3).each do |c|
         info_window_content += content_tag(:div, :class => 'infobox-attr-category-container') do
           content_tag(:div, "", :class => 'infobox-tag-icon')+
-          content_tag(:a, "#{c.name}", :href => "http://localhost:3000/categories/#{c.id}", :class => 'address_property_value infobox-link')
+              content_tag(:a, "#{c.name}", :href => "http://localhost:3000/categories/#{c.id}", :class => 'address_property_value infobox-link')
         end
-        end
-      info_window_content += content_tag(:div, "",:class => 'infobox-divisor')
+      end
+      info_window_content += content_tag(:div, "", :class => 'infobox-divisor')
 
       #Country
       info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
         content_tag(:div, "", :class => 'infobox-flag-icon') +
-        content_tag(:div, :class => 'address_property_value') do
-          "#{address.city},  #{address.state}, #{address.country.name }"
-          # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
-        end
+            content_tag(:div, :class => 'address_property_value') do
+              "#{address.city},  #{address.state}, #{address.country.name }"
+              # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
+            end
       end
       #Fullstreet
       info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
@@ -59,7 +59,6 @@ class WelcomeController < ApplicationController
               # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
             end
       end
-
       #add phone numbers to infowindow
       info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
         content_tag(:div, "", :class => 'infobox-phone-icon') +
@@ -81,16 +80,22 @@ class WelcomeController < ApplicationController
       #add cryptocurrencies to infowindow
       info_window_content += content_tag(:div, :id => 'accepted-coins') do
         a = ActiveSupport::SafeBuffer.new
-        address.crypto_currencies_accepted.collect { |coin_accepted| a << ActionController::Base.helpers.image_tag("coins_icons/#{coin_accepted.split.join('-')}", class: 'infobox-currency-logo-16x16')}
+        address.currencies.collect do |coin_accepted|
+          a << content_tag(:a, :href => currency_path(coin_accepted)) do
+            if (Rails.application.assets.find_asset "coins_icons/#{coin_accepted.name.split.join('-')}.png")
+              ActionController::Base.helpers.link_to ActionController::Base.helpers.image_tag("coins_icons/#{coin_accepted.name.split.join('-')}.png", class: 'infobox-currency-logo-16x16'), currency_path(coin_accepted)
+            else
+              ActionController::Base.helpers.link_to coin_accepted.name, currency_path(coin_accepted)
+            end
+          end
+        end
         a
       end
-
       marker.infowindow info_window_content
     end
   end
 
   def report
-
   end
 
   def donate

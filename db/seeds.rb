@@ -173,14 +173,15 @@ class DbFeed
       addr.country = Country.where(code_iso2: fk_addr.country_code).first || Country.where(code_iso2: "BR").first
       addr.state = fk_addr.state_abbr
       addr.city = fk_addr.city
+      addr.district = fk_addr.city
       addr.zip_code = fk_addr.zip_code
       addr.street = fk_addr.street_name
       addr.number = fk_addr.building_number
       addr.complement = fk_addr.secondary_address
       addr.email= Faker::Internet.email
       addr.phone= "+5521992064121"
-      addr.crypto_currencies_accepted=["119", "120", "130" , "145" , "345"]
-      addr.categories= Category.first(3)
+      addr.crypto_currencies_accepted=["119", "120", "130" , "145" , "345", "122", "144", "155"]
+      addr.categories= Category.first(5)
       addr.latitude = fk_addr.latitude
       addr.longitude = fk_addr.longitude
       puts addr.save

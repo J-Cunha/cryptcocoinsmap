@@ -1,21 +1,19 @@
 Rails.application.routes.draw do
-
-
-  resources :address_attachments
+  #resources :address_attachments
 
   get 'dashboard/index', as: :dashboard_index
-
   get 'dashboard/addresses', as: :dashboard_addresses
-
   get 'dashboard/avaliations', as: :dashboard_avaliations
-
   get 'dashboard/contacts', as: :dashboard_contacts
 
 
-  resources :donate_infos
   devise_for :users, :controllers => {sessions: 'users/sessions', registrations: 'users/registrations',  :omniauth_callbacks => 'users/omniauth_callbacks'}
 
   resources :addresses
+  resources :currencies, only: [:index, :show]
+  resources :fiat_currencies, only: [:index, :show], :controller => 'currencies'
+  resources :crypto_currencies, only: [:index, :show],:controller => 'currencies'
+  resources :categories, only: [:index, :show]
 
   get 'welcome/index', as: :index
   get 'welcome/donate', as: :donate

@@ -1,76 +1,90 @@
-<div class="blue-70" style="margin-top: 100px;">
-<p id="notice"><%= notice %></p>
-  <p>
-    <strong>Business Name:</strong>
-    <%= @address.business_name %>
-  </p>
-  <p>
-    <strong>Categories:</strong>
-    <%= @address.get_categories %>
-  </p>
-  <p>
-    <strong>Country:</strong>
-    <%= @address.country.name %>
-  </p>
+<% content_for :title, "#{@address.business_name} - CryptoCoinsMap" %>
 
-  <p>
-    <strong>State:</strong>
-    <%= @address.state %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= @address.city %>
-  </p>
-
-  <p>
-    <strong>District:</strong>
-    <%= @address.district %>
-  </p>
-
-  <p>
-    <strong>Street:</strong>
-    <%= @address.street %>
-  </p>
-
-  <p>
-    <strong>Number:</strong>
-    <%= @address.number %>
-  </p>
-
-  <p>
-    <strong>Complement:</strong>
-    <%= @address.complement %>
-  </p>
-
-  <p>
-    <strong>Reference point:</strong>
-    <%= @address.reference_point %>
-  </p>
-  <p>
-    <strong>Web Site:</strong>
-    <%= @address.web_site%>
-  </p>
-  <p>
-    <strong>E-mails:</strong>
-    <%= @address.emails %>
-  </p>
-  <p>
-    <strong>Phone_numbers:</strong>
-    <%= @address.phone_numbers %>
-  </p>
-  <p>
-    <strong>CryptoCurrenciesAccepted:</strong>
-    <%= @address.crypto_currencies_accepted%>
-  </p>
-
-  <p>
-    <% @address.address_attachments.each do |p| %>
-      <%= image_tag p.photos.thumb.url %>  
-      <%= link_to "Edit attachment", edit_address_attachment_path(p) %>
-    <% end %>
-  </p>
-
-  <%= link_to 'Edit', edit_address_path(@address) %> |
-  <%= link_to 'Back', addresses_path %>
+<div class="blue-70 container-fluid text-center " style="max-width: 680px;">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center"><%= @address.business_name %></h1>
+      <p class="text-center">
+        <% @address.categories.each do |category| %>
+            <%= link_to category.name, category_path(category), class: 'address-show-link' %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+  <br>
+  <% unless @address.description.nil? %>
+      <div class="row" class="text-center">
+        <div class="col-xs-12">
+          <strong class="text-center">Description:</strong><br>
+          <%= @address.description %>
+        </div>
+      </div>
+      <br>
+  <% end %>
+  <div class="row">
+    <div class="col-sm-6 ">
+      <p class="pull-right">
+        <strong>Country:</strong><br>
+        <%= "#{@address.country.name}, #{@address.state}, #{@address.city} " %>
+        <br>
+        <br>
+        <strong>Address:</strong><br>
+        <%= "#{@address.street}, #{@address.number}" + (", #{@address.complement unless @address.complement.empty?}") %>
+        <br>
+        <br>
+        <strong><%= t('address.zip_code') %>:</strong><br>
+        <%= "#{@address.zip_code}" + ("#{(', ' +@address.district) unless (@address.district.nil?||@address.district.empty?)} ") %>
+        <% unless @address.reference_point.nil? %>
+            <br>
+            <br>
+            <strong>Reference point:</strong>
+            <%= @address.reference_point %>
+        <% end %>
+        </div>
+    <div class="col-sm-6">
+      <p class="pull-left">
+        <% unless @address.web_site.nil? %>
+            <strong>Website:</strong><br>
+            <%= @address.web_site %>
+            <br>
+            <br>
+        <% end %>
+        <% unless @address.facebook_page.nil? %>
+            <strong>Facebook:</strong><br>
+            <%= @address.facebook_page %>
+            <br>
+            <br>
+        <% end %>
+        <strong>E-mail:</strong><br>
+        <%= @address.email %>
+        <br>
+        <br>
+        <strong>Phone:</strong><br>
+        <%= @address.phone %>
+      </p>
+    </div>
+  </div>
+  <br>
+  <div class="row text-center ">
+    <div class="col-xs-12">
+      <p>
+        <strong>Crypto Currencies Accepted:</strong><br>
+        <% @address.currencies.collect do |coin_accepted| %>
+            <% if (Rails.application.assets.find_asset "coins_icons/#{coin_accepted.name.split.join('-')}.png") %>
+                <%= link_to image_tag("coins_icons/#{coin_accepted.name.split.join('-')}.png", class: 'infobox-currency-logo-16x16'), currency_path(coin_accepted) %>
+            <% else %>
+                <%= link_to coin_accepted.name, currency_path(coin_accepted) %>
+            <% end %>
+        <% end %>
+      </p>
+      <p>
+        <% @address.address_attachments.each do |p| %>
+            <%= image_tag p.photos.thumb.url %>
+            <%= link_to "Edit attachment", edit_address_attachment_path(p) %>
+        <% end %>
+      </p>
+      <%# link_to 'Edit', edit_address_path(@address) %> |
+      <%# link_to 'Back', addresses_path %>
+    </div>
+  </div>
 </div>

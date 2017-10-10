@@ -8,8 +8,14 @@
 @import "flagLocaleSelector";
 @import "dashboard";
 @import "donate_infos";
-
-
+.address-show-link{
+ color: $water_light_95;
+  font-size: 120%;
+}
+.address-show-link:hover{
+  color: white;
+  font-size: 130%;
+}
 .btn-remove-category{
  margin-top: 25px;
 }
@@ -91,7 +97,12 @@ div.infobox-street-icon{
 div.infobox-divisor {
   min-height: 8px;
 }
+.currency-logo-16x16{
+  height: 16px;
+  width: 16px;
+}
 .infobox-currency-logo-16x16{
+
   height: 24px;
   width: 24px;
   margin-right: 4px;

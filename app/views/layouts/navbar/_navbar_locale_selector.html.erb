@@ -5,7 +5,7 @@
 <ul class="dropdown-menu">
   <% I18n.available_locales.each do |l| %>
       <% if l != I18n.locale %>
-          <li><%= link_to locale: l.to_s  do %>i
+          <li><%= link_to locale: l.to_s  do %>
                 <%= image_tag "languages/#{l.to_s.downcase}.jpg", class: 'flag-locale-selector'  %></li>
                 <% end%>
       <% end %>
