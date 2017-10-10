@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
     @crypto_currencies = CryptoCurrency.all
     @languages = Language.all
     @categories = Category.all
-    @hash = Gmaps4rails.build_markers(@addresses.first(2)) do |address, marker|
+    @hash = Gmaps4rails.build_markers(@addresses) do |address, marker|
       marker.lat address.latitude
       marker.lng address.longitude
       marker.picture({
