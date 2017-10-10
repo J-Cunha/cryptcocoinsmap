@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Currencies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Symbol</th>
+      <th>Country</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @currencies.each do |currency| %>
+      <tr>
+        <td><%= currency.name %></td>
+        <td><%= currency.code %></td>
+        <td><%= currency.symbol %></td>
+        <td><%= currency.country %></td>
+        <td><%= link_to 'Show', currency %></td>
+        <td><%= link_to 'Edit', edit_currency_path(currency) %></td>
+        <td><%= link_to 'Destroy', currency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Currency', new_currency_path %>

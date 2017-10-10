@@ -1,0 +1,363 @@
+---
+pt:
+  index:
+    index: Index
+    coins_accepted: Moedas Aceitas
+  address:
+    business_name: Nome do negócio
+    web_site: Web site
+    facebook_page: Facebook
+    description: Descrição
+    country: País
+    state: UF
+    city: Cidade
+    zip_code: CEP
+    district: Bairro
+    street: Logradouro
+    number: Nº
+    complement: Complemento
+    reference_point: Ponto de referência
+    email: Email
+    add_email: Adicionar Email
+    phone: Telefone
+    add_phone: Adicionar Telefone
+    phone_valid: "✓"
+    phone_invalid: nº inválido
+    categories: Categorias
+    add_category: Adiconar Categoria
+    evaluations: Avaliações
+    my_businesses: Meus Negócios
+  navbar:
+    map: Mapa
+    reports: Relatórios
+    my_account: Minha Conta
+    donate: Contribua
+    logout: Sair
+    login: Entrar
+  summary:
+    most_accepted_coins: Moedas mais aceitas
+    registered_businesses: Negócios Registrados
+    add_business: Adicionar Negócio
+  filters:
+    countries: Países
+    languages: Idiomas
+    categories: Categorias
+    coins: Moedas
+    apply_filter: Filtrar
+    no_filter: Sem Filtro
+  new_address_page:
+    business_name: Nome do Negócio
+    web_site: Web Site
+    facebook_page: Facebook
+    description: Descrição
+    country: Country
+    state: UF
+    city: Cidade
+    zip_code: CEP
+    district: Bairro
+    street: Logradouro
+    number: Nº
+    complement: Complemento
+    reference_point: Ponto de referência
+    create_address: Cadastrar Negócio
+    create_new_address: Cadastrar Novo Negócio
+  donate_page:
+    make_donation: Faça uma Doação
+    donate: Doe
+    donate_text: Para manter este site no ar requer custos, nos ajude a mante-lo no
+      ar, faça uma doação.
+    answer: Responda
+    answer_text: Responda as nossas pesquisas
+    share: Divulgue
+    share_text: Divulgue nosso site para que mais pessoas possam usufruir
+    facebook_share: Compartilhe
+    contribute: Contribua
+    translate: Traduza
+  devise:
+    confirmations:
+      confirmed: Sua conta foi confirmada com sucesso. Você está logado.
+      send_instructions: Dentro de minutos, você receberá um e-mail com instruções
+        para a confirmação da sua conta.
+      send_paranoid_instructions: Se o seu endereço de e-mail estiver cadastrado,
+        você receberá uma mensagem com instruções para confirmação da sua conta.
+    failure:
+      already_authenticated: Você já está logado.
+      inactive: Sua conta ainda não foi ativada.
+      invalid: "%{authentication_keys} ou senha inválida."
+      locked: Sua conta está bloqueada.
+      last_attempt: Você tem mais uma tentativa antes de bloquear sua conta.
+      not_found_in_database: "%{authentication_keys} ou senha inválida."
+      timeout: Sua sessão expirou, por favor, efetue login novamente para continuar.
+      unauthenticated: Para continuar, efetue login ou registre-se.
+      unconfirmed: Antes de continuar, confirme a sua conta.
+    mailer:
+      confirmation_instructions:
+        subject: Instruções de confirmação
+      reset_password_instructions:
+        subject: Instruções de troca de senha
+      unlock_instructions:
+        subject: Instruções de desbloqueio
+      email_changed:
+        subject: Email alterado
+      password_change:
+        subject: Senha alterada
+    omniauth_callbacks:
+      failure: Não foi possível autenticá-lo como %{kind} porque %{reason}.
+      success: Autenticado com sucesso com uma conta de %{kind}.
+    passwords:
+      no_token: Você só pode acessar essa página através de um e-mail de troca de
+        senha. Se já estiver acessando por um e-mail, verifique se a URL fornecida
+        está completa.
+      send_instructions: Dentro de minutos, você receberá um e-mail com instruções
+        para a troca da sua senha.
+      send_paranoid_instructions: Se o seu endereço de e-mail estiver cadastrado,
+        você receberá um link de recuperação da senha via e-mail.
+      updated: Sua senha foi alterada com sucesso. Você está logado.
+      updated_not_active: Sua senha foi alterada com sucesso.
+    registrations:
+      destroyed: Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em
+        breve.
+      signed_up: Login efetuado com sucesso. Se não foi autorizado, a confirmação
+        será enviada por e-mail.
+      signed_up_but_inactive: Você foi cadastrado com sucesso. No entanto, não foi
+        possível efetuar login, pois sua conta não foi ativada.
+      signed_up_but_locked: Você foi cadastrado com sucesso. No entanto, não foi possível
+        efetuar login, pois sua conta está bloqueada.
+      signed_up_but_unconfirmed: Uma mensagem com um link de confirmação foi enviada
+        para o seu endereço de e-mail. Por favor, abra o link para confirmar a sua
+        conta.
+      update_needs_confirmation: Você atualizou a sua conta com sucesso, mas o seu
+        novo endereço de e-mail precisa ser confirmado. Por favor, acesse-o e clique
+        no link de confirmação que enviamos.
+      updated: Sua conta foi atualizada com sucesso.
+      update: Atualizar conta
+      edit_account: Editar conta
+      current_password: Senha atual
+      current_password_hint: Insira sua senha atual para confirmar as alterações
+      new_password_hint: Deixe em branco se não quiser alterar
+      new_password: Nova senha
+      new_password_confirmation: Confirme a nova senha
+    sessions:
+      signed_in: Login efetuado com sucesso!
+      signed_out: Saiu com sucesso.
+      already_signed_out: Saiu com sucesso.
+      new: Login
+      email: Email
+      password: Senha
+      password_confirmation: Confirme a Senha
+      sign_in_with_facebook: Facebook
+      sign_in_with_twitter: Twitter
+      sign_in_with_google: Google+
+      sign_in_with_github: GitHub
+      sing_up: Criar Conta
+      forgot_password?: Esqueceu sua senha?
+      remember_me: Me mantenha logado
+    unlocks:
+      send_instructions: Dentro de minutos, você receberá um email com instruções
+        para o desbloqueio da sua conta.
+      send_paranoid_instructions: Se sua conta existir, você receberá um e-mail com
+        instruções para desbloqueá-la em alguns minutos.
+      unlocked: Sua conta foi desbloqueada com sucesso. Efetue login para continuar.
+  errors:
+    messages:
+      already_confirmed: Ja está confirmada, tente fazer login
+      confirmation_period_expired: precisa ser confirmado dentro de %{period}, por
+        favor peça um novo
+      expired: Expirou, por favor peça um novo
+      not_found: não encontrado
+      not_locked: Não foi bloqueado
+      not_saved:
+        one: '1 erro impediu este %{resource} de ser salvo:'
+        other: "%{count} erros impediram este %{resource} de ser salvo:"
+      accepted: deve ser aceito
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: não é igual a %{attribute}
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: não está disponível
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: não é válido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      model_invalid: 'A validação falhou: %{errors}'
+      not_a_number: não é um número
+      not_an_integer: não é um número inteiro
+      odd: deve ser ímpar
+      required: é obrigatório(a)
+      taken: já está em uso
+      too_long:
+        one: 'é muito longo (máximo: 1 caracter)'
+        other: 'é muito longo (máximo: %{count} caracteres)'
+      too_short:
+        one: 'é muito curto (mínimo: 1 caracter)'
+        other: 'é muito curto (mínimo: %{count} caracteres)'
+      wrong_length:
+        one: não possui o tamanho esperado (1 caracter)
+        other: não possui o tamanho esperado (%{count} caracteres)
+      other_than: deve ser diferente de %{count}
+    format: "%{attribute} %{message}"
+    template:
+      body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
+      header:
+        one: 'Não foi possível gravar %{model}: 1 erro'
+        other: 'Não foi possível gravar %{model}: %{count} erros'
+  simple_form:
+    'yes': Sim
+    'no': Não
+    required:
+      text: obrigatório
+      mark: "*"
+    error_notification:
+      default_message: Por favor resolva os problemas abaixo
+    labels:
+      defaults:
+        name: Nome
+        message: Mensagem
+        email: E-mail
+        username: User name
+        password: Password
+        new:
+          username: Escolha seu nome de usuário
+    hints:
+      defaults:
+        username: User name to sign in.
+        password: Sem caracteres especiais
+    placeholders:
+      defaults:
+        username: Seu nome de usuário
+        password: "****"
+  titles:
+    map: Mapa
+    reports: Relatórios
+    my_account: Minha Conta
+  dashboard:
+    menu:
+      my_account: Minha conta
+      edit_profile: Editar conta
+      settings: Configurações
+      delete_account: Deletar conta
+      businesses: Negócios
+      show_all: Ver todos
+      add_new: Adicionar
+      avaliations: Avaliações
+      messages: Mensagens
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'A validação falhou: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Não é possível excluir o registro pois existe um %{record} dependente
+          has_many: Não é possível excluir o registro pois existem %{record} dependentes
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %B"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadamente 1 hora
+        other: aproximadamente %{count} horas
+      about_x_months:
+        one: aproximadamente 1 mês
+        other: aproximadamente %{count} meses
+      about_x_years:
+        one: aproximadamente 1 ano
+        other: aproximadamente %{count} anos
+      almost_x_years:
+        one: quase 1 ano
+        other: quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      x_days:
+        one: 1 dia
+        other: "%{count} dias"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mês
+        other: "%{count} meses"
+      x_years:
+        one: 1 ano
+        other: "%{count} anos"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%u %n"
+        unit: R$
+    format:
+      delimiter: "."
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            one: bilhão
+            other: bilhões
+          million:
+            one: milhão
+            other: milhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+          thousand: mil
+          trillion:
+            one: trilhão
+            other: trilhões
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: "."
+        format: "%n%"
+    precision:
+      format:
+        delimiter: "."
+  support:
+    array:
+      last_word_connector: " e "
+      two_words_connector: " e "
+  time:
+    formats:
+      default: "%a, %d de %B de %Y, %H:%M:%S %z"
+      long: "%d de %B de %Y, %H:%M"
+      short: "%d de %B, %H:%M"

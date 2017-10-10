@@ -1,0 +1,256 @@
+key,pt_value,es_value,es_value
+pt.index.index,Index,Index,Index
+pt.index.coins_accepted,Moedas Aceitas,Monedas Aceptadas,Monedas Aceptadas
+pt.address.business_name,Nome do negócio,Nombre del Negocio,Nombre del Negocio
+pt.address.web_site,Web site,Web site,Web site
+pt.address.facebook_page,Facebook,Facebook,Facebook
+pt.address.description,Descrição,Descripción,Descripción
+pt.address.country,País,País,País
+pt.address.state,UF,Estado,Estado
+pt.address.city,Cidade,Ciudad,Ciudad
+pt.address.zip_code,CEP,Código postal,Código postal
+pt.address.district,Bairro,Distrito,Distrito
+pt.address.street,Logradouro,Calle,Calle
+pt.address.number,Nº,Nº,Nº
+pt.address.complement,Complemento,Complemento,Complemento
+pt.address.reference_point,Ponto de referência,punto de referencia,punto de referencia
+pt.address.email,Email,Email,Email
+pt.address.add_email,Adicionar Email,Añadir Email,Añadir Email
+pt.address.phone,Telefone,Teléfono,Teléfono
+pt.address.add_phone,Adicionar Telefone,Añadir Teléfono,Añadir Teléfono
+pt.address.phone_valid,✓,✓,✓
+pt.address.phone_invalid,nº inválido,nº invalid,nº invalid
+pt.address.categories,Categorias,Categorías,Categorías
+pt.address.add_category,Adiconar Categoria,Reports,Reports
+pt.address.evaluations,Avaliações,Evaluaciones,Evaluaciones
+pt.address.my_businesses,Meus Negócios,Mis Negocios,Mis Negocios
+pt.navbar.map,Mapa,Mapa,Mapa
+pt.navbar.reports,Relatórios,Relatórios,Relatórios
+pt.navbar.my_account,Minha Conta,Mi cuenta,Mi cuenta
+pt.navbar.donate,Contribua,Contribuir,Contribuir
+pt.navbar.logout,Sair,Logout,Logout
+pt.navbar.login,Entrar,Login,Login
+pt.summary.most_accepted_coins,Moedas mais aceitas,Monedas más aceptadas,Monedas más aceptadas
+pt.summary.registered_businesses,Negócios Registrados,Negocios Registrados,Negocios Registrados
+pt.summary.add_business,Adicionar Negócio,Añadir Negocio,Añadir Negocio
+pt.filters.countries,Países,Países,Países
+pt.filters.languages,Idiomas,Idiomas,Idiomas
+pt.filters.categories,Categorias,Categorías,Categorías
+pt.filters.coins,Moedas,Monedas,Monedas
+pt.filters.apply_filter,Filtrar,Filtrar,Filtrar
+pt.filters.no_filter,Sem Filtro,Sin Filtro,Sin Filtro
+pt.new_address_page.business_name,Nome do Negócio,Nombre del Negocio,Nombre del Negocio
+pt.new_address_page.web_site,Web Site,Web site,Web site
+pt.new_address_page.facebook_page,Facebook,Facebook,Facebook
+pt.new_address_page.description,Descrição,Descripción,Descripción
+pt.new_address_page.country,Country,País,País
+pt.new_address_page.state,UF,Estado,Estado
+pt.new_address_page.city,Cidade,Ciudad,Ciudad
+pt.new_address_page.zip_code,CEP,Código postal,Código postal
+pt.new_address_page.district,Bairro,Distrito,Distrito
+pt.new_address_page.street,Logradouro,Calle,Calle
+pt.new_address_page.number,Nº,Nº,Nº
+pt.new_address_page.complement,Complemento,Complemento,Complemento
+pt.new_address_page.reference_point,Ponto de referência,punto de referencia,punto de referencia
+pt.new_address_page.create_address,Cadastrar Negócio,Registrar Negocio,Registrar Negocio
+pt.new_address_page.create_new_address,Cadastrar Novo Negócio,Registrar nuevo negocio,Registrar nuevo negocio
+pt.donate_page.make_donation,Faça uma Doação,Haz una donación,Haz una donación
+pt.donate_page.donate,Doe,Donar,Donar
+pt.donate_page.donate_text,"Para manter este site no ar requer custos, nos ajude a mante-lo no ar, faça uma doação."
+pt.donate_page.answer,Responda
+pt.donate_page.answer_text,Responda as nossas pesquisas
+pt.donate_page.share,Divulgue,Compartir,Compartir
+pt.donate_page.share_text,Divulgue nosso site para que mais pessoas possam usufruir
+pt.donate_page.facebook_share,Compartilhe,Compartir,Compartir
+pt.donate_page.contribute,Contribua
+pt.donate_page.translate,Traduza
+pt.devise.confirmations.confirmed,Sua conta foi confirmada com sucesso. Você está logado.,Tu correo electrónico ha sido confirmado exitosamente.,Tu correo electrónico ha sido confirmado exitosamente.
+pt.devise.confirmations.send_instructions,"Dentro de minutos, você receberá um e-mail com instruções para a confirmação da sua conta.",Recibirás un email con las instrucciones para confirmar tu correo electrónico en unos minutos.,Recibirás un email con las instrucciones para confirmar tu correo electrónico en unos minutos.
+pt.devise.confirmations.send_paranoid_instructions,"Se o seu endereço de e-mail estiver cadastrado, você receberá uma mensagem com instruções para confirmação da sua conta.","Si tu correo electrónico existe en nuestra base de datos, recibirás un email con las instrucciones para confirmar tu correo electrónico en unos minutos.","Si tu correo electrónico existe en nuestra base de datos, recibirás un email con las instrucciones para confirmar tu correo electrónico en unos minutos."
+pt.devise.failure.already_authenticated,Você já está logado.,Ya iniciaste sesión.,Ya iniciaste sesión.
+pt.devise.failure.inactive,Sua conta ainda não foi ativada.,Tu cuenta aún no ha sido activada.,Tu cuenta aún no ha sido activada.
+pt.devise.failure.invalid,%{authentication_keys} ou senha inválida.,Email y/o contraseña inválidos.,Email y/o contraseña inválidos.
+pt.devise.failure.locked,Sua conta está bloqueada.,Tu cuenta está bloqueada.,Tu cuenta está bloqueada.
+pt.devise.failure.last_attempt,Você tem mais uma tentativa antes de bloquear sua conta.,Tienes un intento más antes que tu cuenta sea bloqueada.,Tienes un intento más antes que tu cuenta sea bloqueada.
+pt.devise.failure.not_found_in_database,%{authentication_keys} ou senha inválida.,%{authentication_keys} o contraseña inválidos.,%{authentication_keys} o contraseña inválidos.
+pt.devise.failure.timeout,"Sua sessão expirou, por favor, efetue login novamente para continuar.",Tu sesión ha expirado. Inicia sesión nuevamente.,Tu sesión ha expirado. Inicia sesión nuevamente.
+pt.devise.failure.unauthenticated,"Para continuar, efetue login ou registre-se.",Tienes que registrarte o iniciar sesión antes de continuar.,Tienes que registrarte o iniciar sesión antes de continuar.
+pt.devise.failure.unconfirmed,"Antes de continuar, confirme a sua conta.",Tienes que confirmar tu cuenta antes de continuar.,Tienes que confirmar tu cuenta antes de continuar.
+pt.devise.mailer.confirmation_instructions.subject,Instruções de confirmação,Instrucciones de confirmación,Instrucciones de confirmación
+pt.devise.mailer.reset_password_instructions.subject,Instruções de troca de senha,Instrucciones de cambio de contraseña,Instrucciones de cambio de contraseña
+pt.devise.mailer.unlock_instructions.subject,Instruções de desbloqueio,Instrucciones de desbloqueo,Instrucciones de desbloqueo
+pt.devise.mailer.email_changed.subject,Email alterado,Email modificado,Email modificado
+pt.devise.mailer.password_change.subject,Senha alterada,Contraseña modificada,Contraseña modificada
+pt.devise.omniauth_callbacks.failure,Não foi possível autenticá-lo como %{kind} porque %{reason}.,"No pudimos autentificar tu cuenta de %{kind} por la siguiente razón: ""%{reason}"".","No pudimos autentificar tu cuenta de %{kind} por la siguiente razón: ""%{reason}""."
+pt.devise.omniauth_callbacks.success,Autenticado com sucesso com uma conta de %{kind}.,Te autentificaste correctamente con tu cuenta de %{kind}.,Te autentificaste correctamente con tu cuenta de %{kind}.
+pt.devise.passwords.no_token,"Você só pode acessar essa página através de um e-mail de troca de senha. Se já estiver acessando por um e-mail, verifique se a URL fornecida está completa.","No puedes acceder a esta página sin venir desde el email de reinicio de contraseña. Si vienes desde ahí, por favor asegúrate de usar la url completa que aparece.","No puedes acceder a esta página sin venir desde el email de reinicio de contraseña. Si vienes desde ahí, por favor asegúrate de usar la url completa que aparece."
+pt.devise.passwords.send_instructions,"Dentro de minutos, você receberá um e-mail com instruções para a troca da sua senha.",Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos.,Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos.
+pt.devise.passwords.send_paranoid_instructions,"Se o seu endereço de e-mail estiver cadastrado, você receberá um link de recuperação da senha via e-mail.","Si tu email existe en el sistema, recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos.","Si tu email existe en el sistema, recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos."
+pt.devise.passwords.updated,Sua senha foi alterada com sucesso. Você está logado.,Tu contraseña fue modificada correctamente. Has iniciado sesión.,Tu contraseña fue modificada correctamente. Has iniciado sesión.
+pt.devise.passwords.updated_not_active,Sua senha foi alterada com sucesso.,Tu contraseña fue modificada correctamente.,Tu contraseña fue modificada correctamente.
+pt.devise.registrations.destroyed,Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.,"Adiós, tu cuenta ha sido eliminada. Esperamos verte de vuelta pronto!","Adiós, tu cuenta ha sido eliminada. Esperamos verte de vuelta pronto!"
+pt.devise.registrations.signed_up,"Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail.",Bienvenido! Te has registrado correctamente.,Bienvenido! Te has registrado correctamente.
+pt.devise.registrations.signed_up_but_inactive,"Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta não foi ativada.","Te has registrado correctamente, pero tu cuenta aun no ha sido activada.","Te has registrado correctamente, pero tu cuenta aun no ha sido activada."
+pt.devise.registrations.signed_up_but_locked,"Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta está bloqueada.","Te has registrado correctamente, pero tu cuenta está bloqueada.","Te has registrado correctamente, pero tu cuenta está bloqueada."
+pt.devise.registrations.signed_up_but_unconfirmed,"Uma mensagem com um link de confirmação foi enviada para o seu endereço de e-mail. Por favor, abra o link para confirmar a sua conta.",Te hemos enviado un email con instrucciones para que confirmes tu cuenta.,Te hemos enviado un email con instrucciones para que confirmes tu cuenta.
+pt.devise.registrations.update_needs_confirmation,"Você atualizou a sua conta com sucesso, mas o seu novo endereço de e-mail precisa ser confirmado. Por favor, acesse-o e clique no link de confirmação que enviamos.","Actualizaste tu cuenta correctamente, pero tenemos que revalidar tu email. Revisa tu correo para confirmar la dirección.","Actualizaste tu cuenta correctamente, pero tenemos que revalidar tu email. Revisa tu correo para confirmar la dirección."
+pt.devise.registrations.updated,Sua conta foi atualizada com sucesso.,Actualizaste tu cuenta correctamente.,Actualizaste tu cuenta correctamente.
+pt.devise.registrations.update,Atualizar conta
+pt.devise.registrations.edit_account,Editar conta
+pt.devise.registrations.current_password,Senha atual
+pt.devise.registrations.current_password_hint,Insira sua senha atual para confirmar as alterações
+pt.devise.registrations.new_password_hint,Deixe em branco se não quiser alterar
+pt.devise.registrations.new_password,Nova senha
+pt.devise.registrations.new_password_confirmation,Confirme a nova senha
+pt.devise.sessions.signed_in,Login efetuado com sucesso!,Iniciaste sesión correctamente.,Iniciaste sesión correctamente.
+pt.devise.sessions.signed_out,Saiu com sucesso.,Cerraste sesión correctamente.,Cerraste sesión correctamente.
+pt.devise.sessions.already_signed_out,Saiu com sucesso.,Se cerró sesión correctamente.,Se cerró sesión correctamente.
+pt.devise.sessions.new,Login
+pt.devise.sessions.email,Email
+pt.devise.sessions.password,Senha
+pt.devise.sessions.password_confirmation,Confirme a Senha
+pt.devise.sessions.sign_in_with_facebook,Facebook
+pt.devise.sessions.sign_in_with_twitter,Twitter
+pt.devise.sessions.sign_in_with_google,Google+
+pt.devise.sessions.sign_in_with_github,GitHub
+pt.devise.sessions.sing_up,Criar Conta
+pt.devise.sessions.forgot_password?,Esqueceu sua senha?
+pt.devise.sessions.remember_me,Me mantenha logado
+pt.devise.unlocks.send_instructions,"Dentro de minutos, você receberá um email com instruções para o desbloqueio da sua conta.",Recibirás un email con instrucciones para desbloquear tu cuenta en unos minutos,Recibirás un email con instrucciones para desbloquear tu cuenta en unos minutos
+pt.devise.unlocks.send_paranoid_instructions,"Se sua conta existir, você receberá um e-mail com instruções para desbloqueá-la em alguns minutos.","Si tu cuenta existe, recibirás un email con instrucciones para desbloquear tu cuenta en unos minutos","Si tu cuenta existe, recibirás un email con instrucciones para desbloquear tu cuenta en unos minutos"
+pt.devise.unlocks.unlocked,Sua conta foi desbloqueada com sucesso. Efetue login para continuar.,Tu cuenta ha sido desbloqueada. Inicia sesión para continuar.,Tu cuenta ha sido desbloqueada. Inicia sesión para continuar.
+pt.errors.messages.already_confirmed,"Ja está confirmada, tente fazer login",ya fue confirmada. Intenta ingresar.,ya fue confirmada. Intenta ingresar.
+pt.errors.messages.confirmation_period_expired,"precisa ser confirmado dentro de %{period}, por favor peça um novo","necesita ser confirmada dentro de %{period}, por favor pide una nueva","necesita ser confirmada dentro de %{period}, por favor pide una nueva"
+pt.errors.messages.expired,"Expirou, por favor peça um novo","ha expirado, por favor pide una nueva","ha expirado, por favor pide una nueva"
+pt.errors.messages.not_found,não encontrado,no encontrado,no encontrado
+pt.errors.messages.not_locked,Não foi bloqueado,no ha sido bloqueada,no ha sido bloqueada
+pt.errors.messages.not_saved.one,1 erro impediu este %{resource} de ser salvo:,Ha ocurrido 1 error:,Ha ocurrido 1 error:
+pt.errors.messages.not_saved.other,%{count} erros impediram este %{resource} de ser salvo:,Han ocurrido %{count} errores:,Han ocurrido %{count} errores:
+pt.errors.messages.accepted,deve ser aceito
+pt.errors.messages.blank,não pode ficar em branco
+pt.errors.messages.present,deve ficar em branco
+pt.errors.messages.confirmation,não é igual a %{attribute}
+pt.errors.messages.empty,não pode ficar vazio
+pt.errors.messages.equal_to,deve ser igual a %{count}
+pt.errors.messages.even,deve ser par
+pt.errors.messages.exclusion,não está disponível
+pt.errors.messages.greater_than,deve ser maior que %{count}
+pt.errors.messages.greater_than_or_equal_to,deve ser maior ou igual a %{count}
+pt.errors.messages.inclusion,não está incluído na lista
+pt.errors.messages.invalid,não é válido
+pt.errors.messages.less_than,deve ser menor que %{count}
+pt.errors.messages.less_than_or_equal_to,deve ser menor ou igual a %{count}
+pt.errors.messages.model_invalid,A validação falhou: %{errors}
+pt.errors.messages.not_a_number,não é um número
+pt.errors.messages.not_an_integer,não é um número inteiro
+pt.errors.messages.odd,deve ser ímpar
+pt.errors.messages.required,é obrigatório(a)
+pt.errors.messages.taken,já está em uso
+pt.errors.messages.too_long.one,é muito longo (máximo: 1 caracter)
+pt.errors.messages.too_long.other,é muito longo (máximo: %{count} caracteres)
+pt.errors.messages.too_short.one,é muito curto (mínimo: 1 caracter)
+pt.errors.messages.too_short.other,é muito curto (mínimo: %{count} caracteres)
+pt.errors.messages.wrong_length.one,não possui o tamanho esperado (1 caracter)
+pt.errors.messages.wrong_length.other,não possui o tamanho esperado (%{count} caracteres)
+pt.errors.messages.other_than,deve ser diferente de %{count}
+pt.errors.format,%{attribute} %{message}
+pt.errors.template.body,"Por favor, verifique o(s) seguinte(s) campo(s):"
+pt.errors.template.header.one,Não foi possível gravar %{model}: 1 erro
+pt.errors.template.header.other,Não foi possível gravar %{model}: %{count} erros
+pt.simple_form.yes,Sim
+pt.simple_form.no,Não
+pt.simple_form.required.text,obrigatório
+pt.simple_form.required.mark,*
+pt.simple_form.error_notification.default_message,Por favor resolva os problemas abaixo
+pt.simple_form.labels.defaults.name,Nome
+pt.simple_form.labels.defaults.message,Mensagem
+pt.simple_form.labels.defaults.email,E-mail
+pt.simple_form.labels.defaults.username,User name
+pt.simple_form.labels.defaults.password,Password
+pt.simple_form.labels.defaults.new.username,Escolha seu nome de usuário
+pt.simple_form.hints.defaults.username,User name to sign in.
+pt.simple_form.hints.defaults.password,Sem caracteres especiais
+pt.simple_form.placeholders.defaults.username,Seu nome de usuário
+pt.simple_form.placeholders.defaults.password,****
+pt.titles.map,Mapa
+pt.titles.reports,Relatórios
+pt.titles.my_account,Minha Conta
+pt.dashboard.menu.my_account,Minha conta
+pt.dashboard.menu.edit_profile,Editar conta
+pt.dashboard.menu.settings,Configurações
+pt.dashboard.menu.delete_account,Deletar conta
+pt.dashboard.menu.businesses,Negócios
+pt.dashboard.menu.show_all,Ver todos
+pt.dashboard.menu.add_new,Adicionar
+pt.dashboard.menu.avaliations,Avaliações
+pt.dashboard.menu.messages,Mensagens
+pt.activerecord.errors.messages.record_invalid,A validação falhou: %{errors}
+pt.activerecord.errors.messages.restrict_dependent_destroy.has_one,Não é possível excluir o registro pois existe um %{record} dependente
+pt.activerecord.errors.messages.restrict_dependent_destroy.has_many,Não é possível excluir o registro pois existem %{record} dependentes
+pt.date.formats.default,%d/%m/%Y
+pt.date.formats.long,%d de %B de %Y
+pt.date.formats.short,%d de %B
+pt.datetime.distance_in_words.about_x_hours.one,aproximadamente 1 hora
+pt.datetime.distance_in_words.about_x_hours.other,aproximadamente %{count} horas
+pt.datetime.distance_in_words.about_x_months.one,aproximadamente 1 mês
+pt.datetime.distance_in_words.about_x_months.other,aproximadamente %{count} meses
+pt.datetime.distance_in_words.about_x_years.one,aproximadamente 1 ano
+pt.datetime.distance_in_words.about_x_years.other,aproximadamente %{count} anos
+pt.datetime.distance_in_words.almost_x_years.one,quase 1 ano
+pt.datetime.distance_in_words.almost_x_years.other,quase %{count} anos
+pt.datetime.distance_in_words.half_a_minute,meio minuto
+pt.datetime.distance_in_words.less_than_x_minutes.one,menos de um minuto
+pt.datetime.distance_in_words.less_than_x_minutes.other,menos de %{count} minutos
+pt.datetime.distance_in_words.less_than_x_seconds.one,menos de 1 segundo
+pt.datetime.distance_in_words.less_than_x_seconds.other,menos de %{count} segundos
+pt.datetime.distance_in_words.over_x_years.one,mais de 1 ano
+pt.datetime.distance_in_words.over_x_years.other,mais de %{count} anos
+pt.datetime.distance_in_words.x_days.one,1 dia
+pt.datetime.distance_in_words.x_days.other,%{count} dias
+pt.datetime.distance_in_words.x_minutes.one,1 minuto
+pt.datetime.distance_in_words.x_minutes.other,%{count} minutos
+pt.datetime.distance_in_words.x_months.one,1 mês
+pt.datetime.distance_in_words.x_months.other,%{count} meses
+pt.datetime.distance_in_words.x_years.one,1 ano
+pt.datetime.distance_in_words.x_years.other,%{count} anos
+pt.datetime.distance_in_words.x_seconds.one,1 segundo
+pt.datetime.distance_in_words.x_seconds.other,%{count} segundos
+pt.datetime.prompts.day,Dia
+pt.datetime.prompts.hour,Hora
+pt.datetime.prompts.minute,Minuto
+pt.datetime.prompts.month,Mês
+pt.datetime.prompts.second,Segundo
+pt.datetime.prompts.year,Ano
+pt.helpers.select.prompt,Por favor selecione
+pt.helpers.submit.create,Criar %{model}
+pt.helpers.submit.submit,Salvar %{model}
+pt.helpers.submit.update,Atualizar %{model}
+pt.number.currency.format.delimiter,.
+pt.number.currency.format.format,%u %n
+pt.number.currency.format.unit,R$
+pt.number.format.delimiter,.
+pt.number.human.decimal_units.format,%n %u
+pt.number.human.decimal_units.units.billion.one,bilhão
+pt.number.human.decimal_units.units.billion.other,bilhões
+pt.number.human.decimal_units.units.million.one,milhão
+pt.number.human.decimal_units.units.million.other,milhões
+pt.number.human.decimal_units.units.quadrillion.one,quatrilhão
+pt.number.human.decimal_units.units.quadrillion.other,quatrilhões
+pt.number.human.decimal_units.units.thousand,mil
+pt.number.human.decimal_units.units.trillion.one,trilhão
+pt.number.human.decimal_units.units.trillion.other,trilhões
+pt.number.human.storage_units.format,%n %u
+pt.number.human.storage_units.units.byte.one,Byte
+pt.number.human.storage_units.units.byte.other,Bytes
+pt.number.human.storage_units.units.gb,GB
+pt.number.human.storage_units.units.kb,KB
+pt.number.human.storage_units.units.mb,MB
+pt.number.human.storage_units.units.tb,TB
+pt.number.percentage.format.delimiter,.
+pt.number.percentage.format.format,%n%
+pt.number.precision.format.delimiter,.
+pt.support.array.last_word_connector, e 
+pt.support.array.two_words_connector, e 
+pt.time.formats.default,"%a, %d de %B de %Y, %H:%M:%S %z"
+pt.time.formats.long,"%d de %B de %Y, %H:%M"
+pt.time.formats.short,"%d de %B, %H:%M"

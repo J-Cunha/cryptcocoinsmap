@@ -1,0 +1,14 @@
+<%= simple_form_for(@currency) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :code %>
+    <%= f.input :symbol %>
+    <%= f.association :country %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

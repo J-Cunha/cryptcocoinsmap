@@ -1,0 +1,44 @@
+<% content_for :title, "#{@category.name} - CryptoCoinsMap" %>
+
+<div class="blue-70 container-fluid  text-center " style="max-width: 680px;">
+
+<h1> <span class="glyphicon glyphicon-tag"></span> <%= @category.name%> </h1>
+  <br>
+
+
+
+<p>
+  <h3>Businesses in this category:</h3>
+      <table class="blue-70 table table-hover dashboard-address-table">
+
+      <thead>
+      <tr>
+        <th><%= t('address.business_name') %></th>
+        <th><%= t('address.country') %></th>
+        <th><%= t('address.evaluations') %></th>
+        <th ></th>
+      </tr>
+      </thead>
+      <tbody class="dashboard-addresses-tbody">
+      <% @category.addresses.each do |address| %>
+          <tr class="text-left">
+            <td><%= address.business_name %></td>
+            <td><%= address.country.name_en %></td>
+
+            <td>
+              <%= link_to address do %>
+                  <span class="glyphicon glyphicon-eye-open blue-50 table-command-button" aria-hidden="true"></span>
+              <% end %>
+
+
+
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+      </table>
+</p>
+
+<%# link_to 'Edit', edit_category_path(@category) %> |
+<%# link_to 'Back', categories_path %>
+</div>

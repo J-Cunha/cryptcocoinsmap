@@ -1,0 +1,59 @@
+<% content_for :title, "#{@currency.name} - CryptoCoinsMap" %>
+<div class="blue-70 container-fluid  text-center " style="max-width: 680px;">
+  <div class="row">
+    <div class="col-xs-6 ">
+      <p class="pull-right">
+        <br>
+        <% if (Rails.application.assets.find_asset "coins_icons/#{@currency.name.split.join('-')}.png") %>
+            <%= image_tag("coins_icons/#{@currency.name.split.join('-')}.png", width: 64, class: '') %>
+        <% end %>
+      </p>
+    </div>
+    <div class="col-xs-6">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 ">
+            <h1 class="pull-left">  <%= @currency.name %></h1><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 ">
+            <p class="pull-left" style="margin-left: 2px;">
+              <%= @currency.code + ("#{(', '+@currency.symbol) unless @currency.symbol.nil?}") %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <h3>Businesses That Accept <%= @currency.name %> as payment:</h3><br>
+  <table class="blue-70 table table-hover dashboard-address-table">
+    <thead class="">
+    <tr>
+      <th><%= t('address.business_name') %></th>
+      <th><%= t('address.country') %></th>
+      <th><%= t('address.evaluations') %></th>
+      <th ></th>
+    </tr>
+    </thead>
+    <tbody class="dashboard-addresses-tbody">
+    <% @currency.addresses.each do |address| %>
+        <tr class="text-left" >
+          <td><%= address.business_name %></td>
+          <td><%= address.country.name_en %></td>
+          <td><%#  %></td>
+          <td><%#  %></td>
+          <td>
+            <%= link_to address do %>
+                <span class="glyphicon glyphicon-eye-open blue-50 table-command-button" aria-hidden="true"></span>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%# link_to 'Edit', edit_currency_path(@currency) %> |
+  <%# link_to 'Back', currencies_path %>
+</div>
