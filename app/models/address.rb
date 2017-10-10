@@ -88,40 +88,6 @@ class Address < ApplicationRecord
     end
     return emails
   end
-  def set_emails=(emails)
-    puts "emails= #{emails.inspect} #{self.inspect}"
-    emails.each do |k, v|
-      Email.create(address: self, email: v) unless v.to_s.empty? || v.to_s.nil?
-    end
-    true
-  end
-  def emails=(emails)
-    puts "emails= #{emails.inspect} #{self.inspect}"
-    emails.each do |e|
-      Email.create(address: self, email: e[1])
-    end
-    true
-  end
-
-  def phone_numbers
-    phone_numbers = []
-    PhoneNumber.where(address: self).each do |pn|
-      phone_numbers.push(pn.number) unless pn.number.nil?
-    end
-    return phone_numbers
-  end
-  def phone_numbers=(phone_numbers)
-    phone_numbers.each do |pn|
-      PhoneNumber.create(address: self, number: pn[1], country: Country.where(id: 1).first)
-    end
-    true
-  end
-  def set_phone_numbers=(phone_numbers)
-    phone_numbers.each do |k,v|
-      PhoneNumber.create(address: self, number: v.to_s, country: Country.where(id: 107).first) unless v.to_s.empty? || v.to_s.nil?
-    end
-    true
-  end
 
   def country_id
     self.country.id unless self.country.nil?
