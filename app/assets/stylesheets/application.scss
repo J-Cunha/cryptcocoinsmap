@@ -69,6 +69,21 @@ div.infobox-tag-icon{
   background-size: cover;
   display: inline-block;
 }
+.infobox-accepted-coins-container{
+  max-width: 325px;
+  max-height: 120px;
+  overflow-y: scroll;
+
+}
+.infobox-3dots-link{
+ font-size: 250%;
+  color: $water_dark_blue;
+  font-weight: bold;
+}
+.infobox-coin-name-link{
+ margin-left: 4px;
+ margin-right: 4px;
+}
 div.infobox-phone-icon{
   height: $info_box_icon_height;
   width: $info_box_icon_width;

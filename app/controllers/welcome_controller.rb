@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
     @crypto_currencies = CryptoCurrency.all
     @languages = Language.all
     @categories = Category.all
-    @hash = Gmaps4rails.build_markers(@addresses) do |address, marker|
+    @hash = Gmaps4rails.build_markers(@addresses.first(2)) do |address, marker|
       marker.lat address.latitude
       marker.lng address.longitude
       marker.picture({
@@ -35,7 +35,7 @@ class WelcomeController < ApplicationController
         #country
       end
       #categories
-      address.categories.first(3).each do |c|
+      address.categories.first(10).each do |c|
         info_window_content += content_tag(:div, :class => 'infobox-attr-category-container') do
           content_tag(:div, "", :class => 'infobox-tag-icon')+
               content_tag(:a, "#{c.name}", :href => "http://localhost:3000/categories/#{c.id}", :class => 'address_property_value infobox-link')
@@ -78,18 +78,22 @@ class WelcomeController < ApplicationController
       end
 
       #add cryptocurrencies to infowindow
-      info_window_content += content_tag(:div, :id => 'accepted-coins') do
+      info_window_content += content_tag(:div, :class => 'infobox-accepted-coins-container') do
         a = ActiveSupport::SafeBuffer.new
-        address.currencies.collect do |coin_accepted|
+        address.currencies.first(10).collect do |coin_accepted|
           a << content_tag(:a, :href => currency_path(coin_accepted)) do
             if (Rails.application.assets.find_asset "coins_icons/#{coin_accepted.name.split.join('-')}.png")
               ActionController::Base.helpers.link_to ActionController::Base.helpers.image_tag("coins_icons/#{coin_accepted.name.split.join('-')}.png", class: 'infobox-currency-logo-16x16'), currency_path(coin_accepted)
             else
-              ActionController::Base.helpers.link_to coin_accepted.name, currency_path(coin_accepted)
+              ActionController::Base.helpers.link_to(coin_accepted.name, currency_path(coin_accepted), class: 'infobox-coin-name-link')
             end
           end
         end
-        a
+        if address.currencies.size > 10
+          a << ActionController::Base.helpers.link_to("...", address_path(address), class: 'infobox-3dots-link')
+        end
+
+          a
       end
       marker.infowindow info_window_content
     end
