@@ -56,7 +56,7 @@
     <div class="row">
       <div class="col-xs-8 col-sm-4">
         <div class="form-group required">
-          <label class="control-label string required login-label" for="address_zip_code"><abbr title="required">*</abbr> <%= "#{t('address.country')}:" %>
+          <label class="control-label string required login-label" for="address_zip_code"><abbr title="required">*</abbr> <%= t('address.country') %>
           </label><br>
           <%= f.collection_select :country_id, Country.order(:name_en), :id, :name_native, {include_blank: false}, {class: 'form-control transparent-input country-select'} %>
         </div>
@@ -128,8 +128,8 @@
         </div>
       </div>
     </div> -->
-    <h4 class="login-label"><strong><%= "#{t('index.coins_accepted')}:" %></strong></h4>
     <hr>
+    <h4 class=""><%= t('index.coins_accepted') %></h4>
     <div class="row">
       <div class="col-xs-12">
       </div>

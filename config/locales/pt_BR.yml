@@ -64,8 +64,8 @@ pt:
   donate_page:
     make_donation: Faça uma Doação
     donate: Doe
-    donate_text: Para manter este site no ar requer custos, nos ajude a mante-lo no
-      ar, faça uma doação.
+    donate_text: Para manter este site no ar requer custos com servidores de hospedagem,
+      nos ajude a mante-lo no ar fazendo uma doação.
     answer: Responda
     answer_text: Responda as nossas pesquisas
     share: Divulgue
@@ -163,7 +163,7 @@ pt:
       already_confirmed: Ja está confirmada, tente fazer login
       confirmation_period_expired: precisa ser confirmado dentro de %{period}, por
         favor peça um novo
-      expired: Expirou, por favor peça um novo
+      expired: Expirou, peça um novo
       not_found: não encontrado
       not_locked: Não foi bloqueado
       not_saved:
@@ -305,7 +305,7 @@ pt:
       year: Ano
   helpers:
     select:
-      prompt: Por favor selecione
+      prompt: Slecione
     submit:
       create: Criar %{model}
       submit: Salvar %{model}

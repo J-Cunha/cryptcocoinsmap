@@ -1,5 +1,4 @@
 <% content_for :title, "#{@address.business_name} - CryptoCoinsMap" %>
-
 <div class="blue-70 container-fluid text-center " style="max-width: 680px;">
   <div class="row">
     <div class="col-xs-12">
@@ -12,54 +11,54 @@
     </div>
   </div>
   <br>
-  <% unless @address.description.nil? %>
+  <% unless @address.description.nil? || @address.description.empty? %>
       <div class="row" class="text-center">
         <div class="col-xs-12">
-          <strong class="text-center">Description:</strong><br>
+          <strong class="text-center"><%= "#{t('address.description')}:" %></strong><br>
           <%= @address.description %>
         </div>
       </div>
       <br>
   <% end %>
   <div class="row">
-    <div class="col-sm-6 ">
+    <div class="col-xs-6 ">
       <p class="pull-right">
-        <strong>Country:</strong><br>
+        <strong><%= "#{t('address.country')}:" %></strong><br>
         <%= "#{@address.country.name}, #{@address.state}, #{@address.city} " %>
         <br>
         <br>
-        <strong>Address:</strong><br>
-        <%= "#{@address.street}, #{@address.number}" + (", #{@address.complement unless @address.complement.empty?}") %>
-        <br>
-        <br>
-        <strong><%= t('address.zip_code') %>:</strong><br>
+        <strong><%= "#{t('address.zip_code')}" + ("#{(', ' +t('address.district')) unless (@address.district.nil?||@address.district.empty?)} ") %>:</strong><br>
         <%= "#{@address.zip_code}" + ("#{(', ' +@address.district) unless (@address.district.nil?||@address.district.empty?)} ") %>
+        <br>
+        <br>
+        <strong><%= "#{t('address.address')}:" %></strong><br>
+        <%= "#{@address.street}, #{@address.number}" + ("#{(' , ' + @address.complement) unless @address.complement.empty?}") %>
         <% unless @address.reference_point.nil? %>
             <br>
             <br>
-            <strong>Reference point:</strong>
+            <strong><%= "#{t('address.reference_point')}:" %></strong><br>
             <%= @address.reference_point %>
         <% end %>
         </div>
-    <div class="col-sm-6">
+    <div class="col-xs-6">
       <p class="pull-left">
         <% unless @address.web_site.nil? %>
-            <strong>Website:</strong><br>
+            <strong><%= "#{t('address.web_site')}:" %></strong><br>
             <%= @address.web_site %>
             <br>
             <br>
         <% end %>
         <% unless @address.facebook_page.nil? %>
-            <strong>Facebook:</strong><br>
+            <strong><%= "#{t('address.facebook_page')}:" %></strong><br>
             <%= @address.facebook_page %>
             <br>
             <br>
         <% end %>
-        <strong>E-mail:</strong><br>
+        <strong><%= "#{t('address.email')}:" %></strong><br>
         <%= @address.email %>
         <br>
         <br>
-        <strong>Phone:</strong><br>
+        <strong><%= "#{t('address.phone')}:" %></strong><br>
         <%= @address.phone %>
       </p>
     </div>
@@ -68,7 +67,7 @@
   <div class="row text-center ">
     <div class="col-xs-12">
       <p>
-        <strong>Crypto Currencies Accepted:</strong><br>
+        <strong><%= "#{t('index.coins_accepted')}:" %></strong><br>
         <% @address.currencies.collect do |coin_accepted| %>
             <% if (Rails.application.assets.find_asset "coins_icons/#{coin_accepted.name.split.join('-')}.png") %>
                 <%= link_to image_tag("coins_icons/#{coin_accepted.name.split.join('-')}.png", class: 'infobox-currency-logo-16x16'), currency_path(coin_accepted) %>
@@ -83,7 +82,7 @@
             <%= link_to "Edit attachment", edit_address_attachment_path(p) %>
         <% end %>
       </p>
-      <%# link_to 'Edit', edit_address_path(@address) %> |
+      <%# link_to 'Edit', edit_address_path(@address) %>
       <%# link_to 'Back', addresses_path %>
     </div>
   </div>
