@@ -42,8 +42,6 @@ gem 'jquery_mask_rails'
 #cocoon for nested attributes
 gem 'cocoon'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 gem 'devise' #authentication
 gem 'crono' #scheduled jobs
 
@@ -65,13 +63,22 @@ gem 'mini_magick'
 # Use Cocoon to nerest forms
 gem 'cocoon'
 
+gem 'dotenv-rails'
+
+# Use Capistrano for deployment
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+
+gem 'capistrano-rbenv'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.6'
   gem 'faker'
