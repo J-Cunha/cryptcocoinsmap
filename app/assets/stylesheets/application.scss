@@ -72,17 +72,23 @@ div.infobox-tag-icon{
 .infobox-accepted-coins-container{
   max-width: 325px;
   max-height: 120px;
-  overflow-y: scroll;
-
 }
 .infobox-3dots-link{
  font-size: 250%;
   color: $water_dark_blue;
   font-weight: bold;
 }
+
 .infobox-coin-name-link{
  margin-left: 4px;
  margin-right: 4px;
+}
+div.infobox-website-icon{
+  height: $info_box_icon_height;
+  width: $info_box_icon_width;
+  background: asset_data_url('info_box/web_site.png') no-repeat center ;
+  background-size: cover;
+  display: inline-block;
 }
 div.infobox-phone-icon{
   height: $info_box_icon_height;

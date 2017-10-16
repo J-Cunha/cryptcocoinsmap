@@ -31,7 +31,6 @@ class WelcomeController < ApplicationController
             address.business_name
           end
         end
-
         #country
       end
       #categories
@@ -59,22 +58,35 @@ class WelcomeController < ApplicationController
               # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
             end
       end
-      #add phone numbers to infowindow
-      info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
-        content_tag(:div, "", :class => 'infobox-phone-icon') +
-            content_tag(:div, :class => 'address_property_value') do
-              "#{address.phone}"
-              # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
-            end
+      #add website to infowindow
+      unless (address.web_site.nil?) || (address.web_site.empty?)
+        info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
+          content_tag(:div, "", :class => 'infobox-website-icon') +
+              content_tag(:div, :class => 'address_property_value infobox-website-link') do
+                ActionController::Base.helpers.link_to(address.web_site, address.web_site, target: :_blank, class: 'infobox-website-link')
+                # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
+              end
+        end
       end
-
+      #add phone numbers to infowindow
+      unless (address.phone.nil?) || (address.phone.empty?)
+        info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
+          content_tag(:div, "", :class => 'infobox-phone-icon') +
+              content_tag(:div, :class => 'address_property_value') do
+                "#{address.phone}"
+                # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
+              end
+        end
+      end
       #add  emails to infowindow
-      info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
-        content_tag(:div, "", :class => 'infobox-email-icon') +
-            content_tag(:div, :class => 'address_property_value') do
-              "#{address.email}"
-              # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
-            end
+      unless (address.email.nil?) || (address.email.empty?)
+        info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
+          content_tag(:div, "", :class => 'infobox-email-icon') +
+              content_tag(:div, :class => 'address_property_value') do
+                "#{address.email}"
+                # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
+              end
+        end
       end
 
       #add cryptocurrencies to infowindow
@@ -93,7 +105,7 @@ class WelcomeController < ApplicationController
           a << ActionController::Base.helpers.link_to("...", address_path(address), class: 'infobox-3dots-link')
         end
 
-          a
+        a
       end
       marker.infowindow info_window_content
     end

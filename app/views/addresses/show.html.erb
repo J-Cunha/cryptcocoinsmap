@@ -32,7 +32,7 @@
         <br>
         <br>
         <strong><%= "#{t('address.address')}:" %></strong><br>
-        <%= "#{@address.street}, #{@address.number}" + ("#{(' , ' + @address.complement) unless @address.complement.empty?}") %>
+        <%= "#{@address.street}, #{@address.number}" + ("#{(' , ' + @address.complement) unless (@address.complement.nil?)|| (@address.complement.empty?)}") %>
         <% unless @address.reference_point.nil? %>
             <br>
             <br>

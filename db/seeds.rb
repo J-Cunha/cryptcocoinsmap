@@ -9,6 +9,7 @@ require 'json'
 require 'open-uri'
 require 'faker'
 require 'nokogiri'
+require 'net/http'
 
 class DbFeed
   #LANGUAGES
@@ -141,6 +142,7 @@ class DbFeed
     nonclassifiable=format_cat_str("")
 
 
+
   end
 
   def format_cat_str(str)
@@ -198,6 +200,71 @@ class DbFeed
 
 
   end
+  def self.addresses_from_coinmap
+    addrs_saved = 0
+    addrs_failed = 0
+    url = 'https://coinmap.org/api/v1/venues/'
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    json = JSON.parse(response)
+
+    venues = json['venues']
+    venues.each do |v|
+      addr = Address.new
+
+      addr.business_name = v['name']
+      addr.user=User.where(email: 'joao@joao.com').first
+      coin_map_id = v['id']
+
+      if Category.where(name: v['category']).size > 0
+        addr.categories=Category.where(name: v['category'])
+      else
+        n_cat = Category.create(name: v['category'].to_s.capitalize)
+        addr.categories=[n_cat]
+      end
+      addr.latitude = latitude = v['lat']
+      addr.longitude = longitude = v['lon']
+      details_response = Net::HTTP.get(URI("https://coinmap.org/api/v1/venues/#{coin_map_id.to_s}"))
+      details_json = JSON.parse(details_response)
+      details = details_json['venue']
+      if (details['country'].nil?) || (details['country'].empty?)
+        puts "#{addr.business_name} - failed(No Country)"
+        next
+      else
+        addr.country = Country.where(code_iso2: details['country']).first
+      end
+      if (details['state'].nil?) || (details['state'].empty?)
+        puts "#{addr.business_name} - failed(No State)"
+        next
+        end
+      if (details['postcode'].nil?) || (details['postcode'].empty?)
+        puts "#{addr.business_name} - failed(No Postcode)"
+        next
+      end
+      addr.description = details['description']
+      addr.web_site = details['website']
+      addr.facebook_page = details['facebook']
+      addr.email = details['email']
+      addr.phone = details['phone']
+      addr.state = details['state']
+      addr.city = details['city']
+      addr.zip_code= details['postcode']
+      addr.street = details['street']
+      addr.number= details['houseno']
+      addr.complement= details['complement']
+      addr.reference_point= details['reference_point']
+      addr.currencies = Currency.where(name: "Bitcoin")
+      if addr.save
+        puts "#{addr.business_name} - saved"
+        addrs_saved +=1
+      else
+        puts "#{addr.business_name} - failed(#{addr.errors.messages.inspect})"
+        addrs_failed +=1
+      end
+    end
+    puts "addresses saved: #{addrs_saved}"
+    puts "addresses failed: #{addrs_failed}"
+  end
 end
 
 #real = FiatCurrency.create(country_name: 'Brasil', name: 'Real', code: 'BRL', symbol: 'R$')
@@ -218,4 +285,5 @@ end
 #DbFeed.crypto_currencies
 #DbFeed.donate_info
 #DbFeed.categories
-DbFeed.address_faker
+#DbFeed.address_faker
+DbFeed.addresses_from_coinmap

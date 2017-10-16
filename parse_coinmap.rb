@@ -7,7 +7,7 @@ uri = URI(url)
 response = Net::HTTP.get(uri)
 json = JSON.parse(response)
 
-venues = json['venues'].first(10)
+venues = json['venues'].first(3)
 venues.each do |v|
   puts coin_map_id = v['id']
   puts name = v['name']
@@ -17,7 +17,7 @@ venues.each do |v|
 
   details_response = Net::HTTP.get(URI("https://coinmap.org/api/v1/venues/#{coin_map_id.to_s}"))
   details_json = JSON.parse(details_response)
-  details = details_json['venue']
+  puts details = details_json['venue']
 
   puts description = details['description']
 
