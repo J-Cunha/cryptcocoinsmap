@@ -17,7 +17,7 @@ class Address < ApplicationRecord
   accepts_nested_attributes_for :address_attachments, reject_if: :all_blank,
   allow_destroy: true
   
-  validates_presence_of :business_name, :country, :state, :city, :zip_code, :street, :number
+  validates_presence_of :business_name, :country, :zip_code, :street, :number
 
   attr_readonly [:full_address]
   attr_accessor :country_id,

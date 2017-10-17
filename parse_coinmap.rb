@@ -19,6 +19,8 @@ venues.each do |v|
       puts "#{business_exist_tot += 1}: #{v['name']} exists in local file"
       next
     end
+  else
+    venues_local = {'venues' => []}
   end
   #v['id']
   #v['name']
@@ -39,6 +41,9 @@ venues.each do |v|
   v['city'] = details['city']
   v['zip_code'] = details['postcode']
   v['street'] = details['street']
+  v['number'] = details['houseno']
+  v['complement'] = details['complement']
+  v['reference_point'] = details['reference_point']
   venues_local['venues'] << v
   puts "#{business_added_tot += 1}: #{v['name']}"
   if business_added_tot%25 == 0

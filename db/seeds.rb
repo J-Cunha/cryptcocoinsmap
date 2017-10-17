@@ -142,7 +142,6 @@ class DbFeed
     nonclassifiable=format_cat_str("")
 
 
-
   end
 
   def format_cat_str(str)
@@ -182,7 +181,7 @@ class DbFeed
       addr.complement = fk_addr.secondary_address
       addr.email= Faker::Internet.email
       addr.phone= "+5521992064121"
-      addr.crypto_currencies_accepted=["119", "120", "130" , "145" , "345", "122", "144", "155"]
+      addr.crypto_currencies_accepted=["119", "120", "130", "145", "345", "122", "144", "155"]
       addr.categories= Category.first(5)
       addr.latitude = fk_addr.latitude
       addr.longitude = fk_addr.longitude
@@ -200,6 +199,7 @@ class DbFeed
 
 
   end
+
   def self.addresses_from_coinmap
     addrs_saved = 0
     addrs_failed = 0
@@ -207,29 +207,16 @@ class DbFeed
     venues_file = File.read('parse_coinmap_venues.json')
     venues_local = JSON.parse(venues_file)
 
-    venues = venues_local['venues']
+    venues = venues_local['venues'].first(1000)
     venues.each do |v|
       addr = Address.new
+      addr.user=User.where(email: 'jvsdc1992@gmail.com').first
 
       addr.business_name = v['name']
-      addr.user=User.where(email: 'jvsdc1992@gmail.com').first
-      coin_map_id = v['id']
-
-      if Category.where(name: v['category']).size > 0
-        addr.categories=Category.where(name: v['category'])
-      else
-        n_cat = Category.create(name: v['category'].to_s.capitalize)
-        addr.categories=[n_cat]
-      end
-      addr.latitude = latitude = v['lat']
-      addr.longitude = longitude = v['lon']
-      details_response = Net::HTTP.get(URI("https://coinmap.org/api/v1/venues/#{coin_map_id.to_s}"))
-      details_json = JSON.parse(details_response)
-      details = details_json['venue']
       if Address.where(business_name: addr.business_name).size > 0
         exist = false
         Address.where(business_name: addr.business_name).each do |addr|
-          if (addr.street == details['street']) && ( addr.number == details['houseno'])
+          if (addr.street == v['street']) && (addr.number == v['number'])
             exist = true
             break
           end
@@ -239,41 +226,40 @@ class DbFeed
           next
         end
       end
-      if (details['country'].nil?) || (details['country'].empty?)
-        puts "#{addr.business_name} - failed(No Country)"
-        next
+
+      if Category.where(name: v['category']).size > 0
+        addr.categories=Category.where(name: v['category'])
       else
-        addr.country = Country.where(code_iso2: details['country']).first
+        n_cat = Category.create(name: v['category'].to_s.capitalize)
+        addr.categories=[n_cat]
       end
-      if (details['state'].nil?) || (details['state'].empty?)
-        puts "#{addr.business_name} - failed(No State)"
-        next
-        end
-      if (details['postcode'].nil?) || (details['postcode'].empty?)
-        puts "#{addr.business_name} - failed(No Postcode)"
-        next
-      end
-      addr.description = details['description']
-      addr.web_site = details['website']
-      addr.facebook_page = details['facebook']
-      addr.email = details['email']
-      addr.phone = details['phone']
-      addr.state = details['state']
-      addr.city = details['city']
-      addr.zip_code= details['postcode']
-      addr.street = details['street']
-      addr.number= details['houseno']
-      addr.complement= details['complement']
-      addr.reference_point= details['reference_point']
+
+      addr.latitude = v['lat']
+      addr.longitude = v['lon']
+
+      addr.description = v['description']
+      addr.web_site = v['website']
+      addr.facebook_page = v['facebook']
+      addr.email = v['email']
+      addr.phone = v['phone']
+      addr.country = Country.where(code_iso2: v['country']).first
+      addr.state = v['state']
+      addr.city = v['city']
+      addr.zip_code= v['zip_code']
+      addr.street = v['street']
+      addr.number= v['number']
+      addr.complement= v['complement']
+      addr.reference_point= v['reference_point']
       addr.currencies = Currency.where(name: "Bitcoin")
       if addr.save
-        puts "#{addr.business_name} - saved"
+        puts "- saved - #{addr.business_name} "
         addrs_saved +=1
       else
-        puts "#{addr.business_name} - failed(#{addr.errors.messages.inspect})"
+        puts "- failed - #{addr.business_name} - (#{addr.errors.messages.inspect})"
         addrs_failed +=1
       end
     end
+
     puts "addresses saved: #{addrs_saved}"
     puts "addresses failed: #{addrs_failed}"
   end
