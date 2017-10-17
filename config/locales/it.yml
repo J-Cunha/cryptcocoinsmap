@@ -1,10 +1,9 @@
-
+---
 it:
   index:
     index: Index
     coins_accepted: Monete Accettate
   address:
-    address: Indirizzo
     business_name: Nome Commerciale
     web_site: Web site
     facebook_page: Facebook
@@ -28,6 +27,7 @@ it:
     add_category: Aggiungi Categorie
     evaluations: Valutazioni
     my_businesses: Miei Negozi
+    address: Indirizzo
   navbar:
     map: Mappa
     reports: Rapporti
@@ -175,6 +175,32 @@ it:
       accepted: deve accettare
       blank: non può essere lasciato vuoto
       present: deve essere lasciato vuoto
+    format: "%{attribute} %{message}"
+  simple_form:
+    'yes': Sì
+    'no': Non
+    required:
+      text: Richiesto
+      mark: "*"
+    error_notification:
+      default_message: Si prega di rivedere i seguenti problemi
+    labels:
+      defaults:
+        name: Nome
+        message: Messaggio
+        email: E-mail
+        username: User name
+        password: Password
+        new:
+          username: Scegli un username
+    hints:
+      defaults:
+        username: Username per accedere.
+        password: Nessun carattere speciale, per favore.
+    placeholders:
+      defaults:
+        username: Tuoi username
+        password: "****"
   titles:
     map: Mappa
     reports: Rapporti
@@ -197,6 +223,11 @@ it:
         restrict_dependent_destroy:
           has_one: Impossibile eliminare il record perché esiste un {%} dipendente
           has_many: Impossibile eliminare il registro poiché dipendono% {record}
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %B"
   datetime:
     distance_in_words:
       about_x_hours:

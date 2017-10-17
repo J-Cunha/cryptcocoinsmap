@@ -27,6 +27,7 @@ es:
     add_category: Añadir Categoría
     evaluations: Evaluaciones
     my_businesses: Mis Negocios
+    address: Dirección
   navbar:
     map: Mapa
     reports: Relatórios
@@ -66,9 +67,13 @@ es:
     donate: Donar
     donate_text: Para mantener este sitio en onlin requiere costos con servidores
       de hospedaje, nos ayude a mantenerlo en el aire haciendo una donación.
+    answer: Responder
+    answer_text: Responde nuestras búsquedas
     share: Compartir
     share_text: Divulgue nuestro sitio para que más personas puedan disfrutar
     facebook_share: Compartir
+    contribute: Contribuir
+    translate: Traducir
   devise:
     confirmations:
       confirmed: Tu correo electrónico ha sido confirmado exitosamente.
@@ -162,3 +167,52 @@ es:
       not_saved:
         one: 'Ha ocurrido 1 error:'
         other: 'Han ocurrido %{count} errores:'
+      accepted: debe ser aceptado
+      blank: No puede estar en blanco
+      present: Debe estar en blanco
+    format: "%{attribute} %{message}"
+  simple_form:
+    'yes': Sí
+    'no': 'No'
+    required:
+      text: Obligatorio
+      mark: "*"
+    error_notification:
+      default_message: Revise los siguientes problemas
+    labels:
+      defaults:
+        name: Nombre
+        message: Mensaje
+        email: E-mail
+        username: User name
+        password: Contraseña
+        new:
+          username: Elige un nombre de usuario
+    hints:
+      defaults:
+        username: Nombre de usuario para iniciar sesión.
+        password: Sin caracteres especiales, por favor.
+    placeholders:
+      defaults:
+        username: Tu nombre de usuario
+        password: "****"
+  titles:
+    map: Mapa
+    reports: Informes
+    my_account: Mi cuenta
+  dashboard:
+    menu:
+      my_account: Mi cuenta
+      edit_profile: Editar cuenta
+      settings: Configuración
+      delete_account: Borrar cuenta
+      businesses: Negocios
+      show_all: Ver todo
+      add_new: Añadir nuevo
+      avaliations: Evaluaciones
+      messages: Mensajes
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %B"
