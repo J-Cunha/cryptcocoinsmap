@@ -8,7 +8,8 @@ class WelcomeController < ApplicationController
       f_countries = params[:filter_countries]
       @addresses = Address.from_countries(f_countries)
     else
-      @addresses = Address.all
+      #@addresses = Address.all
+      @addresses = Address.all.includes(:categories, :currencies)
     end
     @countries = Country.all.order(:name_en)
     @crypto_currencies = CryptoCurrency.all
