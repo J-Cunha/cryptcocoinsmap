@@ -1,0 +1,12 @@
+<div id="nested-fields" class="row nested-fields address-currency-fields">
+  <div class=" currency_from_list">
+    <div class="col-xs-10">
+      <%= f.association :currency, :collection => Currency.all.order(:name), :prompt => 'Choose an existing currency', :label_html => {class: 'login-label'},:input_html => {class: 'transparent-input country-select'} %>
+    </div>
+    <div class="col-xs-2 center-align ">
+      <%= link_to_remove_association "X", f, class: 'btn btn-danger btn-remove-category' %>
+
+    </div>
+  </div>
+  <%# link_to_add_association 'or create a new tag', f, :category %>
+</div>
