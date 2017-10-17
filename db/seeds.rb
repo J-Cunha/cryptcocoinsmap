@@ -207,7 +207,7 @@ class DbFeed
     venues_file = File.read('parse_coinmap_venues.json')
     venues_local = JSON.parse(venues_file)
 
-    venues = venues_local['venues'].first(1000)
+    venues = venues_local['venues']
     venues.each do |v|
       addr = Address.new
       addr.user=User.where(email: 'jvsdc1992@gmail.com').first
