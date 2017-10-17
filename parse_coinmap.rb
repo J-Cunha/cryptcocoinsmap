@@ -1,4 +1,3 @@
-
 require 'net/http'
 require 'json'
 
@@ -7,30 +6,44 @@ uri = URI(url)
 response = Net::HTTP.get(uri)
 json = JSON.parse(response)
 
-venues = json['venues'].first(3)
+venues_file = File.read('parse_coinmap_venues.json') if File.exist?('parse_coinmap_venues.json')
+venues_local = JSON.parse(venues_file) if File.exist?('parse_coinmap_venues.json')
+
+venues = json['venues']
+business_added_tot = 0
+business_exist_tot = 0
+
 venues.each do |v|
-  puts coin_map_id = v['id']
-  puts name = v['name']
-  puts category = v['category']
-  puts latitude = v['lat']
-  puts longitude = v['lon']
-
-  details_response = Net::HTTP.get(URI("https://coinmap.org/api/v1/venues/#{coin_map_id.to_s}"))
+  if !venues_local.nil?
+    if venues_local['venues'].any? {|vl| vl['id'] == v['id']}
+      puts "#{business_exist_tot += 1}: #{v['name']} exists in local file"
+      next
+    end
+  end
+  #v['id']
+  #v['name']
+  #v['lat']
+  #v['lon']
+  details_response = Net::HTTP.get(URI("https://coinmap.org/api/v1/venues/#{v['id'].to_s}"))
   details_json = JSON.parse(details_response)
-  puts details = details_json['venue']
+  details = details_json['venue']
 
-  puts description = details['description']
+  v['description'] = details['description']
 
-  puts web_site = details['website']
-  puts email = details['email']
-  puts facebook = details['facebook']
+  v['web_site'] = details['website']
+  v['email'] = details['email']
+  v['facebook'] = details['facebook']
 
-  puts country = details['country']
-  puts state = details['state']
-  puts city = details['city']
-  puts zip_code= details['postcode']
-  puts street = details['street']
-
-
+  v['country'] = details['country']
+  v['state'] = details['state']
+  v['city'] = details['city']
+  v['zip_code'] = details['postcode']
+  v['street'] = details['street']
+  venues_local['venues'] << v
+  puts "#{business_added_tot += 1}: #{v['name']}"
+  if business_added_tot%25 == 0
+    File.write('parse_coinmap_venues.json', venues_local.to_json)
+    p 'File Saved'
+  end
 end
 

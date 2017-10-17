@@ -80,7 +80,7 @@ class DbFeed
   def self.crypto_currencies
     #CRYPTOCURRENCIES
     ####################################################
-    page = Nokogiri::HTML(open("http://coinmarketcap.com/currencies/views/all/"))
+    page = Nokogiri::HTML(open("https://coinmarketcap.com/currencies/views/all/"))
     allTr = page.css('tr')
     puts allTr.class
     allTr.each do |tr|
@@ -157,7 +157,7 @@ class DbFeed
 #USERS
 ####################################################
   def self.users
-    j_u = User.create(email: "user@user.com", password: "password", password_confirmation: "password")
+    j_u = User.create(email: "jvsdc1992@gmail.com", password: "password", password_confirmation: "password")
     j_u_2 = User.create(email: "user1@user1.com", password: "password", password_confirmation: "password")
     j_u_2 = User.create(email: "joao@joao.com", password: "password", password_confirmation: "password")
   end
@@ -203,17 +203,16 @@ class DbFeed
   def self.addresses_from_coinmap
     addrs_saved = 0
     addrs_failed = 0
-    url = 'https://coinmap.org/api/v1/venues/'
-    uri = URI(url)
-    response = Net::HTTP.get(uri)
-    json = JSON.parse(response)
 
-    venues = json['venues']
+    venues_file = File.read('parse_coinmap_venues.json')
+    venues_local = JSON.parse(venues_file)
+
+    venues = venues_local['venues']
     venues.each do |v|
       addr = Address.new
 
       addr.business_name = v['name']
-      addr.user=User.where(email: 'joao@joao.com').first
+      addr.user=User.where(email: 'jvsdc1992@gmail.com').first
       coin_map_id = v['id']
 
       if Category.where(name: v['category']).size > 0
@@ -227,6 +226,19 @@ class DbFeed
       details_response = Net::HTTP.get(URI("https://coinmap.org/api/v1/venues/#{coin_map_id.to_s}"))
       details_json = JSON.parse(details_response)
       details = details_json['venue']
+      if Address.where(business_name: addr.business_name).size > 0
+        exist = false
+        Address.where(business_name: addr.business_name).each do |addr|
+          if (addr.street == details['street']) && ( addr.number == details['houseno'])
+            exist = true
+            break
+          end
+        end
+        if exist
+          puts "#{addr.business_name} - failed(Already exist)"
+          next
+        end
+      end
       if (details['country'].nil?) || (details['country'].empty?)
         puts "#{addr.business_name} - failed(No Country)"
         next

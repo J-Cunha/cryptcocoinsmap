@@ -18,7 +18,7 @@ class WelcomeController < ApplicationController
       marker.lat address.latitude
       marker.lng address.longitude
       marker.picture({
-                         "url" => "http://localhost:3000#{ActionController::Base.helpers.asset_path('marker.png')}",
+                         "url" => "#{ActionController::Base.helpers.asset_url('marker.png')}",
                          "width" => 32,
                          "height" => 32
                      })
@@ -27,9 +27,7 @@ class WelcomeController < ApplicationController
       info_window_content += content_tag(:div, :class => 'countainer-fluid') do
         #title - Business Name
         content_tag(:h4) do
-          content_tag(:a, :href => "http://localhost:3000/addresses/#{address.id}") do
-            address.business_name
-          end
+          ActionController::Base.helpers.link_to(address.business_name, address_path(address), target: :_blank, class: 'infobox-website-link')
         end
         #country
       end
