@@ -48,7 +48,7 @@
     <div class="row">
       <div class="col-xs-12">
         <%= f.input :description,
-                    input_html: {class: 'transparent-input', maxlength: 500, rows: 5 }, label: "#{t('address.description')}:",
+                    input_html: {class: 'transparent-input', maxlength: 500, rows: 5}, label: "#{t('address.description')}:",
                     :label_html => {:class => 'login-label'} %>
       </div>
     </div>
@@ -111,16 +111,27 @@
     <div class="row">
       <div class="col-xs-12">
         <%= f.input :reference_point,
-                    input_html: {class: 'transparent-input', maxlength: 250, rows:3}, label: "#{t('address.reference_point')}:",
+                    input_html: {class: 'transparent-input', maxlength: 250, rows: 3}, label: "#{t('address.reference_point')}:",
                     :label_html => {:class => 'login-label'} %>
       </div>
     </div>
-   <!-- <div class="row">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="container-fluid">
+          <%= f.simple_fields_for :address_currencies do |address_currency| %>
+              <%= render 'addresses/address_currency_fields', :f => address_currency %>
+          <% end %>
+          <%= link_to_add_association t('address.add_category'), f, :address_currencies, class: 'btn btn-success  ' %>
+
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
       <div class="col-xs-12">
         <div id="address_attachments">
           <%# f.simple_fields_for :address_attachments do |attach| %>
-              <%# render "address_attachment_fields", :f => attach %>
-          <% #end %>
+    <%# render "address_attachment_fields", :f => attach %>
+    <% #end %>
 
           <div class="links">
             <%# link_to_add_association 'Add photo', f, :address_attachments, :class => "btn btn-default" %>

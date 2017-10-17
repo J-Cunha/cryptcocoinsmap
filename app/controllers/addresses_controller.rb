@@ -31,6 +31,7 @@ class AddressesController < ApplicationController
     @address = Address.new
     @address_attachment = @address.address_attachments.build
     1.times {@address.address_categories.build}
+    1.times {@address.address_currencies.build}
   end
 
   # GET /addresses/1/edit
@@ -45,7 +46,7 @@ class AddressesController < ApplicationController
     respond_to do |format|
       if @address.save
         save_attachments if params[:address_attachments]
-        @address.crypto_currencies_accepted = address_params[:crypto_currencies_accepted]
+        #@address.crypto_currencies_accepted = address_params[:crypto_currencies_accepted]
         format.html {redirect_to @address, notice: 'Address was successfully created.'}
         format.json {render :show, status: :created, location: @address}
       else
@@ -94,7 +95,9 @@ class AddressesController < ApplicationController
                                     :street, :number, :complement,
                                     :reference_point,
                                     :email, :phone, address_attachments_attributes: [:id, :address_id, {photos: []}, :_destroy],
-                                      address_categories_attributes: [:id, :_destroy, :category_id, category_attributes: [:id, :_destroy, :name]], crypto_currencies_accepted: [] )
+                                      address_categories_attributes: [:id, :_destroy, :category_id, category_attributes: [:id, :_destroy, :name]],
+                                      address_currencies_attributes: [:id, :_destroy, :currency_id, currency_attributes: [:id, :_destroy, :name]],
+                                            crypto_currencies_accepted: [] )
   end
 
   def save_attachments
