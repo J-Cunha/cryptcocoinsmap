@@ -203,6 +203,7 @@ class DbFeed
   def self.addresses_from_coinmap
     addrs_saved = 0
     addrs_failed = 0
+    addrs_exist = 0
 
     venues_file = File.read('parse_coinmap_venues.json')
     venues_local = JSON.parse(venues_file)
@@ -222,7 +223,8 @@ class DbFeed
           end
         end
         if exist
-          puts "#{addr.business_name} - failed(Already exist)"
+          puts " - failed - #{addr.business_name} - (Already exist)"
+          addrs_exist +=1
           next
         end
       end
@@ -233,7 +235,11 @@ class DbFeed
         n_cat = Category.create(name: v['category'].to_s.capitalize)
         addr.categories=[n_cat]
       end
-
+      if v['zip_code'].to_s.empty? || v['number'].to_s.empty? || v['street'].to_s.empty?
+        puts " - failed - #{addr.business_name} - (Empty values)"
+        addrs_failed +=1
+        next
+      end
       addr.latitude = v['lat']
       addr.longitude = v['lon']
 
@@ -242,11 +248,13 @@ class DbFeed
       addr.facebook_page = v['facebook']
       addr.email = v['email']
       addr.phone = v['phone']
-					if      Country.where(code_iso2: v['country']).size == 0
-next
-else
-	addr.country = Country.where(code_iso2: v['country']).first
-end
+      if Country.where(code_iso2: v['country']).size == 0
+        puts " - failed - #{addr.business_name} - (Empty Country)"
+        addrs_failed +=1
+        next
+      else
+        addr.country = Country.where(code_iso2: v['country']).first
+      end
       addr.state = v['state']
       addr.city = v['city']
       addr.zip_code= v['zip_code']
@@ -265,6 +273,7 @@ end
     end
 
     puts "addresses saved: #{addrs_saved}"
+    puts "addresses exist: #{addrs_exist}"
     puts "addresses failed: #{addrs_failed}"
   end
 end
