@@ -31,7 +31,7 @@ class AddressesController < ApplicationController
     @address = Address.new
     @address_attachment = @address.address_attachments.build
     1.times {@address.address_categories.build}
-    1.times {@address.address_currencies.build}
+    @address.address_currencies.build.currency = Currency.where(name: 'Bitcoin').first
   end
 
   # GET /addresses/1/edit

@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!, only: [:index, :addresses, :avaliations, :contacts]
   def index
-    redirect_to edit_user_registration_path
+    redirect_to addresses_path
   end
 
   def addresses

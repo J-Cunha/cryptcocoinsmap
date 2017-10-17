@@ -28,6 +28,8 @@ en:
     evaluations: Evaluations
     my_businesses: My Businesses
     address: Address
+    coin_accepted: Coin Accepted
+    add_coin: Add Coin
   navbar:
     map: Map
     reports: Reports

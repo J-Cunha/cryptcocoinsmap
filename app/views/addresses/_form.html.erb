@@ -108,6 +108,7 @@
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-xs-12">
         <%= f.input :reference_point,
@@ -115,17 +116,19 @@
                     :label_html => {:class => 'login-label'} %>
       </div>
     </div>
+
     <div class="row">
       <div class="col-xs-12">
         <div class="container-fluid">
           <%= f.simple_fields_for :address_currencies do |address_currency| %>
               <%= render 'addresses/address_currency_fields', :f => address_currency %>
           <% end %>
-          <%= link_to_add_association t('address.add_category'), f, :address_currencies, class: 'btn btn-success  ' %>
+          <%= link_to_add_association t('address.add_coin'), f, :address_currencies, class: 'btn btn-success  ' %>
 
         </div>
       </div>
     </div>
+
     <!-- <div class="row">
       <div class="col-xs-12">
         <div id="address_attachments">
@@ -139,42 +142,7 @@
         </div>
       </div>
     </div> -->
-    <hr>
-    <h4 class=""><%= t('index.coins_accepted') %></h4>
-    <div class="row">
-      <div class="col-xs-12">
-      </div>
-    </div>
-    <div class="row ">
-      <% tot = @crypto_currencies.count %>
-      <% mod = tot % 4 %>
-      <% tot_p_blk = (tot - mod) / 4 %>
-      <% i = 0 %>
-      <% blks = [
-          @crypto_currencies[0..tot_p_blk],
-          @crypto_currencies[(tot_p_blk + 1)..(tot_p_blk * 2)],
-          @crypto_currencies[((tot_p_blk * 2) + 1)..(tot_p_blk * 3)],
-          @crypto_currencies[((tot_p_blk * 3) + 1)..((tot_p_blk * 4) + mod)]] %>
-      <% 2.times do %>
-          <div class="col-lg-6">
-            <div class="row scrollable-coin-container" id="scrollable-coin-container">
-              <% 2.times do %>
-                  <div class="col-xs-6">
-                    <% blks[i].each do |c| %>
-                        <div class="checkbox filter-dropdown-checkbox">
-                          <input type="checkbox" value="<%= c.id.to_s %>" name="address[crypto_currencies_accepted][]"/>
-                          <%= (image_tag ("coins_icons/#{c.name.split.join('-')}.png"),
-                                         class: 'currency-logo-16x16 inline') if (Rails.application.assets.find_asset "coins_icons/#{c.name.split.join('-')}.png") %>
-                          <div class="login-label inline"><%= "#{c.name}" %></div>
-                        </div>
-                    <% end %>
-                    <% i = (i + 1) %>
-                  </div>
-              <% end %>
-            </div>
-          </div>
-      <% end %>
-    </div>
+
     <div class="row">
       <div class="col-xs-12">
         <div class="form-actions">
