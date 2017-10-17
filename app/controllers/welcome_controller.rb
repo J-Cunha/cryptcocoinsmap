@@ -9,12 +9,12 @@ class WelcomeController < ApplicationController
       @addresses = Address.from_countries(f_countries)
     else
       #@addresses = Address.all
-      @addresses = Address.all.includes(:categories, :currencies)
+      @addresses = Address.all.includes(:categories, :currencies, :country)
     end
-    @countries = Country.all.order(:name_en)
-    @crypto_currencies = CryptoCurrency.all
-    @languages = Language.all
-    @categories = Category.all
+    #@countries = Country.all.order(:name_en)
+    #@crypto_currencies = CryptoCurrency.all
+    #@languages = Language.all
+    #@categories = Category.all
     @hash = Gmaps4rails.build_markers(@addresses) do |address, marker|
       marker.lat address.latitude
       marker.lng address.longitude
@@ -25,7 +25,7 @@ class WelcomeController < ApplicationController
                      })
       info_window_content =""
 
-      info_window_content += content_tag(:div, :class => 'countainer-fluid') do
+      info_window_content += content_tag(:div, :class => 'container-fluid') do
         #title - Business Name
         content_tag(:h4) do
           ActionController::Base.helpers.link_to(address.business_name, address_path(address), target: :_blank, class: 'infobox-website-link')
@@ -36,7 +36,7 @@ class WelcomeController < ApplicationController
       address.categories.first(3).each do |c|
         info_window_content += content_tag(:div, :class => 'infobox-attr-category-container') do
           content_tag(:div, "", :class => 'infobox-tag-icon')+
-              content_tag(:a, "#{c.name}", :href => "http://localhost:3000/categories/#{c.id}", :class => 'address_property_value infobox-link')
+              ActionController::Base.helpers.link_to(c.name, category_path(c), target: :_blank, class: 'infobox-website-link')
         end
       end
       info_window_content += content_tag(:div, "", :class => 'infobox-divisor')
@@ -103,7 +103,6 @@ class WelcomeController < ApplicationController
         if address.currencies.size > 10
           a << ActionController::Base.helpers.link_to("...", address_path(address), class: 'infobox-3dots-link')
         end
-
         a
       end
       marker.infowindow info_window_content

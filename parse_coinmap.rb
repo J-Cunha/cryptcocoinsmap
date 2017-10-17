@@ -34,6 +34,7 @@ venues.each do |v|
 
   v['web_site'] = details['website']
   v['email'] = details['email']
+  v['phone'] = details['phone']
   v['facebook'] = details['facebook']
 
   v['country'] = details['country']

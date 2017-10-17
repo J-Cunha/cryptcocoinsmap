@@ -219,10 +219,10 @@ it:
   activerecord:
     errors:
       messages:
-        record_invalid: Validazione non riuscita:% {errors}
+        record_invalid: "Validazione non riuscita: %{errors}"
         restrict_dependent_destroy:
-          has_one: Impossibile eliminare il record perché esiste un {%} dipendente
-          has_many: Impossibile eliminare il registro poiché dipendono% {record}
+          has_one: "Impossibile eliminare il record perché esiste un %{record} dipendente"
+          has_many: "Impossibile eliminare il registro poiché dipendono% %{record}"
   date:
     formats:
       default: "%d/%m/%Y"
