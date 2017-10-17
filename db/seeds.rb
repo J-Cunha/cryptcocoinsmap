@@ -242,7 +242,11 @@ class DbFeed
       addr.facebook_page = v['facebook']
       addr.email = v['email']
       addr.phone = v['phone']
-      addr.country = Country.where(code_iso2: v['country']).first
+					if      Country.where(code_iso2: v['country']).size == 0
+next
+else
+	addr.country = Country.where(code_iso2: v['country']).first
+end
       addr.state = v['state']
       addr.city = v['city']
       addr.zip_code= v['zip_code']
