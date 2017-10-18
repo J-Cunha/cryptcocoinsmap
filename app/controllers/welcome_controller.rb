@@ -1,5 +1,4 @@
 class WelcomeController < ApplicationController
-  include ActionView::Helpers::TagHelper
   attr_accessor :output_buffer
 
   def index
@@ -25,86 +24,73 @@ class WelcomeController < ApplicationController
                      })
       info_window_content =""
 
-      info_window_content += content_tag(:div, :class => 'container-fluid') do
-        #title - Business Name
-        content_tag(:h4) do
-          ActionController::Base.helpers.link_to(address.business_name, address_path(address), target: :_blank, class: 'infobox-website-link')
-        end
-        #country
-      end
+      info_window_content += "<h4><a href=\"http://cryptocoinsmap.info/addresses/#{address.id }\" target=\"_blank\">#{address.business_name}</a></h4>"
+
       #categories
       address.categories.first(3).each do |c|
-        info_window_content += content_tag(:div, :class => 'infobox-attr-category-container') do
-          content_tag(:div, "", :class => 'infobox-tag-icon')+
-              ActionController::Base.helpers.link_to(c.name, category_path(c), target: :_blank, class: 'infobox-website-link')
-        end
+        info_window_content += "<div class = \"infobox-attr-category-container\">"+
+            "<div class = \"infobox-tag-icon\"></div>"+
+            "<div class = \"address_property_value\">"+
+            "<a href=\"http://cryptocoinsmap.info/categories/#{c.id }\" target=\"_blank\" class=\"infobox-website-link\">#{c.name}</a>"+
+            "</div>"+
+            "</div>"
       end
-      info_window_content += content_tag(:div, "", :class => 'infobox-divisor')
+      info_window_content += "<div class=\"infobox-divisor\"></div>"
 
       #Country
-      info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
-        content_tag(:div, "", :class => 'infobox-flag-icon') +
-            content_tag(:div, :class => 'address_property_value') do
-              "#{address.city},  #{address.state}, #{address.country.name }"
-              # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
-            end
-      end
-      #Fullstreet
-      info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
-        content_tag(:div, "", :class => 'infobox-street-icon') +
-            content_tag(:div, :class => 'address_property_value') do
-              "#{address.full_street}"
-              # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
-            end
-      end
-      #add website to infowindow
+      info_window_content += "<div class = \"infobox-attr-container\">"+
+          "<div class = \"infobox-flag-icon\"></div>"+
+          "<div class = \"address_property_value\">"+
+
+          #"<a href=\"http://cryptocoinsmap.info/countries/#{address.country.id}\" target=\"_blank\" class=\"infobox-website-link\">#{address.country.name}</a>"+
+          "#{address.country.name}"+
+          "</div>"+
+          "</div>"
+      info_window_content += "<div class = \"infobox-attr-container\">"+
+          "<div class = \"infobox-street-icon\"></div>"+
+          "<div class = \"address_property_value\">"+
+          "#{address.full_street}"+
+          "</div>"+
+          "</div>"
+
+
       unless (address.web_site.nil?) || (address.web_site.empty?)
-        info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
-          content_tag(:div, "", :class => 'infobox-website-icon') +
-              content_tag(:div, :class => 'address_property_value infobox-website-link') do
-                ActionController::Base.helpers.link_to(address.web_site, address.web_site, target: :_blank, class: 'infobox-website-link')
-                # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
-              end
-        end
+        info_window_content += "<div class = \"infobox-attr-container\">"+
+            "<div class = \"infobox-website-icon\"></div>"+
+            "<div class = \"address_property_value infobox-website-link\">"+
+            "<a href=\"#{address.web_site}\" target=\"_blank\" class=\"infobox-website-link\">#{address.web_site}</a>"+
+            "</div>" +
+            "</div>"
       end
-      #add phone numbers to infowindow
-      unless (address.phone.nil?) || (address.phone.empty?)
-        info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
-          content_tag(:div, "", :class => 'infobox-phone-icon') +
-              content_tag(:div, :class => 'address_property_value') do
-                "#{address.phone}"
-                # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
-              end
-        end
-      end
-      #add  emails to infowindow
       unless (address.email.nil?) || (address.email.empty?)
-        info_window_content += content_tag(:div, :class => 'infobox-attr-container') do
-          content_tag(:div, "", :class => 'infobox-email-icon') +
-              content_tag(:div, :class => 'address_property_value') do
-                "#{address.email}"
-                # content_tag(:a,  "{c.name}",:href => "http://localhost:3000/categories/", :class => 'address_property_value')
-              end
-        end
+        info_window_content += "<div class = \"infobox-attr-container\">"+
+            "<div class = \"infobox-email-icon\"></div>"+
+            "<div class = \"address_property_value \">"+
+            "#{address.email}"+
+            "</div>" +
+            "</div>"
+      end
+      unless (address.phone.nil?) || (address.phone.empty?)
+        info_window_content += "<div class = \"infobox-attr-container\">"+
+            "<div class = \"infobox-phone-icon\"></div>"+
+            "<div class = \"address_property_value\">"+
+            "#{address.phone}"+
+            "</div>" +
+            "</div>"
       end
 
-      #add cryptocurrencies to infowindow
-      info_window_content += content_tag(:div, :class => 'infobox-accepted-coins-container') do
-        a = ActiveSupport::SafeBuffer.new
-        address.currencies.first(10).collect do |coin_accepted|
-          a << content_tag(:a, :href => currency_path(coin_accepted)) do
-            if (Rails.application.assets.find_asset "coins_icons/#{coin_accepted.name.split.join('-')}.png")
-              ActionController::Base.helpers.link_to ActionController::Base.helpers.image_tag("coins_icons/#{coin_accepted.name.split.join('-')}.png", class: 'infobox-currency-logo-16x16'), currency_path(coin_accepted)
-            else
-              ActionController::Base.helpers.link_to(coin_accepted.name, currency_path(coin_accepted), class: 'infobox-coin-name-link')
-            end
-          end
-        end
-        if address.currencies.size > 10
-          a << ActionController::Base.helpers.link_to("...", address_path(address), class: 'infobox-3dots-link')
-        end
-        a
+      info_window_content += "<div class=\"infobox-divisor\"></div>"
+
+      info_window_content += "<div class = \"infobox-accepted-coins-container\">"
+      address.currencies.first(3).each do |coin_accepted|
+        info_window_content += "<a href=\"http://cryptocoinsmap.info/currencies/#{coin_accepted.id}\">#{coin_accepted.name}</a><br>"
       end
+      if address.currencies.size > 3
+        info_window_content += "<a class=\"infobox-3dots-link\" href=\"http://cryptocoinsmap.info/addresses/#{address.id }\" target=\"_blank\">...</a></h4>"
+      end
+      info_window_content += "</div>"
+
+
       marker.infowindow info_window_content
     end
   end
