@@ -88,14 +88,16 @@ class WelcomeController < ApplicationController
             "</div>" +
             "</div>"
       end
-
       info_window_content += "<div class=\"infobox-divisor\"></div>"
-
       info_window_content += "<div class = \"infobox-accepted-coins-container\">"
-      address.currencies.first(3).each do |coin_accepted|
-        info_window_content += "<a href=\"http://cryptocoinsmap.info/currencies/#{coin_accepted.id}\">#{coin_accepted.name}</a><br>"
+      address.currencies.first(7).each do |coin_accepted|
+        if (Rails.application.assets.find_asset "coins_icons/#{coin_accepted.name.split.join('-')}.png")
+          info_window_content += ActionController::Base.helpers.link_to ActionController::Base.helpers.image_tag("coins_icons/#{coin_accepted.name.split.join('-')}.png", class: 'infobox-currency-logo-16x16'), currency_path(coin_accepted)
+        else
+          info_window_content += ActionController::Base.helpers.link_to(coin_accepted.name, currency_path(coin_accepted), class: 'infobox-coin-name-link')
+        end
       end
-      if address.currencies.size > 3
+      if address.currencies.size > 7
         info_window_content += "<a class=\"infobox-3dots-link\" href=\"http://cryptocoinsmap.info/addresses/#{address.id }\" target=\"_blank\">...</a></h4>"
       end
       info_window_content += "</div>"
