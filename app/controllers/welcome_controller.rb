@@ -2,18 +2,30 @@ class WelcomeController < ApplicationController
   attr_accessor :output_buffer
 
   def index
-    @addresses = nil
-    if params[:filter_countries]
-      f_countries = params[:filter_countries]
-      @addresses = Address.from_countries(f_countries)
-    else
-      #@addresses = Address.all
-      @addresses = Address.all.includes(:categories, :currencies, :country)
-    end
+    #@addresses = Address.all
+    @addresses = Address.all.includes(:categories, :currencies, :country)
     #@countries = Country.all.order(:name_en)
     #@crypto_currencies = CryptoCurrency.all
     #@languages = Language.all
     #@categories = Category.all
+    cache = Rails.cache.read(:markers_hash)
+    if cache.nil?
+      feed_marker_hash
+    else
+      @hash = cache
+    end
+
+
+  end
+  def report
+  end
+
+  def donate
+    @donate_infos = DonateInfo.all
+  end
+
+  private
+  def feed_marker_hash
     @hash = Gmaps4rails.build_markers(@addresses) do |address, marker|
       marker.lat address.latitude
       marker.lng address.longitude
@@ -52,8 +64,6 @@ class WelcomeController < ApplicationController
           "#{address.full_street}"+
           "</div>"+
           "</div>"
-
-
       unless (address.web_site.nil?) || (address.web_site.empty?)
         info_window_content += "<div class = \"infobox-attr-container\">"+
             "<div class = \"infobox-website-icon\"></div>"+
@@ -90,15 +100,10 @@ class WelcomeController < ApplicationController
       end
       info_window_content += "</div>"
 
-
       marker.infowindow info_window_content
     end
-  end
-
-  def report
-  end
-
-  def donate
-    @donate_infos = DonateInfo.all
+    Rails.cache.fetch(:markers_hash, expires_in: 1.hour) do
+      @hash
+    end
   end
 end

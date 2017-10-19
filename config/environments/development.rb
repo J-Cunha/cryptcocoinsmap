@@ -6,6 +6,9 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  config.action_controller.perform_caching = true
+  config.cache_store = :memory_store
+
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -14,14 +17,11 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
-    config.action_controller.perform_caching = true
 
-    config.cache_store = :memory_store
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
     }
   else
-    config.action_controller.perform_caching = false
 
     config.cache_store = :null_store
   end
